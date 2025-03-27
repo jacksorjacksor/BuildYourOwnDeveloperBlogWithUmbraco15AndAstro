@@ -22,3 +22,8 @@ https://www.hanselman.com/blog/
 
 ### Kenn Jacobsen
 https://kjac.dev/
+
+## RSS Feeds / Umbraco Blogs
+
+### How to add your own blog posts to the blog feed
+https://community.umbraco.com/learn-about-the-community/blog-posts/how-to-add-your-own-blog-post/
