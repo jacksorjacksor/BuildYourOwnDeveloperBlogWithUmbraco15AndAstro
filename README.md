@@ -25,5 +25,8 @@ https://kjac.dev/
 
 ## RSS Feeds / Umbraco Blogs
 
-### How to add your own blog posts to the blog feed
+### Umbraco: How to add your own blog posts to the blog feed
 https://community.umbraco.com/learn-about-the-community/blog-posts/how-to-add-your-own-blog-post/
+
+### Astro: Add an RSS feed:
+https://docs.astro.build/en/recipes/rss/
