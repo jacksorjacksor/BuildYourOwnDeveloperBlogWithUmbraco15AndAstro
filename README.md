@@ -12,7 +12,7 @@ Tuesday 17th June 2025
 > 
 > Whether you’re a solo developer or part of a larger team, this workshop will give you practical, real-world experience in building and deploying a modern developer blog - leaving you with a live site and all the know-how to keep it growing.
 
-## Samples
+## Sample Blogs
 
 ### Theo's Blog
 https://t3.gg/blog
