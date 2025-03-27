@@ -23,6 +23,12 @@ https://www.hanselman.com/blog/
 ### Kenn Jacobsen
 https://kjac.dev/
 
+### Owain Jones
+https://www.owainjones.dev/
+
+### Rick Butterfield
+https://rickbutterfield.dev/
+
 ## RSS Feeds / Umbraco Blogs
 
 ### Umbraco: How to add your own blog posts to the blog feed
