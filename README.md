@@ -19,3 +19,6 @@ https://t3.gg/blog
 
 ### Scott Hanselman
 https://www.hanselman.com/blog/
+
+### Kenn Jacobsen
+https://kjac.dev/
