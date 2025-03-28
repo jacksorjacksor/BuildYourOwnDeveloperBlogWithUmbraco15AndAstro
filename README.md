@@ -29,6 +29,9 @@ https://www.owainjones.dev/
 ### Rick Butterfield
 https://rickbutterfield.dev/
 
+## HexMaster
+https://hexmaster.nl/
+
 ## RSS Feeds / Umbraco Blogs
 
 ### Umbraco: How to add your own blog posts to the blog feed
