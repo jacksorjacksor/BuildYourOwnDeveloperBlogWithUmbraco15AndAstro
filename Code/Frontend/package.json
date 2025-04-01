@@ -6,9 +6,14 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "astro": "astro"
+    "astro": "astro",
+    "umb-ts-generate": "openapi-ts"
   },
   "dependencies": {
     "astro": "^5.5.5"
+  },
+  "devDependencies": {
+    "@hey-api/openapi-ts": "^0.65.0",
+    "@hey-api/client-fetch": "^0.9.0"
   }
 }
