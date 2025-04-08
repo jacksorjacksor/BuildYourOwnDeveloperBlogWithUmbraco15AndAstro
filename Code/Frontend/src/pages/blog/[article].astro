@@ -1,0 +1,45 @@
+---
+import { getFinalUrlSegment } from "../../helpers/AppHelpers";
+import { getContentByType } from "../../services/ContentService";
+
+export async function getStaticPaths() {
+  const contentType = "blogArticlePage";
+
+  const take = 100;
+  let skip = 0;
+  let pages: any = [];
+  let total = 0;
+
+  // Continue fetching until we have retrieved all items.
+  do {
+    const contentResponse = await getContentByType(contentType, skip, take);
+
+    // Update the total number of items.
+    total = contentResponse.total;
+
+    // Process the items from the current batch.
+    const batchPages = contentResponse.items.map((item) => {
+      return {
+        params: { article: getFinalUrlSegment(item.route.path) },
+        props: {
+          title: item.properties.title,
+          content: item.properties.content,
+        },
+      };
+    });
+
+    // Add the current batch's pages to our overall pages array.
+    pages = pages.concat(batchPages);
+
+    // Increment the skip count to fetch the next batch.
+    skip += take;
+  } while (skip < total);
+
+  return pages;
+}
+
+const { title, content } = Astro.props;
+---
+
+<h1>{title}</h1>
+<div set:html={content.markup} />

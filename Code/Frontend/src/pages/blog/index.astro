@@ -1,0 +1,27 @@
+---
+import { getContentByType } from "../../services/ContentService";
+
+const contentType = "blogArticlePage";
+const take = 5;
+const skip = 0;
+
+const contentResponse = await getContentByType(contentType, skip, take);
+
+const latestArticles = contentResponse.items.map((item) => {
+  return {
+    title: item.properties.title,
+    link: item.route?.path,
+  };
+});
+---
+
+<h1>Blog Listing</h1>
+<ul>
+  {
+    latestArticles.map((article) => (
+      <li>
+        <a href={article.link}>{article.title}</a>
+      </li>
+    ))
+  }
+</ul>

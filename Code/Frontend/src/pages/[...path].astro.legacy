@@ -1,0 +1,84 @@
+<!-- ---
+import Layout from "../layouts/Layout.astro";
+import { getContentByType } from "../services/ContentService";
+
+export async function getStaticPaths() {
+  // Define the content type you want to query.
+  const contentType = "blogArticlePage";
+
+  // Set pagination values.
+  const skip = 0;
+  const take = 100;
+
+  // Retrieve the content items.
+  const contentResponse = await getContentByType(contentType, skip, take);
+
+  // how might we use the contentResponse.total to continue to look up until we have all pages
+
+  const pages = contentResponse.items.map((item) => {
+    return {
+      params: { path: item.route.path },
+      props: { title: item.properties.title, content: item.properties.content },
+    };
+  });
+
+  return pages;
+}
+
+// Receive the properties for the current page.
+const { title, content } = Astro.props;
+---
+
+<Layout>
+  <h1>{title}</h1>
+  <div set:html={content.markup} />
+</Layout> --><!-- ---
+import Layout from "../layouts/Layout.astro";
+import { getContentByType } from "../services/ContentService";
+
+export async function getStaticPaths() {
+  // TODO: Move pagination batch call into service.
+  // TODO: Make so will work across all page types, not just blogArticlePage
+
+  // Define the content type you want to query.
+  const contentType = "blogArticlePage";
+
+  // Set the number of items to retrieve per call.
+  const take = 100;
+  let skip = 0;
+  let pages = [];
+  let total = 0;
+
+  // Continue fetching until we have retrieved all items.
+  do {
+    const contentResponse = await getContentByType(contentType, skip, take);
+    total = contentResponse.total;
+
+    // Process the items from the current batch.
+    const batchPages = contentResponse.items.map((item) => {
+      return {
+        params: { path: item.route.path },
+        props: {
+          title: item.properties.title,
+          content: item.properties.content,
+        },
+      };
+    });
+
+    // Add the current batch's pages to our overall pages array.
+    pages = pages.concat(batchPages);
+
+    // Increment the skip count to fetch the next batch.
+    skip += take;
+  } while (skip < total);
+
+  return pages;
+}
+
+const { title, content } = Astro.props;
+---
+
+<Layout>
+  <h1>{title}</h1>
+  <div set:html={content.markup} />
+</Layout> -->

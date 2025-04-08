@@ -1,4 +1,4 @@
-import { isNullOrWhiteSpace } from "../helpers/StringHelpers";
+import { isNullOrWhiteSpace } from "../helpers/AppHelpers";
 import { 
   getContent20, 
   getContentItemById20, 
@@ -77,6 +77,8 @@ export async function getContentByType(
     skip: number,
     take: number
 ): Promise<PagedIApiContentResponseModel> {
+
+    //console.log(`Calling getContentByType fpr contentType '${contentType}' skip: ${skip} take: ${take}`)
 
     if (isNullOrWhiteSpace(contentType)) {
         throw new Error('Content type must be provided.');
