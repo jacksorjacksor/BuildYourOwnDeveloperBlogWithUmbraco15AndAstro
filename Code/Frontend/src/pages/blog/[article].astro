@@ -1,45 +1,43 @@
 ---
 import { getFinalUrlSegment } from "../../helpers/AppHelpers";
-import { getContentByType } from "../../services/ContentService";
+import {
+  getAllContentByType,
+  getPagedContentByType,
+} from "../../services/ContentService";
 
 export async function getStaticPaths() {
+  // TODO:
+  // Implement BlockList Renderer with Typed Blocks
+  // Sort 'never' Type issue with generated Hey Api - see https://github.com/hey-api/openapi-ts/issues/1931
+
   const contentType = "blogArticlePage";
 
-  const take = 100;
-  let skip = 0;
-  let pages: any = [];
-  let total = 0;
+  // Retrieve all content items using the refactored function.
+  const items = await getAllContentByType(contentType);
 
-  // Continue fetching until we have retrieved all items.
-  do {
-    const contentResponse = await getContentByType(contentType, skip, take);
-
-    // Update the total number of items.
-    total = contentResponse.total;
-
-    // Process the items from the current batch.
-    const batchPages = contentResponse.items.map((item) => {
-      return {
-        params: { article: getFinalUrlSegment(item.route.path) },
-        props: {
-          title: item.properties.title,
-          content: item.properties.content,
-        },
-      };
-    });
-
-    // Add the current batch's pages to our overall pages array.
-    pages = pages.concat(batchPages);
-
-    // Increment the skip count to fetch the next batch.
-    skip += take;
-  } while (skip < total);
+  // Map the full list of items into the page parameters.
+  const pages = items.map((item) => {
+    return {
+      params: { article: getFinalUrlSegment(item.route.path) },
+      props: {
+        title: item.properties.title,
+        content: item.properties.content,
+        components: item.properties.components?.items,
+      },
+    };
+  });
 
   return pages;
 }
 
-const { title, content } = Astro.props;
+const { title, content, components } = Astro.props;
 ---
 
 <h1>{title}</h1>
 <div set:html={content.markup} />
+
+{
+  components?.map((component) => (
+    <li>{component.content?.properties?.richText?.markup}</li>
+  ))
+}

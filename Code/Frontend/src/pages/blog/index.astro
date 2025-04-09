@@ -1,11 +1,12 @@
 ---
-import { getContentByType } from "../../services/ContentService";
+import { getPagedContentByType } from "../../services/ContentService";
+import type { BlogArticlePageContentResponseModel } from "../../umbraco-client/content/api/types.gen";
 
 const contentType = "blogArticlePage";
 const take = 5;
 const skip = 0;
 
-const contentResponse = await getContentByType(contentType, skip, take);
+const contentResponse = await getPagedContentByType(contentType, skip, take);
 
 const latestArticles = contentResponse.items.map((item) => {
   return {
