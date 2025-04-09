@@ -8,6 +8,7 @@
 
   <ItemGroup>
     <PackageReference Include="Umbraco.Cms" Version="15.3.0" />
+    <PackageReference Include="Umbraco.Community.DeliveryApiExtensions" Version="15.0.1" />
     <PackageReference Include="uSync" Version="15.1.5" />
   </ItemGroup>
 
