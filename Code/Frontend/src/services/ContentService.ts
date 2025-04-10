@@ -1,13 +1,6 @@
 import { isNullOrWhiteSpace } from "../helpers/AppHelpers";
-import {  
-  type IApiContentResponseModel, 
-  type PagedIApiContentResponseModel 
-} from "../umbraco-client/content/api/types.gen";
-import { 
-    getContent20, 
-    getContentItemById20, 
-    getContentItemByPath20, 
-  } from "../umbraco-client/content/api/sdk.gen";
+import { getContent20, getContentItemById20, getContentItemByPath20 } from "../umbraco-client/content/content";
+import type { IApiContentResponseModel, PagedIApiContentResponseModel } from "../umbraco-client/model";
 
 /**
  * Retrieves page content based on the provided URL.
@@ -21,13 +14,12 @@ export async function getPageContent(url: string): Promise<IApiContentResponseMo
         url = '/'; // Default to root if URL is not provided.
     }
 
-    const response = await getContentItemByPath20({
-        path: { path: url }, // Wrap the URL string in an object
-        query: { expand: 'properties[$all]' } 
-    });
+    const response = await getContentItemByPath20(url, {
+      expand: 'properties[$all]' 
+    })
 
-    if (response.error) {
-        throw response.error;
+    if (response.status != 200) {
+        throw new Error(`Error with Umbraco API request: ${url}`);
     }
 
     if (!response.data) {
@@ -49,13 +41,13 @@ export async function getContentById(id?: string): Promise<IApiContentResponseMo
         return null;
     }
 
-    const response = await getContentItemById20({
-        path: { id: id },
-        query: { expand: 'properties[$all]' }
+    const response = await getContentItemById20(id, {
+      expand: 'properties[$all]' 
     });
 
-    if (response.error) {
-        throw response.error;
+
+    if (response.status != 200) {
+      throw new Error(`Error with Umbraco API request: ${id}`);
     }
 
     if (!response.data) {
@@ -121,17 +113,15 @@ export async function getAllContentByType(contentType: string): Promise<IApiCont
     const filter = [`contentType:${contentType}`];
   
     const response = await getContent20({
-      query: {
         filter: filter,
         sort: ['createDate:desc'],
         fields: 'properties[$all]',
         skip: skip,
         take: take,
-      },
     });
   
-    if (response.error) {
-      throw response.error;
+    if (response.status != 200) {
+      throw new Error(`Error with Umbraco API request`);
     }
   
     if (!response.data) {
