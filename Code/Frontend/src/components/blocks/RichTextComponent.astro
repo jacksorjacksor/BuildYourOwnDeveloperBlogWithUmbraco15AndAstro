@@ -1,0 +1,14 @@
+---
+import type { ApiBlockListModelItemsItem } from "../../umbraco-client/model";
+
+interface Props {
+  block: ApiBlockListModelItemsItem;
+}
+
+const { block } = Astro.props;
+---
+
+<div
+  set:html={block.content?.properties?.richText?.markup}
+  class=`py-5 text-base leading-relaxed text-body-color dark:text-dark-6`
+/>

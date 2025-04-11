@@ -1,9 +1,12 @@
 ---
+import Layout from "../../layouts/Layout.astro";
 import { getFinalUrlSegment } from "../../helpers/AppHelpers";
-import {
-  getAllContentByType,
-  getPagedContentByType,
-} from "../../services/ContentService";
+import { getAllContentByType } from "../../services/ContentService";
+import type {
+  ApiBlockListModel,
+  RichTextModel,
+} from "../../umbraco-client/model";
+import BlockList from "../../components/BlockList.astro";
 
 export async function getStaticPaths() {
   // TODO:
@@ -19,12 +22,16 @@ export async function getStaticPaths() {
 
   // Map the full list of items into the page parameters.
   const pages = items.map((item) => {
+    // We should not have to do this. For some reason the components collection and the rich text property are being interpreted as unknown by the TypeSctipt compiler
+    let components = item.properties?.components as ApiBlockListModel;
+    let content = item.properties?.content as RichTextModel;
+
     return {
       params: { article: getFinalUrlSegment(item.route.path) },
       props: {
-        title: item.properties.title,
-        content: item.properties.content,
-        components: item.properties.components?.items,
+        title: item.properties?.title,
+        content: content,
+        components: components?.items,
       },
     };
   });
@@ -35,11 +42,108 @@ export async function getStaticPaths() {
 const { title, content, components } = Astro.props;
 ---
 
-<h1>{title}</h1>
-<div set:html={content.markup} />
-
-{
-  components?.map((component) => (
-    <li>{component.content?.properties?.richText?.markup}</li>
-  ))
-}
+<Layout>
+  <section class="py-10 bg-white dark:bg-dark">
+    <div class="container mx-auto">
+      <div class="flex flex-wrap justify-center -mx-4">
+        <div class="w-full px-4 lg:w-10/12 xl:w-8/12">
+          <div class="w-full">
+            <h1
+              class="mb-6 text-[26px] font-bold leading-normal text-dark dark:text-white sm:text-3xl sm:leading-snug md:text-4xl md:leading-snug"
+            >
+              {title}
+            </h1>
+            <div class="flex flex-wrap items-center pb-4">
+              <div class="flex items-center mb-4 mr-5 md:mr-10">
+                <div class="w-10 h-10 mr-4 overflow-hidden rounded-full">
+                  <img
+                    src="https://cdn.tailgrids.com/2.0/image/application/images/blog-details/blog-details-01/author-01.png"
+                    alt="image"
+                    class="w-full"
+                  />
+                </div>
+                <p
+                  class="text-base font-medium text-body-color dark:text-dark-6"
+                >
+                  <span class="pr-0.5">By</span>
+                  <a
+                    href="javascript:void(0)"
+                    class="text-body-color dark:text-dark-6 hover:text-primary"
+                  >
+                    Samuyl Joshi
+                  </a>
+                </p>
+              </div>
+              <div class="flex items-center mb-4">
+                <p
+                  class="flex items-center mr-5 text-sm font-medium text-body-color dark:text-dark-6 md:mr-8"
+                >
+                  <span class="mr-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M14 2.6499H12.7V2.0999C12.7 1.7999 12.45 1.5249 12.125 1.5249C11.8 1.5249 11.55 1.7749 11.55 2.0999V2.6499H4.42505V2.0999C4.42505 1.7999 4.17505 1.5249 3.85005 1.5249C3.52505 1.5249 3.27505 1.7749 3.27505 2.0999V2.6499H2.00005C1.15005 2.6499 0.425049 3.3499 0.425049 4.2249V12.9249C0.425049 13.7749 1.12505 14.4999 2.00005 14.4999H14C14.85 14.4999 15.575 13.7999 15.575 12.9249V4.1999C15.575 3.3499 14.85 2.6499 14 2.6499ZM1.57505 7.2999H3.70005V9.7749H1.57505V7.2999ZM4.82505 7.2999H7.45005V9.7749H4.82505V7.2999ZM7.45005 10.8999V13.3499H4.82505V10.8999H7.45005ZM8.57505 10.8999H11.2V13.3499H8.57505V10.8999ZM8.57505 9.7749V7.2999H11.2V9.7749H8.57505ZM12.3 7.2999H14.425V9.7749H12.3V7.2999ZM2.00005 3.7749H3.30005V4.2999C3.30005 4.5999 3.55005 4.8749 3.87505 4.8749C4.20005 4.8749 4.45005 4.6249 4.45005 4.2999V3.7749H11.6V4.2999C11.6 4.5999 11.85 4.8749 12.175 4.8749C12.5 4.8749 12.75 4.6249 12.75 4.2999V3.7749H14C14.25 3.7749 14.45 3.9749 14.45 4.2249V6.1749H1.57505V4.2249C1.57505 3.9749 1.75005 3.7749 2.00005 3.7749ZM1.57505 12.8999V10.8749H3.70005V13.3249H2.00005C1.75005 13.3499 1.57505 13.1499 1.57505 12.8999ZM14 13.3499H12.3V10.8999H14.425V12.9249C14.45 13.1499 14.25 13.3499 14 13.3499Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                  <span>26 Feb 2023</span>
+                </p>
+                <p
+                  class="flex items-center mr-5 text-sm font-medium text-body-color dark:text-dark-6 md:mr-8"
+                >
+                  <span class="mr-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M11.1001 4.875H4.65007C4.35007 4.875 4.07507 5.125 4.07507 5.45C4.07507 5.775 4.32507 6.025 4.65007 6.025H11.1251C11.4251 6.025 11.7001 5.775 11.7001 5.45C11.7001 5.125 11.4251 4.875 11.1001 4.875Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M9.80007 7.92505H4.65007C4.35007 7.92505 4.07507 8.17505 4.07507 8.50005C4.07507 8.82505 4.32507 9.07505 4.65007 9.07505H9.80007C10.1001 9.07505 10.3751 8.82505 10.3751 8.50005C10.3751 8.17505 10.1001 7.92505 9.80007 7.92505Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M14 1.9751H2.00005C1.15005 1.9751 0.425049 2.6751 0.425049 3.5501V12.9751C0.425049 13.3751 0.650049 13.7501 1.02505 13.9251C1.17505 14.0001 1.32505 14.0251 1.47505 14.0251C1.72505 14.0251 1.95005 13.9501 2.15005 13.7751L4.27505 12.0251H14C14.85 12.0251 15.575 11.3251 15.575 10.4501V3.5501C15.575 2.6751 14.85 1.9751 14 1.9751ZM14.45 10.4501C14.45 10.7001 14.25 10.9001 14 10.9001H4.07505C3.95005 10.9001 3.82505 10.9501 3.72505 11.0251L1.57505 12.8001V3.5501C1.57505 3.3001 1.77505 3.1001 2.02505 3.1001H14.025C14.275 3.1001 14.475 3.3001 14.475 3.5501V10.4501H14.45Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                  <span>05</span>
+                </p>
+                <p
+                  class="flex items-center text-sm font-medium text-body-color dark:text-dark-6"
+                >
+                  <span class="mr-3">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 16 16"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M8.00005 5.92505C6.85005 5.92505 5.92505 6.85005 5.92505 8.00005C5.92505 9.15005 6.85005 10.075 8.00005 10.075C9.15005 10.075 10.075 9.15005 10.075 8.00005C10.075 6.85005 9.15005 5.92505 8.00005 5.92505ZM8.00005 8.95005C7.47505 8.95005 7.05005 8.52505 7.05005 8.00005C7.05005 7.47505 7.47505 7.05005 8.00005 7.05005C8.52505 7.05005 8.95005 7.47505 8.95005 8.00005C8.95005 8.52505 8.52505 8.95005 8.00005 8.95005Z"
+                        fill="currentColor"></path>
+                      <path
+                        d="M15.3 7.1251C13.875 5.0001 11.9 2.8501 8 2.8501C4.1 2.8501 2.125 5.0001 0.7 7.1251C0.35 7.6501 0.35 8.3501 0.7 8.8751C2.125 10.9751 4.1 13.1501 8 13.1501C11.9 13.1501 13.875 10.9751 15.3 8.8751C15.65 8.3251 15.65 7.6501 15.3 7.1251ZM14.375 8.2501C12.55 10.9251 10.725 12.0251 8 12.0251C5.275 12.0251 3.45 10.9251 1.625 8.2501C1.525 8.1001 1.525 7.9001 1.625 7.7501C3.45 5.0751 5.275 3.9751 8 3.9751C10.725 3.9751 12.55 5.0751 14.375 7.7501C14.45 7.9001 14.45 8.1001 14.375 8.2501Z"
+                        fill="currentColor"></path>
+                    </svg>
+                  </span>
+                  <span>05</span>
+                </p>
+              </div>
+            </div>
+            <BlockList blocks={components} />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+</Layout>
