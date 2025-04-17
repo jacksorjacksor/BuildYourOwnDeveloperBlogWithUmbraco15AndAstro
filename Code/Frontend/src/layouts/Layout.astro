@@ -1,0 +1,23 @@
+---
+import "../styles/global.css";
+import Footer from "../components/global/Footer.astro";
+import Header from "../components/global/Header.astro";
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>Codegarden | Build a Developer Blog</title>
+    <!-- Tailwind integrated via CDN - for demo purposes only. Integrate correctly for production -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script> -->
+  </head>
+  <body>
+    <Header />
+    <slot />
+    <Footer />
+  </body>
+</html>

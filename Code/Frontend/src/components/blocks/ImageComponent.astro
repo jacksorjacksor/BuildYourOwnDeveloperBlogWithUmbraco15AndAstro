@@ -1,0 +1,17 @@
+---
+import type { ApiBlockListModelItemsItem } from "../../umbraco-client/model";
+
+interface Props {
+  block: ApiBlockListModelItemsItem;
+}
+
+const { block } = Astro.props;
+---
+
+<div class="py-10 overflow-hidden rounded">
+  <img
+    src="https://cdn.tailgrids.com/2.0/image/application/images/blog-details/blog-details-01/image-01.jpg"
+    alt="image"
+    class="w-full"
+  />
+</div>
