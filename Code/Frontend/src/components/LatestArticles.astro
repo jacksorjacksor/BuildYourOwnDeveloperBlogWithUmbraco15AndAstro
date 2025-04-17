@@ -1,105 +1,66 @@
 ---
+import { getPagedContentByType } from "../services/ContentService";
+
+const contentType = "blogArticlePage";
+const take = 3;
+const skip = 0;
+
+const contentResponse = await getPagedContentByType(contentType, skip, take);
+
+const latestArticles = contentResponse.items.map((item) => {
+  return {
+    title: item.properties?.title,
+    link: item.route?.path,
+  };
+});
+---
 
 ---
 
-<section class="bg-gray-800">
-  <div class="mx-auto max-w-screen-xl px-4 py-8 sm:px-6 lg:px-8">
-    <h2 class="text-2xl font-bold text-white sm:text-3xl">
+<section class="">
+  <div class="mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8">
+    <h2 class="text-2xl font-bold sm:text-3xl text-center pb-4">
       Latest Blog Articles
     </h2>
 
     <div
       class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3"
     >
-      <article
-        class="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg"
-      >
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1524758631624-e2822e304c36?ixlib=rb-1.2.1&ixid=MnwxMjA3fDF8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          class="h-56 w-full object-cover"
-        />
-
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-10" class="block text-xs text-gray-500">
-            10th Oct 2022
-          </time>
-
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              How to position your furniture for positivity
-            </h3>
-          </a>
-
-          <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
-          </p>
-        </div>
-      </article>
-
-      <article
-        class="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg"
-      >
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1616689602308-4154677a9811?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          class="h-56 w-full object-cover"
-        />
-
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-10-05" class="block text-xs text-gray-500">
-            5th Oct 2022
-          </time>
-
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              The importance of natural light in your home
-            </h3>
-          </a>
-
-          <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
-          </p>
-        </div>
-      </article>
-
-      <article
-        class="overflow-hidden rounded-lg shadow-sm transition hover:shadow-lg"
-      >
-        <img
-          alt=""
-          src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80"
-          class="h-56 w-full object-cover"
-        />
-
-        <div class="bg-white p-4 sm:p-6">
-          <time datetime="2022-09-28" class="block text-xs text-gray-500">
-            28th Sep 2022
-          </time>
-
-          <a href="#">
-            <h3 class="mt-0.5 text-lg text-gray-900">
-              Creating a cozy reading nook in your living room
-            </h3>
-          </a>
-
-          <p class="mt-2 line-clamp-3 text-sm/relaxed text-gray-500">
-            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae
-            dolores, possimus pariatur animi temporibus nesciunt praesentium
-            dolore sed nulla ipsum eveniet corporis quidem, mollitia itaque
-            minus soluta, voluptates neque explicabo tempora nisi culpa eius
-            atque dignissimos. Molestias explicabo corporis voluptatem?
-          </p>
-        </div>
-      </article>
+      {
+        latestArticles.map((article) => (
+          <article class="flex flex-col items-start justify-between">
+            <div class="relative w-full">
+              <img
+                src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
+                alt=""
+                class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+              />
+              <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+            </div>
+            <div class="max-w-xl">
+              <div class="mt-8 flex items-center gap-x-4 text-xs">
+                <time datetime="2020-03-16" class="text-gray-500">
+                  Mar 16, 2020
+                </time>
+              </div>
+              <div class="group relative">
+                <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                  <a href={article.link}>
+                    <span class="absolute inset-0" />
+                    {article.title}
+                  </a>
+                </h3>
+                <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
+                  totam vitae illo. Non aliquid explicabo necessitatibus unde.
+                  Sed exercitationem placeat consectetur nulla deserunt vel.
+                  Iusto corrupti dicta.
+                </p>
+              </div>
+            </div>
+          </article>
+        ))
+      }
     </div>
   </div>
 </section>
