@@ -5,12 +5,10 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { ApiBlockListModel } from './apiBlockListModel';
 
-export interface BlogArticlePagePropertiesModel {
+export interface CodeSnippetComponentPropertiesModel {
   /** @nullable */
-  title?: string | null;
-  components?: ApiBlockListModel;
+  codeSnippetSyntax?: string | null;
   /** @nullable */
-  summaryDescription?: string | null;
+  codeSnippet?: string | null;
 }

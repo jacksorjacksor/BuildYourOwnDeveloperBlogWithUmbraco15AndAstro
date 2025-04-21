@@ -5,8 +5,8 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { BlogListingPageContentResponseModel } from './blogListingPageContentResponseModel';
 import type { BlogArticlePageContentResponseModel } from './blogArticlePageContentResponseModel';
+import type { BlogListingPageContentResponseModel } from './blogListingPageContentResponseModel';
 import type { HomePageContentResponseModel } from './homePageContentResponseModel';
 
-export type IApiContentResponseModel = BlogListingPageContentResponseModel | BlogArticlePageContentResponseModel | HomePageContentResponseModel;
+export type IApiContentResponseModel = BlogArticlePageContentResponseModel | BlogListingPageContentResponseModel | HomePageContentResponseModel;

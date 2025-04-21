@@ -5,8 +5,9 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { RichTextComponentElementModel } from './richTextComponentElementModel';
 import type { ImageComponentElementModel } from './imageComponentElementModel';
 import type { QuoteComponentElementModel } from './quoteComponentElementModel';
+import type { RichTextComponentElementModel } from './richTextComponentElementModel';
+import type { CodeSnippetComponentElementModel } from './codeSnippetComponentElementModel';
 
-export type IApiElementModel = RichTextComponentElementModel | ImageComponentElementModel | QuoteComponentElementModel;
+export type IApiElementModel = ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel | CodeSnippetComponentElementModel;
