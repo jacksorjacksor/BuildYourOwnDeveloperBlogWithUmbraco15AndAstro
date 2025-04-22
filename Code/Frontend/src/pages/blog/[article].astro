@@ -24,13 +24,11 @@ export async function getStaticPaths() {
   const pages = items.map((item) => {
     // We should not have to do this. For some reason the components collection and the rich text property are being interpreted as unknown by the TypeSctipt compiler
     let components = item.properties?.components as ApiBlockListModel;
-    let content = item.properties?.content as RichTextModel;
 
     return {
       params: { article: getFinalUrlSegment(item.route.path) },
       props: {
         title: item.properties?.title,
-        content: content,
         components: components?.items,
       },
     };
@@ -39,7 +37,7 @@ export async function getStaticPaths() {
   return pages;
 }
 
-const { title, content, components } = Astro.props;
+const { title, components } = Astro.props;
 ---
 
 <Layout>
