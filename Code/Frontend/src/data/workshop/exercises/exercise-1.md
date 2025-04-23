@@ -1,6 +1,6 @@
 ---
-title: "Exercise 1"
-description: "Setting up Astro"
+title: 'Exercise 1'
+description: 'Setting up Astro'
 ---
 
 # Introduction

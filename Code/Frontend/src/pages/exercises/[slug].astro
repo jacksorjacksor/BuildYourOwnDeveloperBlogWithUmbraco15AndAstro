@@ -1,11 +1,11 @@
 ---
 // Reference: https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default
 
-import { render } from "astro:content";
-import { getCollection } from "astro:content";
+import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
 
 export async function getStaticPaths() {
-  const exercises = await getCollection("workshopExercise");
+  const exercises = await getCollection('workshopExercise');
   return exercises.map((exercise) => ({
     params: { slug: exercise.id },
     props: { exercise },

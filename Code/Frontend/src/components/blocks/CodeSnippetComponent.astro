@@ -1,10 +1,10 @@
 ---
-import type { BundledLanguage } from "shiki";
-import { Code } from "astro:components";
+import type { BundledLanguage } from 'shiki';
+import { Code } from 'astro:components';
 import type {
   ApiBlockListModelItemsItem,
   CodeSnippetComponentElementModel,
-} from "../../umbraco-client/model";
+} from '../../umbraco-client/model';
 
 interface Props {
   block: ApiBlockListModelItemsItem;
@@ -18,5 +18,5 @@ const codeSnippet = content.properties?.codeSnippet;
 ---
 
 <div class="p-6 bg-[#282A36]">
-  <Code code={codeSnippet || ""} lang={syntax || "js"} theme="dracula" />
+  <Code code={codeSnippet || ''} lang={syntax || 'js'} theme="dracula" />
 </div>

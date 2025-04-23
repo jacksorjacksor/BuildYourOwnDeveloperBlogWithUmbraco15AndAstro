@@ -1,6 +1,6 @@
 ---
-title: "Exercise 2"
-description: "Setting up Umbraco"
+title: 'Exercise 2'
+description: 'Setting up Umbraco'
 ---
 
 # Introduction
