@@ -1,17 +1,13 @@
 ---
-import { getCollection } from "astro:content";
-const blogs = await getCollection("blog");
+import { getCollection } from 'astro:content';
+const blogs = await getCollection('blog');
 ---
 
 <section class="">
   <div class="mx-auto max-w-screen-xl px-4 py-4 sm:px-6 lg:px-8">
-    <h2 class="text-2xl font-bold sm:text-3xl text-center pb-4">
-      Latest Blog Articles
-    </h2>
+    <h2 class="text-2xl font-bold sm:text-3xl text-center pb-4">Latest Blog Articles</h2>
 
-    <div
-      class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3"
-    >
+    <div class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3">
       {
         blogs.map((article) => (
           <article class="flex flex-col items-start justify-between">
@@ -37,10 +33,9 @@ const blogs = await getCollection("blog");
                   </a>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel
-                  totam vitae illo. Non aliquid explicabo necessitatibus unde.
-                  Sed exercitationem placeat consectetur nulla deserunt vel.
-                  Iusto corrupti dicta.
+                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
+                  aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur
+                  nulla deserunt vel. Iusto corrupti dicta.
                 </p>
               </div>
             </div>

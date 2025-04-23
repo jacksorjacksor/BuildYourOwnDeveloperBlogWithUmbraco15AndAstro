@@ -1,12 +1,9 @@
 ---
-import Layout from "../../layouts/Layout.astro";
-import { getFinalUrlSegment } from "../../helpers/AppHelpers";
-import { getAllContentByType } from "../../services/ContentService";
-import type {
-  ApiBlockListModel,
-  RichTextModel,
-} from "../../umbraco-client/model";
-import BlockList from "../../components/BlockList.astro";
+import Layout from '../../layouts/Layout.astro';
+import { getFinalUrlSegment } from '../../helpers/AppHelpers';
+import { getAllContentByType } from '../../services/ContentService';
+import type { ApiBlockListModel, RichTextModel } from '../../umbraco-client/model';
+import BlockList from '../../components/BlockList.astro';
 
 export async function getStaticPaths() {
   // TODO:
@@ -15,7 +12,7 @@ export async function getStaticPaths() {
   // As alternative to the above. Implement Orval - https://orval.dev/
   // -- see: https://dev.to/phil-whittaker/streamlining-umbraco-headless-development-automated-model-generation-for-content-delivery-api-with-12n9
 
-  const contentType = "blogArticlePage";
+  const contentType = 'blogArticlePage';
 
   // Retrieve all content items using the refactored function.
   const items = await getAllContentByType(contentType);
