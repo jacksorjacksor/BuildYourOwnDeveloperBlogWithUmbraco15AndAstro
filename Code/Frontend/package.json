@@ -7,6 +7,7 @@
     "preview": "astro preview",
     "astro": "astro",
     "umb-ts-generate": "orval --config ./orval.config.js",
+    "prettier-format-all": "prettier --write .",
     "tsc": "tsc --skipLibCheck --noEmit"
   },
   "dependencies": {
@@ -16,6 +17,7 @@
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {
-    "orval": "^7.8.0"
+    "orval": "^7.8.0",
+    "prettier": "^3.5.3"
   }
 }
