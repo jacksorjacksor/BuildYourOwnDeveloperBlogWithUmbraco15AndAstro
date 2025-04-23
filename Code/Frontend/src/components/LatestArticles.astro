@@ -1,20 +1,6 @@
 ---
-import { getPagedContentByType } from "../services/ContentService";
-
-const contentType = "blogArticlePage";
-const take = 3;
-const skip = 0;
-
-const contentResponse = await getPagedContentByType(contentType, skip, take);
-
-const latestArticles = contentResponse.items.map((item) => {
-  return {
-    title: item.properties?.title,
-    link: item.route?.path,
-  };
-});
----
-
+import { getCollection } from "astro:content";
+const blogs = await getCollection("blog");
 ---
 
 <section class="">
@@ -27,7 +13,7 @@ const latestArticles = contentResponse.items.map((item) => {
       class="mt-6 grid grid-cols-1 gap-x-6 gap-y-8 md:grid-cols-2 lg:grid-cols-3"
     >
       {
-        latestArticles.map((article) => (
+        blogs.map((article) => (
           <article class="flex flex-col items-start justify-between">
             <div class="relative w-full">
               <img
@@ -45,9 +31,9 @@ const latestArticles = contentResponse.items.map((item) => {
               </div>
               <div class="group relative">
                 <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
-                  <a href={article.link}>
+                  <a href={article.data.slug}>
                     <span class="absolute inset-0" />
-                    {article.title}
+                    {article.data.content.properties?.title}
                   </a>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
