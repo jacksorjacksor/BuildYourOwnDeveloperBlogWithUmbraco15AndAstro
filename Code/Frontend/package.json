@@ -2,6 +2,8 @@
   "name": "developer-blog",
   "version": "0.0.1",
   "scripts": {
+    "vercel-link": "vercel link --yes --project cg-blog-workshop",
+    "deploy": "npm run build && npx vercel --prod --yes",
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
@@ -19,6 +21,7 @@
   "devDependencies": {
     "orval": "^7.8.0",
     "prettier": "^3.5.3",
-    "prettier-plugin-astro": "^0.14.1"
+    "prettier-plugin-astro": "^0.14.1",
+    "vercel": "^41.6.2"
   }
 }
