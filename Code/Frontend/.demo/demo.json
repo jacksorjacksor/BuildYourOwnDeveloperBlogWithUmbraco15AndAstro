@@ -32,6 +32,23 @@
       ]
     },
     {
+      "id": "wrap-content-in-layout",
+      "title": "Wrap Content with Layout Tags",
+      "description": "Insert the `<Layout>` wrapper below the front-matter",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/index.astro"
+        },
+        {
+          "action": "insert",
+          "path": "./src/pages/index.astro",
+          "position": "4,0",
+          "content": "<Layout>\n  <!-- Html can go here -->\n</Layout>\n"
+        }
+      ]
+    },
+    {
       "id": "reset-workspace",
       "title": "Reset Workspace",
       "description": "Revert all file changes back to the last Git commit",
@@ -42,5 +59,16 @@
         }
       ]
     }
+    // {
+    //   "id": "switch-branch-term",
+    //   "title": "Switch to Feature Branch",
+    //   "description": "Demo Time runs Git checkout for you",
+    //   "steps": [
+    //     {
+    //       "action": "executeTerminalCommand",
+    //       "command": "git checkout feature-branch"
+    //     }
+    //   ]
+    // }
   ]
 }
