@@ -38,8 +38,8 @@
     },
     {
       "id": "open-dynamic-route",
-      "title": "Open Exercise [slug].astro",
-      "description": "Open the Exercise [slug].astro",
+      "title": "Open [slug].astro",
+      "description": "Open the [slug].astro",
       "steps": [
         {
           "action": "open",
