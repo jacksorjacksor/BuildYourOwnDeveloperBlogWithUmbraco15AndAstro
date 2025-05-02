@@ -1,2 +1,5 @@
+## NOTE: The following Git snippets work from the root of the '/Code/Frontend' path
+
 ## Restore Workshop Exercises to branch
-git restore --source=main -- Code/Frontend/src/data/workshop/exercises/
+git restore --source=main -- src/data/workshop/exercises
+
