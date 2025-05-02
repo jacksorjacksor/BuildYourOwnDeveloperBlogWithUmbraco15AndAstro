@@ -14,16 +14,16 @@
         }
       ]
     }
-    // {
-    //   "id": "switch-branch-term",
-    //   "title": "Switch to Feature Branch",
-    //   "description": "Demo Time runs Git checkout for you",
-    //   "steps": [
-    //     {
-    //       "action": "executeTerminalCommand",
-    //       "command": "git checkout feature-branch"
-    //     }
-    //   ]
-    // }
+    {
+      "id": "switch-branch-term",
+      "title": "Switch to (2) Exercise Files",
+      "description": "Demo Time runs Git checkout for you",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git checkout presentation/2-exercise-content"
+        }
+      ]
+    }
   ]
 }
