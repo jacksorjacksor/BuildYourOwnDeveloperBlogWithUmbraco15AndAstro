@@ -61,7 +61,7 @@
           "action": "insert",
           "path": "./src/pages/index.astro",
           "position": "6,2",
-          "content": "<h1>Hello from Astro! 🚀</h1>\n"
+          "content": "<h1 class=\"p-16 font-bold text-6xl\">Hello from Astro! 🚀</h1>\n"
         }
       ]
     },
