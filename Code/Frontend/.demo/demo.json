@@ -66,6 +66,22 @@
       ]
     },
     {
+      "id": "prepare-dev-command",
+      "title": "Open Terminal and Type Dev Command",
+      "description": "Open the VS Code terminal and insert `npm run dev` without running it",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.toggleTerminal"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "npm run dev" }
+        }
+      ]
+    },
+    {
       "id": "reset-workspace",
       "title": "Reset Workspace",
       "description": "Revert all file changes back to the last Git commit",
