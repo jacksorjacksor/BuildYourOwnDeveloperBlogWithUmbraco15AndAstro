@@ -66,6 +66,17 @@
       ]
     },
     {
+      "id": "open-package-json",
+      "title": "Open package.json",
+      "description": "Open the project’s package.json file",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./package.json"
+        }
+      ]
+    },
+    {
       "id": "prepare-dev-command",
       "title": "Open Terminal and Type Dev Command",
       "description": "Open the VS Code terminal and insert `npm run dev` without running it",
