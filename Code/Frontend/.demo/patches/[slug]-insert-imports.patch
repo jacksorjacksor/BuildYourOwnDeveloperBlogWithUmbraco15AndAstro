@@ -11,5 +11,5 @@ Index: /src/pages/exercises/[slug].astro
    // This expects us to returns a collection of items to render
  }
  ---
-+\
++
 \ No newline at end of file
