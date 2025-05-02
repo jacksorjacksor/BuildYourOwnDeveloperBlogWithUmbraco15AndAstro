@@ -3,3 +3,10 @@
 ## Restore Workshop Exercises to branch
 git restore --source=main -- src/data/workshop/exercises
 
+## Restore Workshop Exercise Pages
+git restore --source=main -- src/pages/exercises
+
+## Restore Content Collection Config
+git restore --source=main -- src/content.config.ts
+
+
