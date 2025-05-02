@@ -10,3 +10,9 @@ git restore --source=main -- src/pages/exercises
 git restore --source=main -- src/content.config.ts
 
 
+
+## Prenders Specific
+
+## Path to Presentation slide screenshots
+C:\projects\umbraco-community\BuildYourOwnDeveloperBlogWithUmbraco15AndAstro\Code\Frontend\_presentation
+
