@@ -64,7 +64,7 @@
           "content": "<h1>Hello from Astro! 🚀</h1>\n"
         }
       ]
-    }
+    },
     {
       "id": "reset-workspace",
       "title": "Reset Workspace",
