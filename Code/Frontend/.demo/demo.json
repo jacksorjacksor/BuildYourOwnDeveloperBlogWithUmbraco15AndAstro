@@ -49,6 +49,23 @@
       ]
     },
     {
+      "id": "insert-h1-greeting",
+      "title": "Insert H1 Greeting",
+      "description": "Add an H1 element inside the Layout wrapper",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/index.astro"
+        },
+        {
+          "action": "insert",
+          "path": "./src/pages/index.astro",
+          "position": "6,2",
+          "content": "<h1>Hello from Astro! 🚀</h1>\n"
+        }
+      ]
+    }
+    {
       "id": "reset-workspace",
       "title": "Reset Workspace",
       "description": "Revert all file changes back to the last Git commit",
