@@ -1,0 +1,2 @@
+## Restore Workshop Exercises to branch
+git restore --source=main -- Code/Frontend/src/data/workshop/exercises/
