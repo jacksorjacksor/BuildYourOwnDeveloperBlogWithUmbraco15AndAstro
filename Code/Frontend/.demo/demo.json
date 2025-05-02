@@ -80,17 +80,6 @@
           "args": { "text": "npm run dev" }
         }
       ]
-    },
-    {
-      "id": "reset-workspace",
-      "title": "Reset Workspace",
-      "description": "Revert all file changes back to the last Git commit",
-      "steps": [
-        {
-          "action": "executeTerminalCommand",
-          "command": "git reset --hard HEAD && git clean -fd"
-        }
-      ]
     }
     // {
     //   "id": "switch-branch-term",

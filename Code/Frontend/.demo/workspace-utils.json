@@ -1,0 +1,29 @@
+{
+  "$schema": "https://demotime.elio.dev/demo-time.schema.json",
+  "title": "Astro: Workspace Utilities",
+  "description": "Utility demos for managing and resetting your Astro workspace",
+  "demos": [
+    {
+      "id": "reset-workspace",
+      "title": "Reset Workspace",
+      "description": "Revert all file changes back to the last Git commit",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git reset --hard HEAD && git clean -fd"
+        }
+      ]
+    }
+    // {
+    //   "id": "switch-branch-term",
+    //   "title": "Switch to Feature Branch",
+    //   "description": "Demo Time runs Git checkout for you",
+    //   "steps": [
+    //     {
+    //       "action": "executeTerminalCommand",
+    //       "command": "git checkout feature-branch"
+    //     }
+    //   ]
+    // }
+  ]
+}
