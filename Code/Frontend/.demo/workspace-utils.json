@@ -13,7 +13,7 @@
           "command": "git reset --hard HEAD && git clean -fd"
         }
       ]
-    }
+    },
     {
       "id": "switch-branch-term",
       "title": "Switch to (2) Exercise Files",
