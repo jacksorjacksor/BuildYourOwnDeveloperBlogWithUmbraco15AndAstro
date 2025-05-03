@@ -4,13 +4,13 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
-      "id": "open-package-json",
-      "title": "Open Package Json",
+      "id": "open-content-config",
+      "title": "Open Content Config",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./package.json"
+          "path": "./src/content.config.ts"
         },
         {
           "action": "executeVSCodeCommand",
