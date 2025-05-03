@@ -9,6 +9,9 @@ git restore --source=main -- src/pages/exercises
 ## Restore Content Collection Config
 git restore --source=main -- src/content.config.ts
 
+## Restore Orval Config
+git restore --source=main -- orval.config.js
+
 
 
 ## Prenders Specific
