@@ -19,6 +19,22 @@
       ]
     },
     {
+      "id": "prepare-dev-command",
+      "title": "Open Terminal and Type Dev Command",
+      "description": "Open the VS Code terminal and insert `npm run dev` without running it",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "npm run dev" }
+        }
+      ]
+    }
+    {
       "id": "open-blog-listing",
       "title": "Open Blog Listing",
       "description": "",
@@ -152,7 +168,7 @@
     },
     {
       "id": "blog-page-map-data",
-      "title": "Blog Page Map Data",
+      "title": "Blog Page Render Props",
       "description": "",
       "steps": [
         {
@@ -164,213 +180,6 @@
           "path": "./src/pages/blog/[slug].astro",
           "contentPath": "snapshots/blog-[slug]-data-mapped.snapshot",
           "patch": "patches/blog-[slug]-render-props.patch"
-        }
-      ]
-    },
-    // {
-    //   "id": "open-slide-1",
-    //   "title": "Open Slide 1",
-    //   "description": "Revisit page routing",
-    //   "steps": [
-    //     {
-    //       "action": "imagePreview",
-    //       "path": "./_presentation/3-2_file-based-routing.png"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-slide-2",
-    //   "title": "Open Slide 2",
-    //   "description": "Single level dynamic route",
-    //   "steps": [
-    //     {
-    //       "action": "imagePreview",
-    //       "path": "./_presentation/4-1-single-level-dynamic-route.png"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-slide-3",
-    //   "title": "Open Slide 3",
-    //   "description": "Multi level dynamic route",
-    //   "steps": [
-    //     {
-    //       "action": "imagePreview",
-    //       "path": "./_presentation/4-2-multi-level-dynamic-route.png"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-dynamic-route",
-    //   "title": "Open [slug].astro",
-    //   "description": "Open the [slug].astro",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/[slug].astro"
-    //     },
-    //     {
-    //       "action": "executeVSCodeCommand",
-    //       "command": "workbench.action.keepEditor"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-content-collections-config",
-    //   "title": "Open content.config.ts",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/content.config.ts"
-    //     },
-    //     {
-    //       "action": "executeVSCodeCommand",
-    //       "command": "workbench.action.keepEditor"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "slug-add-imports",
-    //   "title": "[slug] Add Imports",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/[slug].astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/[slug].astro",
-    //       "contentPath": "snapshots/[slug]-base.snapshot",
-    //       "patch": "patches/[slug]-insert-imports.patch"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "slug-add-content-collection",
-    //   "title": "[slug] Add Content Collection",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/[slug].astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/[slug].astro",
-    //       "contentPath": "snapshots/[slug]-imports.snapshot",
-    //       "patch": "patches/[slug]-content-collection.patch"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-exercise-example",
-    //   "title": "Open Exercise MD File",
-    //   "description": "Open Exercise MD File",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/data/workshop/exercises/exercise-1.md"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "slug-add-props-render",
-    //   "title": "[slug] Add Props & Render",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/[slug].astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/[slug].astro",
-    //       "contentPath": "snapshots/[slug]-content-collection.snapshot",
-    //       "patch": "patches/[slug]-props-render.patch"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "slug-markup-render",
-    //   "title": "[slug] Add Markup",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/[slug].astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/[slug].astro",
-    //       "contentPath": "snapshots/[slug]-props-render.snapshot",
-    //       "patch": "patches/[slug]-markup-output.patch"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "exercise-index-open",
-    //   "title": "Listing Open",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/index.astro"
-    //     },
-    //     {
-    //       "action": "executeVSCodeCommand",
-    //       "command": "workbench.action.keepEditor"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "exercise-c-collection",
-    //   "title": "Listing Add Content Collection",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/index.astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/index.astro",
-    //       "contentPath": "snapshots/exercise-index-base.snapshot",
-    //       "patch": "patches/exercise-index-imports.patch"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "exercise-render-list",
-    //   "title": "Listing Render List",
-    //   "description": "",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/exercises/index.astro"
-    //     },
-    //     {
-    //       "action": "applyPatch",
-    //       "path": "./src/pages/exercises/index.astro",
-    //       "contentPath": "snapshots/exercise-index-c-collection.snapshot",
-    //       "patch": "patches/exercise-index-render-list.patch"
-    //     }
-    //   ]
-    // },
-    {
-      "id": "prepare-dev-command",
-      "title": "Open Terminal and Type Dev Command",
-      "description": "Open the VS Code terminal and insert `npm run dev` without running it",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "npm run dev" }
         }
       ]
     }
