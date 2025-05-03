@@ -1,0 +1,21 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -1,7 +1,15 @@
+ ---
+ export async function getStaticPaths() {
+-  // Fetch the Blog Articles from Umbraco
++  let data = await fetch(
++    'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
++  );
++
++  let blogs = await data.json();
++
++  // Return the collection in a format that Astro expects
++  // -- Set the URL/Path
++  // -- Pass data to render
+ }
+ ---
+ 
+ <!-- Render Blog content here  -->
