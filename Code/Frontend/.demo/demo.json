@@ -85,6 +85,38 @@
       ]
     },
     {
+      "id": "open-blog-listing",
+      "title": "Open Blog Listing",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
+      "id": "blog-listing-content-collection",
+      "title": "Blog Listing Content Collection",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/index.astro",
+          "contentPath": "snapshots/blog-index-base.snapshot",
+          "patch": "patches/index-add-content-collection.patch"
+        }
+      ]
+    },
+    {
       "id": "run-backend-cms",
       "title": "Run Backend CMS",
       "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
