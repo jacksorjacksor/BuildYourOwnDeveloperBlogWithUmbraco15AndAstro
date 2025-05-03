@@ -1,0 +1,13 @@
+Index: /src/pages/exercises/index.astro
+===================================================================
+--- /src/pages/exercises/index.astro
++++ /src/pages/exercises/index.astro
+@@ -1,6 +1,7 @@
+ ---
+-// Import the Content Collection
++import { getCollection } from 'astro:content';
++const workshopExercises = await getCollection('workshopExercise');
+ ---
+ 
+ <h1>Workshop Exercises</h1>
+ 

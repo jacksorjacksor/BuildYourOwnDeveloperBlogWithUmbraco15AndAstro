@@ -1,0 +1,8 @@
+---
+import { getCollection } from 'astro:content';
+const workshopExercises = await getCollection('workshopExercise');
+---
+
+<h1>Workshop Exercises</h1>
+
+<!-- list out the workshop links here -->

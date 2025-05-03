@@ -1,0 +1,19 @@
+Index: /src/pages/exercises/index.astro
+===================================================================
+--- /src/pages/exercises/index.astro
++++ /src/pages/exercises/index.astro
+@@ -4,5 +4,13 @@
+ ---
+ 
+ <h1>Workshop Exercises</h1>
+ 
+-<!-- list out the workshop links here -->
++<ul>
++  {
++    workshopExercises.map((exercise) => (
++      <li>
++        <a href={`/exercises/${exercise.id}`}>{exercise.data.title}</a>
++      </li>
++    ))
++  }
++</ul>
