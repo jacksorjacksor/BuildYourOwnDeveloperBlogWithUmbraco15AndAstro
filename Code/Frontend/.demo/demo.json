@@ -167,7 +167,7 @@
       ]
     },
     {
-      "id": "blog-page-map-data",
+      "id": "blog-page-render-props",
       "title": "Blog Page Render Props",
       "description": "",
       "steps": [
