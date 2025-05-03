@@ -4,16 +4,31 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
-      "id": "open-slide-1",
-      "title": "Open Slide 1",
-      "description": "Revisit page routing",
+      "id": "run-backend-cms",
+      "title": "Run Backend CMS",
+      "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
       "steps": [
         {
-          "action": "imagePreview",
-          "path": "./_presentation/3-2_file-based-routing.png"
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
         }
       ]
     },
+    // {
+    //   "id": "open-slide-1",
+    //   "title": "Open Slide 1",
+    //   "description": "Revisit page routing",
+    //   "steps": [
+    //     {
+    //       "action": "imagePreview",
+    //       "path": "./_presentation/3-2_file-based-routing.png"
+    //     }
+    //   ]
+    // },
     {
       "id": "open-slide-2",
       "title": "Open Slide 2",

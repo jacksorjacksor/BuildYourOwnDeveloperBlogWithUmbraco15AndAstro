@@ -1,5 +1,18 @@
 ---
+import { render } from 'astro:content';
+import { getCollection } from 'astro:content';
+
 export async function getStaticPaths() {
-  // this expects us to returns a collection of items to render
+  const exercises = await getCollection('workshopExercise');
+  return exercises.map((exercise) => ({
+    params: { slug: exercise.id },
+    props: { exercise },
+  }));
 }
+
+const { exercise } = Astro.props;
+const { Content } = await render(exercise);
 ---
+
+<h1>{exercise.data.title}</h1>
+<Content />
