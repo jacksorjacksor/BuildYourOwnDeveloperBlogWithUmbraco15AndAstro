@@ -68,6 +68,23 @@
       ]
     },
     {
+      "id": "content-config-zod-schema",
+      "title": "Content Config Zod Schema",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/content.config.ts"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/content.config.ts",
+          "contentPath": "snapshots/content.config-data-returned.snapshot",
+          "patch": "patches/content.config-zod-schema.patch"
+        }
+      ]
+    },
+    {
       "id": "run-backend-cms",
       "title": "Run Backend CMS",
       "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
