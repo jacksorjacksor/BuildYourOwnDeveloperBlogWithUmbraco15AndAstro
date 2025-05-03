@@ -1,0 +1,23 @@
+Index: /src/pages/blog/index.astro
+===================================================================
+--- /src/pages/blog/index.astro
++++ /src/pages/blog/index.astro
+@@ -14,9 +14,17 @@
+       <div class="mx-auto max-w-2xl text-center">
+         <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+           Blog Listing
+         </h2>
+-        <!-- List out links to Blogs here -->
++        <div class="p-4">
++          {
++            blogs.items.map((article: any) => (
++              <article>
++                <a href={`${article.route.path}`}>{article.name}</a>
++              </article>
++            ))
++          }
++        </div>
+       </div>
+     </div>
+   </div>
+ </Layout>

@@ -33,6 +33,57 @@
         }
       ]
     },
+    {
+      "id": "blog-listing-init-fetch",
+      "title": "Listing Fetch",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/index.astro",
+          "contentPath": "snapshots/blog-index-base.snapshot",
+          "patch": "patches/blog-index-init-fetch.patch"
+        }
+      ]
+    },
+    {
+      "id": "blog-listing-json-data",
+      "title": "Listing Json Data",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/index.astro",
+          "contentPath": "snapshots/blog-index-fetch-added.snapshot",
+          "patch": "patches/blog-index-data-json.patch"
+        }
+      ]
+    },
+    {
+      "id": "blog-listing-list-basic",
+      "title": "Listing Basic",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/index.astro",
+          "contentPath": "snapshots/blog-index-json-data-added.snapshot",
+          "patch": "patches/blog-index-list-basic.patch"
+        }
+      ]
+    },
     // {
     //   "id": "open-slide-1",
     //   "title": "Open Slide 1",
