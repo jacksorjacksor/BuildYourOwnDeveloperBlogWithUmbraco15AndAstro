@@ -1,7 +1,11 @@
 ---
 import Layout from '../../layouts/Layout.astro';
 
-// Fetch the Blog Articles from Umbraco
+let data = await fetch(
+  'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
+);
+
+let blogs = await data.json();
 ---
 
 <Layout>
@@ -11,7 +15,15 @@ import Layout from '../../layouts/Layout.astro';
         <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
           Blog Listing
         </h2>
-        <!-- List out links to Blogs here -->
+        <div class="p-4">
+          {
+            blogs.items.map((article: any) => (
+              <article>
+                <a href={`${article.route.path}`}>{article.name}</a>
+              </article>
+            ))
+          }
+        </div>
       </div>
     </div>
   </div>
