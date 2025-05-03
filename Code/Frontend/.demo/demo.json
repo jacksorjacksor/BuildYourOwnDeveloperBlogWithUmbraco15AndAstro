@@ -33,155 +33,155 @@
           "args": { "text": "npm run dev" }
         }
       ]
-    },
-    {
-      "id": "open-blog-listing",
-      "title": "Open Blog Listing",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "blog-listing-init-fetch",
-      "title": "Listing Fetch",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/index.astro",
-          "contentPath": "snapshots/blog-index-base.snapshot",
-          "patch": "patches/blog-index-init-fetch.patch"
-        }
-      ]
-    },
-    {
-      "id": "blog-listing-json-data",
-      "title": "Listing Json Data",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/index.astro",
-          "contentPath": "snapshots/blog-index-fetch-added.snapshot",
-          "patch": "patches/blog-index-data-json.patch"
-        }
-      ]
-    },
-    {
-      "id": "blog-listing-list-basic",
-      "title": "Listing Basic",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/index.astro",
-          "contentPath": "snapshots/blog-index-json-data-added.snapshot",
-          "patch": "patches/blog-index-list-basic.patch"
-        }
-      ]
-    },
-    {
-      "id": "blog-listing-list-styled",
-      "title": "Listing Styled",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/index.astro",
-          "contentPath": "snapshots/blog-index-basic-list-added.snapshot",
-          "patch": "patches/blog-index-list-styled.patch"
-        }
-      ]
-    },
-    {
-      "id": "open-blog-page",
-      "title": "Open Blog Page",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/[slug].astro"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "blog-page-fetch",
-      "title": "Blog Page Fetch",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/[slug].astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/[slug].astro",
-          "contentPath": "snapshots/blog-[slug]-base.snapshot",
-          "patch": "patches/blog-[slug]-init-fetch.patch"
-        }
-      ]
-    },
-    {
-      "id": "blog-page-map-data",
-      "title": "Blog Page Map Data",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/[slug].astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/[slug].astro",
-          "contentPath": "snapshots/blog-[slug]-fetch-added.snapshot",
-          "patch": "patches/blog-[slug]-map-data.patch"
-        }
-      ]
-    },
-    {
-      "id": "blog-page-render-props",
-      "title": "Blog Page Render Props",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/[slug].astro"
-        },
-        {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/[slug].astro",
-          "contentPath": "snapshots/blog-[slug]-data-mapped.snapshot",
-          "patch": "patches/blog-[slug]-render-props.patch"
-        }
-      ]
     }
+    // {
+    //   "id": "open-blog-listing",
+    //   "title": "Open Blog Listing",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/index.astro"
+    //     },
+    //     {
+    //       "action": "executeVSCodeCommand",
+    //       "command": "workbench.action.keepEditor"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-listing-init-fetch",
+    //   "title": "Listing Fetch",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/index.astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/index.astro",
+    //       "contentPath": "snapshots/blog-index-base.snapshot",
+    //       "patch": "patches/blog-index-init-fetch.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-listing-json-data",
+    //   "title": "Listing Json Data",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/index.astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/index.astro",
+    //       "contentPath": "snapshots/blog-index-fetch-added.snapshot",
+    //       "patch": "patches/blog-index-data-json.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-listing-list-basic",
+    //   "title": "Listing Basic",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/index.astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/index.astro",
+    //       "contentPath": "snapshots/blog-index-json-data-added.snapshot",
+    //       "patch": "patches/blog-index-list-basic.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-listing-list-styled",
+    //   "title": "Listing Styled",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/index.astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/index.astro",
+    //       "contentPath": "snapshots/blog-index-basic-list-added.snapshot",
+    //       "patch": "patches/blog-index-list-styled.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "open-blog-page",
+    //   "title": "Open Blog Page",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/[slug].astro"
+    //     },
+    //     {
+    //       "action": "executeVSCodeCommand",
+    //       "command": "workbench.action.keepEditor"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-page-fetch",
+    //   "title": "Blog Page Fetch",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/[slug].astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/[slug].astro",
+    //       "contentPath": "snapshots/blog-[slug]-base.snapshot",
+    //       "patch": "patches/blog-[slug]-init-fetch.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-page-map-data",
+    //   "title": "Blog Page Map Data",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/[slug].astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/[slug].astro",
+    //       "contentPath": "snapshots/blog-[slug]-fetch-added.snapshot",
+    //       "patch": "patches/blog-[slug]-map-data.patch"
+    //     }
+    //   ]
+    // },
+    // {
+    //   "id": "blog-page-render-props",
+    //   "title": "Blog Page Render Props",
+    //   "description": "",
+    //   "steps": [
+    //     {
+    //       "action": "open",
+    //       "path": "./src/pages/blog/[slug].astro"
+    //     },
+    //     {
+    //       "action": "applyPatch",
+    //       "path": "./src/pages/blog/[slug].astro",
+    //       "contentPath": "snapshots/blog-[slug]-data-mapped.snapshot",
+    //       "patch": "patches/blog-[slug]-render-props.patch"
+    //     }
+    //   ]
+    // }
   ]
 }
