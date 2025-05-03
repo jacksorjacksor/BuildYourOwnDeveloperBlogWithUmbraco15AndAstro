@@ -1,0 +1,30 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+let data = await fetch(
+  'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
+);
+let blogs = await data.json();
+
+console.log(blogs);
+---
+
+<Layout>
+  <div class="bg-white py-10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+          Blog Listing
+        </h2>
+        {
+          blogs.items.map((article: any) => (
+            <article class="flex flex-col items-start justify-between">
+              <h1>{article.name}</h1>
+              <a href={`/blog/${article.route.path}`}>Link</a>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
