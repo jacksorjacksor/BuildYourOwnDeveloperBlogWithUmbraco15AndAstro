@@ -67,6 +67,21 @@
       ]
     },
     {
+      "id": "open-exercise-example",
+      "title": "Open Exercise MD File",
+      "description": "Open Exercise MD File",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/data/workshop/exercises/exercise-1.md"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
       "id": "slug-add-imports",
       "title": "[slug] Add Imports",
       "description": "",
@@ -97,17 +112,6 @@
           "path": "./src/pages/exercises/[slug].astro",
           "contentPath": "snapshots/[slug]-imports.snapshot",
           "patch": "patches/[slug]-content-collection.patch"
-        }
-      ]
-    },
-    {
-      "id": "open-exercise-example",
-      "title": "Open Exercise MD File",
-      "description": "Open Exercise MD File",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/data/workshop/exercises/exercise-1.md"
         }
       ]
     },

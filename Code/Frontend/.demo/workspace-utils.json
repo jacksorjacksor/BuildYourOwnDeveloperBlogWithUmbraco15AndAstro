@@ -13,17 +13,17 @@
           "command": "git reset --hard HEAD && git clean -fd"
         }
       ]
+    },
+    {
+      "id": "switch-branch-to-3",
+      "title": "Switch to 3",
+      "description": "Demo Time runs Git checkout for you",
+      "steps": [
+        {
+          "action": "executeTerminalCommand",
+          "command": "git checkout presentation/3-cd-api-fetch"
+        }
+      ]
     }
-    // {
-    //   "id": "switch-branch-term",
-    //   "title": "Switch to Feature Branch",
-    //   "description": "Demo Time runs Git checkout for you",
-    //   "steps": [
-    //     {
-    //       "action": "executeTerminalCommand",
-    //       "command": "git checkout feature-branch"
-    //     }
-    //   ]
-    // }
   ]
 }
