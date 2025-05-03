@@ -12,6 +12,12 @@ git restore --source=main -- src/content.config.ts
 ## Restore Orval Config
 git restore --source=main -- orval.config.js
 
+## Restore Content Service
+git restore --source=main -- src/services/ContentService.ts
+
+## Restore App Helper
+git restore --source=main -- src/helpers/AppHelpers.ts
+
 
 
 ## Prenders Specific
