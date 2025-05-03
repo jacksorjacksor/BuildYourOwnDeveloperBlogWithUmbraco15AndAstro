@@ -19,17 +19,51 @@
       ]
     },
     {
-      "id": "open-orval-config",
-      "title": "Open Orval Config",
+      "id": "open-content-service",
+      "title": "Open Content Service",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./orval.config.js"
+          "path": "./src/services/ContentService.ts"
         },
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
+      "id": "content-config-init-collection",
+      "title": "Content Config Init Collection",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/content.config.ts"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/content.config.ts",
+          "contentPath": "snapshots/content.config-base.snapshot",
+          "patch": "patches/content.config-init-blog-collection.patch"
+        }
+      ]
+    },
+    {
+      "id": "content-config-collection-return",
+      "title": "Content Config Collection Return",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/content.config.ts"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/content.config.ts",
+          "contentPath": "snapshots/content.config-collection-defined.snapshot",
+          "patch": "patches/content.config-collection-return.patch"
         }
       ]
     },

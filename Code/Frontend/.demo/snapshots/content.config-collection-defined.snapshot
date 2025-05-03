@@ -1,0 +1,20 @@
+import { glob } from 'astro/loaders';
+import { defineCollection, z } from 'astro:content';
+import { getAllContentByType } from './services/ContentService';
+
+const workshopExercise = defineCollection({
+  loader: glob({ pattern: '**/*.md', base: './src/data/workshop/exercises' }),
+  schema: z.object({
+    title: z.string(),
+    description: z.string(),
+  }),
+});
+
+const blog = defineCollection({
+  loader: async () => {
+    const response = await getAllContentByType('blogArticlePage');
+    // Return articles
+  },
+});
+
+export const collections = { workshopExercise };
