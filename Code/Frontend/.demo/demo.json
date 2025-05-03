@@ -84,6 +84,23 @@
         }
       ]
     },
+    {
+      "id": "blog-listing-list-styled",
+      "title": "Listing Styled",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/index.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/index.astro",
+          "contentPath": "snapshots/blog-index-basic-list-added.snapshot",
+          "patch": "patches/blog-index-list-styled.patch"
+        }
+      ]
+    },
     // {
     //   "id": "open-slide-1",
     //   "title": "Open Slide 1",
