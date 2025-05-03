@@ -117,7 +117,7 @@
       ]
     },
     {
-      "id": "blog-page",
+      "id": "blog-page-fetch",
       "title": "Blog Page Fetch",
       "description": "",
       "steps": [
@@ -134,8 +134,8 @@
       ]
     },
     {
-      "id": "blog-page",
-      "title": "Blog Page Fetch",
+      "id": "blog-page-map-data",
+      "title": "Blog Page Map Data",
       "description": "",
       "steps": [
         {
@@ -147,6 +147,23 @@
           "path": "./src/pages/blog/[slug].astro",
           "contentPath": "snapshots/blog-[slug]-fetch-added.snapshot",
           "patch": "patches/blog-[slug]-map-data.patch"
+        }
+      ]
+    },
+    {
+      "id": "blog-page-map-data",
+      "title": "Blog Page Map Data",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-data-mapped.snapshot",
+          "patch": "patches/blog-[slug]-render-props.patch"
         }
       ]
     },

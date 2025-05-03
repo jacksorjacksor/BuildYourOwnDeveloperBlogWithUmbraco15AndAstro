@@ -1,0 +1,16 @@
+---
+export async function getStaticPaths() {
+  let data = await fetch(
+    'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
+  );
+
+  let blogs = await data.json();
+
+  return blogs.items.map((article: any) => ({
+    params: { slug: article.route.path.replace('/blog/', '') },
+    props: { article },
+  }));
+}
+---
+
+<!-- Render Blog content here  -->
