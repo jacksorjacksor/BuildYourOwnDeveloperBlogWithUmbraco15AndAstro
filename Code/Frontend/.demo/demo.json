@@ -4,6 +4,50 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
+      "id": "open-slide-1",
+      "title": "Open Slide 1",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/1_install.png"
+        }
+      ]
+    },
+    {
+      "id": "open-slide-2",
+      "title": "Open Slide 2",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/2_directory_structure.png"
+        }
+      ]
+    },
+    {
+      "id": "open-slide-3",
+      "title": "Open Slide 3",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/3-1_file-based-routing.png"
+        }
+      ]
+    },
+    {
+      "id": "open-slide-4",
+      "title": "Open Slide 4",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/3-2_file-based-routing.png"
+        }
+      ]
+    },
+    {
       "id": "open-index",
       "title": "Open index.astro",
       "description": "Open the main Astro page",
