@@ -33,7 +33,7 @@
           "args": { "text": "npm run dev" }
         }
       ]
-    }
+    },
     {
       "id": "open-blog-listing",
       "title": "Open Blog Listing",
