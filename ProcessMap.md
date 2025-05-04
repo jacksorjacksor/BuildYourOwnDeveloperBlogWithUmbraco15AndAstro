@@ -18,7 +18,9 @@
 ## Rough steps
 
 ### Dev:
+- [Setup connection to generate TS models w Orval?]
 - Umb: Create editors/models
+- Astro: magic
 
 ### Authoring:
 - Umb: Create content
