@@ -30,10 +30,11 @@
 
 ```mermaid
 flowchart TD
-  Umb["Umbraco"}
-        A(["Start"])
-        A --> B{"Decision"}
+  Umb["Umbraco"]
+  Astro["Astro"]
+        Umb(["Start"])
+        Umb --> B{"Decision"}
         B --> C["Option A"]
-        B --> D["Option B"]
+        B --> Astro["Option B"]
 
 ```
