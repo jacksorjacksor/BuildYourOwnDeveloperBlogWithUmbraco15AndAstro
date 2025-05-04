@@ -1,0 +1,20 @@
+---
+import { Image } from 'astro:assets';
+import { mapToImage } from '../../helpers/MediaHelper';
+import type { IApiMediaWithCropsModel } from '../../umbraco-client/model';
+
+interface Props {
+  mediaPicker: IApiMediaWithCropsModel[] | null | undefined;
+  cssClass: string;
+}
+
+const { mediaPicker, cssClass } = Astro.props;
+
+const image = mapToImage(mediaPicker);
+---
+
+{
+  image && (
+    <Image class={cssClass} src={image} layout="full-width" alt={mediaPicker?.[0]?.name || ''} />
+  )
+}
