@@ -18,6 +18,9 @@ git restore --source=main -- src/services/ContentService.ts
 ## Restore App Helper
 git restore --source=main -- src/helpers/AppHelpers.ts
 
+## Restore Blog Listing and Dynamic Route
+git restore --source=main -- src/pages/blog/**
+
 
 
 ## Prenders Specific
