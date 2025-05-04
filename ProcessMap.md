@@ -15,12 +15,12 @@
   - Vercel (v41.6.2)
 
 
-### Rough steps
+## Rough steps
 
-#### Dev:
+### Dev:
 - Umb: Create editors/models
 
-#### Authoring:
+### Authoring:
 - Umb: Create content
 - Umb: Publish content
 - Umb: [Webhook to Astro? Or locally building?] 
