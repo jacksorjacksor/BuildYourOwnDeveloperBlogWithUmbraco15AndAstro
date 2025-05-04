@@ -1,4 +1,6 @@
 ---
+import SiteImage from '../../components/elements/SiteImage.astro';
+import { formatDate } from '../../helpers/AppHelpers';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const blogs = await getCollection('blog');
@@ -9,11 +11,9 @@ const blogs = await getCollection('blog');
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
         <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
-          From the blog
+          Blog Articles
         </h2>
-        <p class="mt-2 text-lg/8 text-gray-600">
-          Learn how to grow your business with our expert advice.
-        </p>
+        <p class="mt-2 text-lg/8 text-gray-600">Thoughts and learnings from Umbraco and beyond</p>
       </div>
       <div
         class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
@@ -22,17 +22,17 @@ const blogs = await getCollection('blog');
           blogs.map((article) => (
             <article class="flex flex-col items-start justify-between">
               <div class="relative w-full">
-                <img
-                  src="https://images.unsplash.com/photo-1496128858413-b36217c2ce36?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=3603&q=80"
-                  alt=""
-                  class="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                <SiteImage
+                  mediaPicker={article.data.content.properties?.summaryImage}
+                  cssClass="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
                 />
+
                 <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
               </div>
               <div class="max-w-xl">
                 <div class="mt-8 flex items-center gap-x-4 text-xs">
                   <time datetime="2020-03-16" class="text-gray-500">
-                    Mar 16, 2020
+                    {formatDate(article.data.content.createDate)}
                   </time>
                 </div>
                 <div class="group relative">
@@ -43,9 +43,7 @@ const blogs = await getCollection('blog');
                     </a>
                   </h3>
                   <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                    Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo.
-                    Non aliquid explicabo necessitatibus unde. Sed exercitationem placeat
-                    consectetur nulla deserunt vel. Iusto corrupti dicta.
+                    {article.data.content.properties?.summaryDescription}
                   </p>
                 </div>
               </div>

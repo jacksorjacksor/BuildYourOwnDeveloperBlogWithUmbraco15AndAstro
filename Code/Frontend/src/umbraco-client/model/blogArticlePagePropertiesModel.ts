@@ -6,6 +6,8 @@
  * OpenAPI spec version: Latest
  */
 import type { ApiBlockListModel } from './apiBlockListModel';
+import type { IApiMediaWithCropsModel } from './iApiMediaWithCropsModel';
+import type { RichTextModel } from './richTextModel';
 
 export interface BlogArticlePagePropertiesModel {
   /** @nullable */
@@ -13,4 +15,7 @@ export interface BlogArticlePagePropertiesModel {
   components?: ApiBlockListModel;
   /** @nullable */
   summaryDescription?: string | null;
+  /** @nullable */
+  summaryImage?: IApiMediaWithCropsModel[] | null;
+  richText?: RichTextModel;
 }

@@ -1,40 +1,27 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { getFinalUrlSegment } from '../../helpers/AppHelpers';
-import { getAllContentByType } from '../../services/ContentService';
-import type { ApiBlockListModel, RichTextModel } from '../../umbraco-client/model';
+import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
+import { getCollection } from 'astro:content';
 import BlockList from '../../components/BlockList.astro';
 
 export async function getStaticPaths() {
-  // TODO:
-  // Implement BlockList Renderer with Typed Blocks
-  // Sort 'never' Type issue with generated Hey Api - see https://github.com/hey-api/openapi-ts/issues/1931
-  // As alternative to the above. Implement Orval - https://orval.dev/
-  // -- see: https://dev.to/phil-whittaker/streamlining-umbraco-headless-development-automated-model-generation-for-content-delivery-api-with-12n9
+  const blogCollection = await getCollection('blog');
 
-  const contentType = 'blogArticlePage';
-
-  // Retrieve all content items using the refactored function.
-  const items = await getAllContentByType(contentType);
-
-  // Map the full list of items into the page parameters.
-  const pages = items.map((item) => {
-    // We should not have to do this. For some reason the components collection and the rich text property are being interpreted as unknown by the TypeSctipt compiler
-    let components = item.properties?.components as ApiBlockListModel;
-
+  const blogArticles = blogCollection.map((article) => {
     return {
-      params: { article: getFinalUrlSegment(item.route.path) },
+      params: { slug: getFinalUrlSegment(article.data.slug) },
       props: {
-        title: item.properties?.title,
-        components: components?.items,
+        date: article.data.content.createDate,
+        title: article.data.content.properties?.title,
+        components: article.data.content.properties?.components?.items,
       },
     };
   });
 
-  return pages;
+  return blogArticles;
 }
 
-const { title, components } = Astro.props;
+const { date, title, components } = Astro.props;
 ---
 
 <Layout>
@@ -66,11 +53,11 @@ const { title, components } = Astro.props;
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span>26 Feb 2023</span>
+                  <span>{formatDate(date)}</span>
                 </p>
               </div>
             </div>
-            <BlockList blocks={components} />
+            {components && <BlockList blocks={components} />}
           </div>
         </div>
       </div>
