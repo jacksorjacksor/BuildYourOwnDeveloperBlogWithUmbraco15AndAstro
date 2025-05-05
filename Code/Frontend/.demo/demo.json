@@ -4,13 +4,13 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
-      "id": "open-content-config",
-      "title": "Open Content Config",
+      "id": "open-content-blog-page",
+      "title": "Open Blog Page",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/content.config.ts"
+          "path": "./src/pages/blog/[slug].astro"
         },
         {
           "action": "executeVSCodeCommand",
@@ -19,13 +19,30 @@
       ]
     },
     {
-      "id": "open-content-service",
-      "title": "Open Content Service",
+      "id": "blog-components-prop",
+      "title": "Blog Components Property",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/services/ContentService.ts"
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-base.snapshot",
+          "patch": "patches/blog-[slug]-components-prop.patch"
+        }
+      ]
+    },
+    {
+      "id": "open-block-list",
+      "title": "Open Block List",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/components/BlockList.astro"
         },
         {
           "action": "executeVSCodeCommand",
@@ -34,85 +51,101 @@
       ]
     },
     {
-      "id": "content-config-init-collection",
-      "title": "Content Config Init Collection",
+      "id": "blocklist-build-1",
+      "title": "Blocklist Build 1",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/content.config.ts"
+          "path": "./src/components/BlockList.astro"
         },
         {
           "action": "applyPatch",
-          "path": "./src/content.config.ts",
-          "contentPath": "snapshots/content.config-base.snapshot",
-          "patch": "patches/content.config-init-blog-collection.patch"
+          "path": "./src/components/BlockList.astro",
+          "contentPath": "snapshots/BlockList-base.snapshot",
+          "patch": "patches/BlockList-add-imports.patch"
         }
       ]
     },
     {
-      "id": "content-config-collection-return",
-      "title": "Content Config Collection Return",
+      "id": "blocklist-build-2",
+      "title": "Blocklist Build 2",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/content.config.ts"
+          "path": "./src/components/BlockList.astro"
         },
         {
           "action": "applyPatch",
-          "path": "./src/content.config.ts",
-          "contentPath": "snapshots/content.config-collection-defined.snapshot",
-          "patch": "patches/content.config-collection-return.patch"
+          "path": "./src/components/BlockList.astro",
+          "contentPath": "snapshots/BlockList-imports-added.snapshot",
+          "patch": "patches/BlockList-add-props.patch"
         }
       ]
     },
     {
-      "id": "content-config-zod-schema",
-      "title": "Content Config Zod Schema",
+      "id": "blocklist-build-3",
+      "title": "Blocklist Build 3",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/content.config.ts"
+          "path": "./src/components/BlockList.astro"
         },
         {
           "action": "applyPatch",
-          "path": "./src/content.config.ts",
-          "contentPath": "snapshots/content.config-data-returned.snapshot",
-          "patch": "patches/content.config-zod-schema.patch"
+          "path": "./src/components/BlockList.astro",
+          "contentPath": "snapshots/BlockList-props-added.snapshot",
+          "patch": "patches/BlockList-add-component-map.patch"
         }
       ]
     },
     {
-      "id": "open-blog-listing",
-      "title": "Open Blog Listing",
+      "id": "blocklist-build-4",
+      "title": "Blocklist Build 4",
       "description": "",
       "steps": [
         {
           "action": "open",
-          "path": "./src/pages/blog/index.astro"
+          "path": "./src/components/BlockList.astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/components/BlockList.astro",
+          "contentPath": "snapshots/BlockList-component-map-added.snapshot",
+          "patch": "patches/BlockList-render-blocks.patch"
+        }
+      ]
+    },
+    {
+      "id": "open-blocks",
+      "title": "Open Blocks",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/components/blocks/RichTextComponent.astro"
         },
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "blog-listing-content-collection",
-      "title": "Blog Listing Content Collection",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/pages/blog/index.astro"
         },
         {
-          "action": "applyPatch",
-          "path": "./src/pages/blog/index.astro",
-          "contentPath": "snapshots/blog-index-base.snapshot",
-          "patch": "patches/index-add-content-collection.patch"
+          "action": "open",
+          "path": "./src/components/blocks/QuoteComponent.astro"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        },
+        {
+          "action": "open",
+          "path": "./src/components/blocks/ImageComponent.astro"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
         }
       ]
     },
@@ -128,22 +161,6 @@
         {
           "action": "executeTerminalCommand",
           "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
-        }
-      ]
-    },
-    {
-      "id": "prepare-ts-generate-cmd",
-      "title": "TS Generate",
-      "description": "",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "npm run umb-ts-generate" }
         }
       ]
     },

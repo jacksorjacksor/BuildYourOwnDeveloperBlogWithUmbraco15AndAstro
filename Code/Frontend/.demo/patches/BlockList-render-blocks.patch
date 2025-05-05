@@ -1,0 +1,16 @@
+Index: /src/components/BlockList.astro
+===================================================================
+--- /src/components/BlockList.astro
++++ /src/components/BlockList.astro
+@@ -16,5 +16,10 @@
+   quoteComponent: QuoteComponent,
+ };
+ ---
+ 
+-<!-- Render Blocks -->
++{
++  blocks?.map((component) => {
++    const BlockComponent = COMPONENT_MAP[component.content.contentType];
++    return BlockComponent ? <BlockComponent block={component} /> : null;
++  })
++}

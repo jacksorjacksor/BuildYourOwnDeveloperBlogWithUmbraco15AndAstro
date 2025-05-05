@@ -1,0 +1,24 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -10,17 +10,17 @@
+       params: { slug: getFinalUrlSegment(article.data.slug) },
+       props: {
+         date: article.data.content.createDate,
+         title: article.data.content.properties?.title,
+-        // Get Block Components Here
++        components: article.data.content.properties?.components?.items,
+       },
+     };
+   });
+ 
+   return blogArticles;
+ }
+ 
+-const { date, title } = Astro.props;
++const { date, title, components } = Astro.props;
+ ---
+ 
+ <Layout>
+   <section class="py-10 bg-white dark:bg-dark">

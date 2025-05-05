@@ -1,0 +1,14 @@
+Index: /src/components/BlockList.astro
+===================================================================
+--- /src/components/BlockList.astro
++++ /src/components/BlockList.astro
+@@ -1,5 +1,8 @@
+ ---
+-// Setup BlockList Implementation
++import type { ApiBlockListModelItemsItem } from '../umbraco-client/model';
++import ImageComponent from './blocks/ImageComponent.astro';
++import QuoteComponent from './blocks/QuoteComponent.astro';
++import RichTextComponent from './blocks/RichTextComponent.astro';
+ ---
+ 
+ <!-- Render Blocks -->

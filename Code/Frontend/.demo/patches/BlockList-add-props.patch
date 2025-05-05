@@ -1,0 +1,18 @@
+Index: /src/components/BlockList.astro
+===================================================================
+--- /src/components/BlockList.astro
++++ /src/components/BlockList.astro
+@@ -2,7 +2,13 @@
+ import type { ApiBlockListModelItemsItem } from '../umbraco-client/model';
+ import ImageComponent from './blocks/ImageComponent.astro';
+ import QuoteComponent from './blocks/QuoteComponent.astro';
+ import RichTextComponent from './blocks/RichTextComponent.astro';
++
++interface Props {
++  blocks: ApiBlockListModelItemsItem[];
++}
++
++const { blocks } = Astro.props;
+ ---
+ 
+ <!-- Render Blocks -->

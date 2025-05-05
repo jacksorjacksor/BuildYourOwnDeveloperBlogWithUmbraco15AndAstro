@@ -1,0 +1,20 @@
+---
+import type { ApiBlockListModelItemsItem } from '../umbraco-client/model';
+import ImageComponent from './blocks/ImageComponent.astro';
+import QuoteComponent from './blocks/QuoteComponent.astro';
+import RichTextComponent from './blocks/RichTextComponent.astro';
+
+interface Props {
+  blocks: ApiBlockListModelItemsItem[];
+}
+
+const { blocks } = Astro.props;
+
+const COMPONENT_MAP = {
+  richTextComponent: RichTextComponent,
+  imageComponent: ImageComponent,
+  quoteComponent: QuoteComponent,
+};
+---
+
+<!-- Render Blocks -->
