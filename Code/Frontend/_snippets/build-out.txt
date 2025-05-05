@@ -18,8 +18,22 @@ git restore --source=main -- src/services/ContentService.ts
 ## Restore App Helper
 git restore --source=main -- src/helpers/AppHelpers.ts
 
+## Restore Media Helper
+git restore --source=main -- src/helpers/MediaHelper.ts
+
 ## Restore Blog Listing and Dynamic Route
 git restore --source=main -- src/pages/blog/**
+
+## Restore Site Image
+git restore --source=main -- src/components/elements/SiteImage.astro
+
+## Restore BlockList Renderer
+git restore --source=main -- src/components/BlockList.astro
+
+## Restore Block Components
+git restore --source=main -- src/components/blocks/**
+
+
 
 
 

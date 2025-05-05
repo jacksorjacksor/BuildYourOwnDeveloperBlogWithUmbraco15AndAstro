@@ -10,4 +10,4 @@ import type { QuoteComponentElementModel } from './quoteComponentElementModel';
 import type { RichTextComponentElementModel } from './richTextComponentElementModel';
 import type { CodeSnippetComponentElementModel } from './codeSnippetComponentElementModel';
 
-export type IApiElementModel = ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel | CodeSnippetComponentElementModel;
+export type IApiElementModel = ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel;

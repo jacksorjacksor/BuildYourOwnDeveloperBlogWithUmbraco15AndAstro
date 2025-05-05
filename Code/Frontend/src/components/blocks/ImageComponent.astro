@@ -1,0 +1,26 @@
+---
+import { Image } from 'astro:assets';
+import type {
+  ApiBlockListModelItemsItem,
+  ImageComponentElementModel,
+} from '../../umbraco-client/model';
+import { mapToImage } from '../../helpers/MediaHelper';
+
+interface Props {
+  block: ApiBlockListModelItemsItem;
+}
+
+const { block } = Astro.props;
+const content = block.content as ImageComponentElementModel;
+
+const image = mapToImage(content.properties?.image);
+---
+
+{
+  image && (
+    <div class="py-10 overflow-hidden rounded">
+      {/* Astro will auto-optimise and give us srcsets */}
+      <Image src={image} layout="full-width" alt={content.properties?.image?.[0]?.name || ''} />
+    </div>
+  )
+}
