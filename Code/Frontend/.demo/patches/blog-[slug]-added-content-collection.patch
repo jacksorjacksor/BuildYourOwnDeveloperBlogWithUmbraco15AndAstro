@@ -1,0 +1,37 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -1,19 +1,22 @@
+ ---
++import { getFinalUrlSegment } from '../../helpers/AppHelpers';
++import { getCollection } from 'astro:content';
++
+ export async function getStaticPaths() {
+-  let data = await fetch(
+-    'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
+-  );
++  const blogCollection = await getCollection('blog');
+ 
+-  let blogs = await data.json();
++  const blogArticles = blogCollection.map((article) => {
++    return {
++      params: { slug: getFinalUrlSegment(article.data.slug) },
++      props: { article },
++    };
++  });
+ 
+-  return blogs.items.map((article: any) => ({
+-    params: { slug: article.route.path.replace('/blog/', '') },
+-    props: { article },
+-  }));
++  return blogArticles;
+ }
+ 
+ const { article } = Astro.props;
+ ---
+ 
+-<h1>{article.properties?.title}</h1>
+-<div set:html={article.properties.richText.markup} />
++<h1>{article.data.content.properties?.title}</h1>
++<div set:html={article.data.content.properties?.richText?.markup} />
