@@ -150,6 +150,23 @@
       ]
     },
     {
+      "id": "add-blocklist-renderer",
+      "title": "Blog Page Render Blocks",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-props-added.snapshot",
+          "patch": "patches/blog-[slug]-render-blocks.patch"
+        }
+      ]
+    },
+    {
       "id": "run-backend-cms",
       "title": "Run Backend CMS",
       "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",

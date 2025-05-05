@@ -1,0 +1,26 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -1,8 +1,10 @@
+ ---
+ import Layout from '../../layouts/Layout.astro';
+ import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
+ import { getCollection } from 'astro:content';
++import BlockList from '../../components/BlockList.astro';
++
+ export async function getStaticPaths() {
+   const blogCollection = await getCollection('blog');
+ 
+   const blogArticles = blogCollection.map((article) => {
+@@ -54,9 +56,9 @@
+                   <span>{formatDate(date)}</span>
+                 </p>
+               </div>
+             </div>
+-            <!-- Render Blocks Here -->
++            {components && <BlockList blocks={components} />}
+           </div>
+         </div>
+       </div>
+     </div>
