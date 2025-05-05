@@ -1,67 +1,9 @@
 import { isNullOrWhiteSpace } from '../helpers/AppHelpers';
-import {
-  getContent20,
-  getContentItemById20,
-  getContentItemByPath20,
-} from '../umbraco-client/content/content';
+import { getContent20 } from '../umbraco-client/content/content';
 import type {
   IApiContentResponseModel,
   PagedIApiContentResponseModel,
 } from '../umbraco-client/model';
-
-/**
- * Retrieves page content based on the provided URL.
- * If the URL is null, empty or only white space, it defaults to the root ('/').
- *
- * @param url - The URL path for which to retrieve content.
- * @returns A promise resolving to an ApiContentResponseModel.
- */
-export async function getPageContent(url: string): Promise<IApiContentResponseModel> {
-  if (isNullOrWhiteSpace(url)) {
-    url = '/'; // Default to root if URL is not provided.
-  }
-
-  const response = await getContentItemByPath20(url, {
-    expand: 'properties[$all]',
-  });
-
-  if (response.status != 200) {
-    throw new Error(`Error with Umbraco API request: ${url}`);
-  }
-
-  if (!response.data) {
-    throw new Error(`No data returned from Umbraco API for path: ${url}`);
-  }
-
-  return response.data;
-}
-
-/**
- * Retrieves content based on the provided ID.
- * If the ID is null, empty or only white space, it returns null.
- *
- * @param id - The identifier of the content.
- * @returns A promise resolving to an ApiContentResponseModel or null.
- */
-export async function getContentById(id?: string): Promise<IApiContentResponseModel | null> {
-  if (!id) {
-    return null;
-  }
-
-  const response = await getContentItemById20(id, {
-    expand: 'properties[$all]',
-  });
-
-  if (response.status != 200) {
-    throw new Error(`Error with Umbraco API request: ${id}`);
-  }
-
-  if (!response.data) {
-    throw new Error(`No data returned from Umbraco API for id: ${id}`);
-  }
-
-  return response.data;
-}
 
 /**
  * Retrieves all content items filtered by the provided content type by repeatedly calling
