@@ -1,6 +1,7 @@
 ---
-title: 'Exercise XX - Deploy to Vercel'
-description: ''
+title: 'Exercise 8'
+description: 'Deploy to Vercel'
+sortOrder: 8
 ---
 
 ## WIP Notes

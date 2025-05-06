@@ -1,16 +1,25 @@
 ---
+import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const workshopExercises = await getCollection('workshopExercise');
 ---
 
-<h1>Workshop Exercises</h1>
+<Layout>
+  <section class="py-[70px] dark:bg-dark">
+    <div class="mx-auto px-4 sm:container">
+      <h1 class="mb-2 text-2xl font-semibold">Workshop Exercises</h1>
 
-<ul>
-  {
-    workshopExercises.map((exercise) => (
-      <li>
-        <a href={`/exercises/${exercise.id}`}>{exercise.data.title}</a>
-      </li>
-    ))
-  }
-</ul>
+      <ul>
+        {
+          [...workshopExercises]
+            .sort((a, b) => a.data.sortOrder - b.data.sortOrder)
+            .map((exercise) => (
+              <li>
+                <a href={`/exercises/${exercise.id}`}>{exercise.data.title}</a>
+              </li>
+            ))
+        }
+      </ul>
+    </div>
+  </section>
+</Layout>

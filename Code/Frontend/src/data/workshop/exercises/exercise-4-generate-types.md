@@ -1,6 +1,7 @@
 ---
-title: 'Exercise 2'
-description: 'Setting up Umbraco'
+title: 'Exercise 4'
+description: 'Generate TypeScript definations'
+sortOrder: 4
 ---
 
 # Introduction
