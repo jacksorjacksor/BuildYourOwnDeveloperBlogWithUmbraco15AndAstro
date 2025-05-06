@@ -1,6 +1,7 @@
 ---
-title: 'Exercise XX - Deploy to Vercel'
-description: ''
+title: 'Appendix A'
+description: 'Serving Media'
+sortOrder: 100
 ---
 
 ## WIP Notes

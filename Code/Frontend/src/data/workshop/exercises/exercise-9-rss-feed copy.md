@@ -1,6 +1,7 @@
 ---
-title: 'Exercise 1'
-description: 'Setting up Astro'
+title: 'Exercise 9'
+description: 'Add an RSS feed'
+sortOrder: 9
 ---
 
 # Introduction
