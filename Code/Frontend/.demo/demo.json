@@ -4,6 +4,36 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
+      "id": "open-exercise-example",
+      "title": "Open Exercise MD File",
+      "description": "Open Exercise MD File",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/data/workshop/exercises/exercise-1.md"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
+      "id": "open-content-collections-config",
+      "title": "Open content.config.ts",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/content.config.ts"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",
@@ -44,36 +74,6 @@
         {
           "action": "open",
           "path": "./src/pages/exercises/[slug].astro"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "open-content-collections-config",
-      "title": "Open content.config.ts",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/content.config.ts"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "open-exercise-example",
-      "title": "Open Exercise MD File",
-      "description": "Open Exercise MD File",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/data/workshop/exercises/exercise-1.md"
         },
         {
           "action": "executeVSCodeCommand",
@@ -210,109 +210,11 @@
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "npm run dev" }
+          "args": {
+            "text": "npm run dev"
+          }
         }
       ]
     }
-    // {
-    //   "id": "open-index",
-    //   "title": "Open index.astro",
-    //   "description": "Open the main Astro page",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/index.astro"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "insert-layout-import",
-    //   "title": "Insert Layout Import",
-    //   "description": "Add the Layout import inside the front-matter",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/index.astro"
-    //     },
-    //     {
-    //       "action": "insert",
-    //       "path": "./src/pages/index.astro",
-    //       "position": "2,0",
-    //       "content": "import Layout from '../layouts/Layout.astro';\n"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "wrap-content-in-layout",
-    //   "title": "Wrap Content with Layout Tags",
-    //   "description": "Insert the `<Layout>` wrapper below the front-matter",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/index.astro"
-    //     },
-    //     {
-    //       "action": "insert",
-    //       "path": "./src/pages/index.astro",
-    //       "position": "4,0",
-    //       "content": "<Layout>\n  <!-- Html can go here -->\n</Layout>\n"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "insert-h1-greeting",
-    //   "title": "Insert H1 Greeting",
-    //   "description": "Add an H1 element inside the Layout wrapper",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./src/pages/index.astro"
-    //     },
-    //     {
-    //       "action": "insert",
-    //       "path": "./src/pages/index.astro",
-    //       "position": "6,2",
-    //       "content": "<h1 class=\"p-16 font-bold text-6xl\">Hello from Astro! 🚀</h1>\n"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "open-package-json",
-    //   "title": "Open package.json",
-    //   "description": "Open the project’s package.json file",
-    //   "steps": [
-    //     {
-    //       "action": "open",
-    //       "path": "./package.json"
-    //     }
-    //   ]
-    // },
-    // {
-    //   "id": "prepare-dev-command",
-    //   "title": "Open Terminal and Type Dev Command",
-    //   "description": "Open the VS Code terminal and insert `npm run dev` without running it",
-    //   "steps": [
-    //     {
-    //       "action": "executeVSCodeCommand",
-    //       "command": "workbench.action.terminal.toggleTerminal"
-    //     },
-    //     {
-    //       "action": "executeVSCodeCommand",
-    //       "command": "workbench.action.terminal.sendSequence",
-    //       "args": { "text": "npm run dev" }
-    //     }
-    //   ]
-    // }
-    // {
-    //   "id": "switch-branch-term",
-    //   "title": "Switch to Feature Branch",
-    //   "description": "Demo Time runs Git checkout for you",
-    //   "steps": [
-    //     {
-    //       "action": "executeTerminalCommand",
-    //       "command": "git checkout feature-branch"
-    //     }
-    //   ]
-    // }
   ]
 }
