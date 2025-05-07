@@ -4,47 +4,6 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
-      "id": "open-exercises-url",
-      "title": "Open Exercises Page in Browser",
-      "description": "",
-      "steps": [
-        {
-          "action": "openWebsite",
-          "url": "https://test-workshop-blog.vercel.app/exercises/"
-        }
-      ]
-    },
-    {
-      "id": "open-exercise-example",
-      "title": "Open Exercise MD File",
-      "description": "Open Exercise MD File",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/data/workshop/exercises/exercise-1.md"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
-      "id": "open-content-collections-config",
-      "title": "Open content.config.ts",
-      "description": "",
-      "steps": [
-        {
-          "action": "open",
-          "path": "./src/content.config.ts"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.keepEditor"
-        }
-      ]
-    },
-    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",
@@ -63,17 +22,6 @@
         {
           "action": "imagePreview",
           "path": "./_presentation/4-1-single-level-dynamic-route.png"
-        }
-      ]
-    },
-    {
-      "id": "open-slide-3",
-      "title": "Open Slide 3",
-      "description": "Multi level dynamic route",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "./_presentation/4-2-multi-level-dynamic-route.png"
         }
       ]
     },
@@ -206,6 +154,58 @@
           "path": "./src/pages/exercises/index.astro",
           "contentPath": "snapshots/exercise-index-c-collection.snapshot",
           "patch": "patches/exercise-index-render-list.patch"
+        }
+      ]
+    },
+    {
+      "id": "open-slide-3",
+      "title": "X - Open Slide 3",
+      "description": "Multi level dynamic route",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/4-2-multi-level-dynamic-route.png"
+        }
+      ]
+    },
+    {
+      "id": "open-content-collections-config",
+      "title": "X - Open content.config.ts",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/content.config.ts"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
+        }
+      ]
+    },
+    {
+      "id": "open-exercises-url",
+      "title": "X - Open Exercises Page in Browser",
+      "description": "",
+      "steps": [
+        {
+          "action": "openWebsite",
+          "url": "https://test-workshop-blog.vercel.app/exercises/"
+        }
+      ]
+    },
+    {
+      "id": "open-exercise-example",
+      "title": "X - Open Exercise MD File",
+      "description": "Open Exercise MD File",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/data/workshop/exercises/exercise-1.md"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.keepEditor"
         }
       ]
     },
