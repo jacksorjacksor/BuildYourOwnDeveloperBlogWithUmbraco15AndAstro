@@ -10,7 +10,7 @@
       "steps": [
         {
           "action": "imagePreview",
-          "path": "./_presentation/1_install.png"
+          "path": "./_presentation/2_directory_structure.png"
         }
       ]
     },
@@ -21,24 +21,13 @@
       "steps": [
         {
           "action": "imagePreview",
-          "path": "./_presentation/2_directory_structure.png"
+          "path": "./_presentation/3-1_file-based-routing.png"
         }
       ]
     },
     {
       "id": "open-slide-3",
       "title": "Open Slide 3",
-      "description": "",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "./_presentation/3-1_file-based-routing.png"
-        }
-      ]
-    },
-    {
-      "id": "open-slide-4",
-      "title": "Open Slide 4",
       "description": "",
       "steps": [
         {
@@ -132,20 +121,22 @@
         {
           "action": "executeVSCodeCommand",
           "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "npm run dev" }
+          "args": {
+            "text": "npm run dev"
+          }
+        }
+      ]
+    },
+    {
+      "id": "open-slide-10",
+      "title": "X - Open Slide Install",
+      "description": "",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/1_install.png"
         }
       ]
     }
-    // {
-    //   "id": "switch-branch-term",
-    //   "title": "Switch to Feature Branch",
-    //   "description": "Demo Time runs Git checkout for you",
-    //   "steps": [
-    //     {
-    //       "action": "executeTerminalCommand",
-    //       "command": "git checkout feature-branch"
-    //     }
-    //   ]
-    // }
   ]
 }
