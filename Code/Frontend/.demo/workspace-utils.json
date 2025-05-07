@@ -21,7 +21,7 @@
       "steps": [
         {
           "action": "executeTerminalCommand",
-          "command": "git checkout presentation/2-exercise-content"
+          "command": "git checkout presentation/2-dynamic-route"
         }
       ]
     }
