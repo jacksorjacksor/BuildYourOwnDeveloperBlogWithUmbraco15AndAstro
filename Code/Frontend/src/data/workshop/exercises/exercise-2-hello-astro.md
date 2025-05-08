@@ -1,17 +1,17 @@
 ---
-title: 'Exercise 2'
+title: '2 - Hello Astro'
 description: 'Astro Familiarisation'
 sortOrder: 2
 ---
 
-# Introduction
+In this exercise you will be exploring the basic Astro setup and getting Astro running with a basic Hello World example.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus euismod, nisi at convallis maximus, purus purus scelerisque ipsum, at convallis justo orci nec mauris. Integer sit amet lectus vitae odio egestas tempor sit amet non risus.
+## Warm-up Exercise
 
-## 1. Lorem ipsum dolor sit
+Familiarise yourself with the Astro syntax and project structure.
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed non risus vitae orci tristique commodo. Nulla facilisi. Phasellus sit amet nibh vitae arcu aliquet scelerisque.
+Open the `index.astro` file in your editor.
 
-## 2. Vestibulum ante ipsum primis
+Use the imported Layout component and render some simple HTML content within it.
 
-Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia curae; Donec ullamcorper, justo at dignissim varius, dolor velit fermentum justo, ac tincidunt mauris orci nec est.
+Run Astro using `npm run dev` to view your changes, observing hot reloading in action.

@@ -1,12 +1,10 @@
 ---
-title: 'Appendix A'
+title: 'Appendix A - Serving Media'
 description: 'Serving Media'
 sortOrder: 100
 ---
 
-## WIP Notes
-
-We are going to explore 2 ways of serving media.
+We can explore 2 ways of serving media.
 
 The first is a little experimental (that's what these workshops are good for right! 😄).
 

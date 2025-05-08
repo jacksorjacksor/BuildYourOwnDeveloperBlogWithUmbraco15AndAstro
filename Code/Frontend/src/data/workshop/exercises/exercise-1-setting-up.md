@@ -1,10 +1,8 @@
 ---
-title: 'Exercise 1'
+title: '1 - Setup'
 description: 'Setting up'
 sortOrder: 1
 ---
-
-# Introduction
 
 If you have made it this far you have already checked out the repository - well done and welcome!
 

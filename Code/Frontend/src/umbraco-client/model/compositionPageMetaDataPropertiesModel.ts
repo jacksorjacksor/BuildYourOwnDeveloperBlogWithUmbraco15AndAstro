@@ -5,7 +5,6 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
-import type { IApiContentModel } from './iApiContentModel';
 import type { IApiMediaWithCropsModel } from './iApiMediaWithCropsModel';
 
 export interface CompositionPageMetaDataPropertiesModel {
@@ -17,7 +16,6 @@ export interface CompositionPageMetaDataPropertiesModel {
   hideFromSearch?: boolean | null;
   /** @nullable */
   metaKeywords?: string | null;
-  canonicalContent?: IApiContentModel;
   /** @nullable */
   canonicalLinkUrl?: string | null;
   /** @nullable */
@@ -32,16 +30,4 @@ export interface CompositionPageMetaDataPropertiesModel {
   openGraphDescription?: string | null;
   /** @nullable */
   openGraphImage?: IApiMediaWithCropsModel[] | null;
-  /** @nullable */
-  structuredDataLabel?: string | null;
-  /** @nullable */
-  enableStructuredData?: boolean | null;
-  /** @nullable */
-  structuredDataType?: string | null;
-  /** @nullable */
-  structuredDataName?: string | null;
-  /** @nullable */
-  structuredDataDescription?: string | null;
-  /** @nullable */
-  structuredDataPublishedDate?: string | null;
 }
