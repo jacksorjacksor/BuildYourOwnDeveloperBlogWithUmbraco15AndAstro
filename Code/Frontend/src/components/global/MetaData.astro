@@ -1,0 +1,43 @@
+---
+import { isNullOrWhiteSpace } from '../../helpers/AppHelpers';
+import type { CompositionPageMetaDataPropertiesModel } from '../../umbraco-client/model';
+
+interface Props {
+  metaProps: CompositionPageMetaDataPropertiesModel | undefined;
+}
+
+let siteUrl = Astro.site?.origin;
+
+const { metaProps } = Astro.props;
+---
+
+{
+  metaProps && (
+    <>
+      {!isNullOrWhiteSpace(metaProps.metaDescription) && (
+        <meta name="description" content={metaProps.metaDescription} />
+      )}
+      {!isNullOrWhiteSpace(metaProps.metaKeywords) && (
+        <meta name="keywords" content={metaProps.metaKeywords} />
+      )}
+      {!isNullOrWhiteSpace(metaProps.canonicalLinkUrl) && (
+        <link rel="canonical" href={metaProps.canonicalLinkUrl} />
+      )}
+      {metaProps.enableOpenGraph && (
+        <>
+          <meta property="og:type" content={metaProps.openGraphType || 'article'} />
+          {!isNullOrWhiteSpace(metaProps.openGraphTitle) && (
+            <meta property="og:title" content={metaProps.openGraphTitle} />
+          )}
+          {!isNullOrWhiteSpace(metaProps.openGraphDescription) && (
+            <meta property="og:description" content={metaProps.openGraphDescription} />
+          )}
+          {metaProps.openGraphImage && (
+            <meta property="og:image" content={`${siteUrl}${metaProps.openGraphImage[0]?.url}`} />
+          )}
+          <meta property="og:url" content={`${siteUrl}${Astro.url.pathname}`} />
+        </>
+      )}
+    </>
+  )
+}

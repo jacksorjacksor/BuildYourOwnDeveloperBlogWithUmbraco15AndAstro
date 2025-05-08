@@ -5,11 +5,12 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
+import type { CompositionPageMetaDataPropertiesModel } from './compositionPageMetaDataPropertiesModel';
 import type { ApiBlockListModel } from './apiBlockListModel';
 import type { IApiMediaWithCropsModel } from './iApiMediaWithCropsModel';
 import type { RichTextModel } from './richTextModel';
 
-export interface BlogArticlePagePropertiesModel {
+export type BlogArticlePagePropertiesModel = CompositionPageMetaDataPropertiesModel & {
   /** @nullable */
   title?: string | null;
   components?: ApiBlockListModel;
@@ -18,4 +19,4 @@ export interface BlogArticlePagePropertiesModel {
   /** @nullable */
   summaryImage?: IApiMediaWithCropsModel[] | null;
   richText?: RichTextModel;
-}
+};

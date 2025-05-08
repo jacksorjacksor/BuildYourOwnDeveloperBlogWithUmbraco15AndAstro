@@ -3,10 +3,15 @@ import SiteImage from '../../components/elements/SiteImage.astro';
 import { formatDate } from '../../helpers/AppHelpers';
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
+import { getPageContent } from '../../services/ContentService';
+import MetaData from '../../components/global/MetaData.astro';
 const blogs = await getCollection('blog');
+
+let page = await getPageContent(Astro.url.pathname);
 ---
 
 <Layout>
+  <MetaData slot="meta" metaProps={page.properties} />
   <div class="bg-white py-10">
     <div class="mx-auto max-w-7xl px-6 lg:px-8">
       <div class="mx-auto max-w-2xl text-center">
