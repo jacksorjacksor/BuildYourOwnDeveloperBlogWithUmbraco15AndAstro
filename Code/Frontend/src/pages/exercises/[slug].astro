@@ -1,6 +1,7 @@
 ---
 // Reference: https://docs.astro.build/en/guides/content-collections/#building-for-static-output-default
 
+import Layout from '../../layouts/Layout.astro';
 import { render } from 'astro:content';
 import { getCollection } from 'astro:content';
 
@@ -16,5 +17,9 @@ const { exercise } = Astro.props;
 const { Content } = await render(exercise);
 ---
 
-<h1>{exercise.data.title}</h1>
-<Content />
+<Layout>
+  <section class="mx-auto py-[70px] prose lg:prose-xl">
+    <h1 class="mb-2 text-lg font-semibold">{exercise.data.title}</h1>
+    <Content />
+  </section>
+</Layout>
