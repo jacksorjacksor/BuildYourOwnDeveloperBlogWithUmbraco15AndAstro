@@ -5,5 +5,6 @@
  * You can find out more about the Umbraco Delivery API in [the documentation](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api).
  * OpenAPI spec version: Latest
  */
+import type { CompositionPageMetaDataPropertiesModel } from './compositionPageMetaDataPropertiesModel';
 
-export interface BlogListingPagePropertiesModel { [key: string]: unknown }
+export type BlogListingPagePropertiesModel = CompositionPageMetaDataPropertiesModel;

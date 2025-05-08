@@ -1,10 +1,15 @@
 ---
+import MetaData from '../components/global/MetaData.astro';
 import LatestArticles from '../components/LatestArticles.astro';
 import Welcome from '../components/Welcome.astro';
 import Layout from '../layouts/Layout.astro';
+import { getPageContent } from '../services/ContentService';
+
+let page = await getPageContent(Astro.url.pathname);
 ---
 
 <Layout>
+  <MetaData slot="meta" metaProps={page.properties} />
   <Welcome />
   <LatestArticles />
 </Layout>

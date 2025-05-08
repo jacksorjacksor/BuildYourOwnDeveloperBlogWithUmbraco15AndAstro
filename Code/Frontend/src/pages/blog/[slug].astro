@@ -3,6 +3,7 @@ import Layout from '../../layouts/Layout.astro';
 import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
 import { getCollection } from 'astro:content';
 import BlockList from '../../components/BlockList.astro';
+import MetaData from '../../components/global/MetaData.astro';
 
 export async function getStaticPaths() {
   const blogCollection = await getCollection('blog');
@@ -14,6 +15,7 @@ export async function getStaticPaths() {
         date: article.data.content.createDate,
         title: article.data.content.properties?.title,
         components: article.data.content.properties?.components?.items,
+        properties: article.data.content.properties,
       },
     };
   });
@@ -21,10 +23,11 @@ export async function getStaticPaths() {
   return blogArticles;
 }
 
-const { date, title, components } = Astro.props;
+const { date, title, components, properties } = Astro.props;
 ---
 
 <Layout>
+  <MetaData slot="meta" metaProps={properties} />
   <section class="py-10 bg-white dark:bg-dark">
     <div class="container mx-auto">
       <div class="flex flex-wrap justify-center -mx-4">
