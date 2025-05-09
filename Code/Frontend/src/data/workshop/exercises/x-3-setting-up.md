@@ -1,7 +1,7 @@
 ---
-title: '1 - Setup'
+title: 'Appendix C - Setup'
 description: 'Setting up'
-sortOrder: 1
+sortOrder: 130
 ---
 
 If you have made it this far you have already checked out the repository - well done and welcome!
@@ -27,3 +27,15 @@ Please run the following:
 ```
 dotnet run
 ```
+
+## 3. Run Astro
+
+From the route of the backend project `./Code/Frontend`
+
+Please run the following:
+
+```
+npm run dev
+```
+
+Now browse to: [http://localhost:4321](http://localhost:4321/)

@@ -1,7 +1,7 @@
 ---
-title: '2 - Hello Astro'
+title: '1 - Hello Astro'
 description: 'Astro Familiarisation'
-sortOrder: 2
+sortOrder: 1
 ---
 
 In this exercise you will be exploring the basic Astro setup and getting Astro running with a basic Hello World example.

@@ -1,7 +1,7 @@
 ---
-title: '5 - Generate TypeScript'
+title: '4 - Generate TypeScript'
 description: 'Generate TypeScript definations'
-sortOrder: 5
+sortOrder: 4
 ---
 
 TBC

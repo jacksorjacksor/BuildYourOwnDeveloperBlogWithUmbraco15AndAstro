@@ -1,7 +1,7 @@
 ---
-title: '7 - Block List Components'
+title: '6 - Block List Components'
 description: 'Add Block List components to the blog article'
-sortOrder: 7
+sortOrder: 6
 ---
 
 TBC

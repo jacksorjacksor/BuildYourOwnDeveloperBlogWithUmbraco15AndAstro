@@ -1,7 +1,7 @@
 ---
-title: '3 - Dynamic Route'
+title: '2 - Dynamic Route'
 description: 'Astro Familiarisation'
-sortOrder: 3
+sortOrder: 2
 ---
 
 TBC

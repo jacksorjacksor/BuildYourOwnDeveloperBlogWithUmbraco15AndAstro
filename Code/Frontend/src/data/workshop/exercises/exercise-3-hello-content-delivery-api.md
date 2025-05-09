@@ -1,7 +1,7 @@
 ---
-title: '4 - Content Delivery API'
+title: '3 - Content Delivery API'
 description: 'Basic content fetch from the Content Delivery API'
-sortOrder: 4
+sortOrder: 3
 ---
 
 In this exercise you will integrate the Umbraco Content Delivery API directly into your Astro project using JavaScript `fetch` requests.
