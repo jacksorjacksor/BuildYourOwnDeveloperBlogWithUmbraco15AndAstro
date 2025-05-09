@@ -2,8 +2,8 @@
 import Layout from '../../layouts/Layout.astro';
 import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
 import { getCollection } from 'astro:content';
-import BlockList from '../../components/BlockList.astro';
 import MetaData from '../../components/global/MetaData.astro';
+import BlockList from '../../components/BlockList.astro';
 
 export async function getStaticPaths() {
   const blogCollection = await getCollection('blog');
