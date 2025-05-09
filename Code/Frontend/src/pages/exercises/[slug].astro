@@ -18,8 +18,26 @@ const { Content } = await render(exercise);
 ---
 
 <Layout>
-  <section class="mx-auto py-[70px] prose lg:prose-xl">
-    <h1 class="mb-2 text-lg font-semibold">{exercise.data.title}</h1>
-    <Content />
+  <section class="mx-auto py-[40px] lg:py-[70px] px-8">
+    <div class="pb-6">
+      <a
+        class="border-indigo-600 border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-indigo-600"
+        href="/exercises"
+      >
+        Back to Exercise List
+      </a>
+    </div>
+    <div class="prose lg:prose-xl">
+      <h1 class="mb-2 text-lg font-semibold">{exercise.data.title}</h1>
+      <Content />
+    </div>
+    <div class="pt-6">
+      <a
+        class="border-indigo-600 border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-indigo-600"
+        href="/exercises"
+      >
+        Back to Exercise List
+      </a>
+    </div>
   </section>
 </Layout>
