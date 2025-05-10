@@ -24,7 +24,7 @@ Open `blog/index.astro` in your editor.
 
 At the top of the file, add a fetch call inside the Astro [Component Script](https://docs.astro.build/en/basics/astro-components/#the-component-script):
 
-```
+```js
 let data = await fetch(
   'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
 );

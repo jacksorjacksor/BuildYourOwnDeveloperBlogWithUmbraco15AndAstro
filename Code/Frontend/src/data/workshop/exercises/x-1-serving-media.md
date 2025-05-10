@@ -32,7 +32,7 @@ In a nutshell... host the media in Azure blob storage and manage the media endpo
 
 ### Explaining the dynamic glob import
 
-```
+```javascript
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/media/**/*.{jpg,png,webp}',
   { eager: true }
@@ -47,13 +47,13 @@ The generic `{ default: ImageMetadata }` Tells TypeScript that each module it fi
 
 Using an eager glob to pull in metadata for every image does carry a few trade-offs:
 
-Build-time overhead:
+### Build-time overhead:
 Every matched file is parsed and its metadata bundled at build time, so the more images you have, the longer your build and memory usage will be.
 
-Runtime performance notes:
+### Runtime performance notes:
 Once the site is built, looking up images[key].default is just a quick object property access – it has virtually zero cost in the browser. Your actual image downloads and <Image> processing happen exactly as before.
 
-Alternatives for scale:
+### Alternatives for scale:
 Switch to non-eager globs (import.meta.glob without eager) so you only load metadata for images you actually reference at runtime.
 
 Split large asset folders into smaller chunks and import only what each page needs.

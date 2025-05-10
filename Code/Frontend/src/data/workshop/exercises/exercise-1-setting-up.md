@@ -14,7 +14,7 @@ From the route of the frontend project `./Code/Frontend`
 
 Please run the following:
 
-```
+```bash
 npm install
 ```
 
@@ -24,6 +24,6 @@ From the route of the backend project `./Code/Backend/DeveloperBlog.Umbraco`
 
 Please run the following:
 
-```
+```bash
 dotnet run
 ```

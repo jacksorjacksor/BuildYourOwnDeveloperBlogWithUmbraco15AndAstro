@@ -42,7 +42,7 @@ This ensures every workshop participant uses the same CLI version without global
 
 In the project root, run:
 
-```
+```bash
 npx vercel
 ```
 
@@ -72,12 +72,12 @@ A `vercel.json` file and a hidden `.vercel/` folder will appear, linking your lo
 
 Open `package.json` and update the scripts section:
 
-```
+```json
 {
-"scripts": {
-"build": "astro build",
-"deploy": "npm run build && npx vercel --prod --prebuilt --confirm"
-}
+    "scripts": {
+        "build": "astro build",
+        "deploy": "npm run build && npx vercel --prod --prebuilt --confirm"
+    }
 }
 ```
 
@@ -90,15 +90,23 @@ Explanation:
 
 A minimal `vercel.json` looks like:
 
-```
+```json
 {
-"builds": [
-{ "src": "package.json", "use": "@vercel/static-build" }
-],
-"routes": [
-{ "handle": "filesystem" },
-{ "src": "/.*", "dest": "/index.html" }
-]
+    "builds": [
+        { 
+            "src": "package.json", 
+            "use": "@vercel/static-build" 
+        }
+    ],
+    "routes": [
+        { 
+            "handle": "filesystem" 
+        },
+        {
+            "src": "/.*", 
+            "dest": "/index.html" 
+        }
+    ]
 }
 ```
 
@@ -109,7 +117,7 @@ A minimal `vercel.json` looks like:
 
 Whenever you’re ready, in your terminal run:
 
-```
+```bash
 npm run deploy
 ```
 
