@@ -2,6 +2,14 @@
 
 ## Goal: Mermaid diagram showing how everything fits together
 
+## Questions:
+- Can we use v16?
+- Do we actually use / need Contentment? Styling in backoffice I guess
+
+## End Goal / Definition of done
+
+
+
 ### Technologies used
 
 - Umbraco (v15.3.1 - [.csproj](https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/blob/b12733b9e6a2999049b2b2bade01a50c8452fe01/Code/Backend/DeveloperBlog.Umbraco/DeveloperBlog.Umbraco.csproj#L12))
