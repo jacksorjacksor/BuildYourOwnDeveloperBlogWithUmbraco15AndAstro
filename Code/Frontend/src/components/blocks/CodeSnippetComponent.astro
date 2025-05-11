@@ -1,6 +1,6 @@
 ---
 import type { BundledLanguage } from 'shiki';
-import { Code } from 'astro:components';
+import { Code } from 'astro-expressive-code/components';
 import type {
   ApiBlockListModelItemsItem,
   CodeSnippetComponentElementModel,
@@ -17,6 +17,6 @@ const syntax = content.properties?.codeSnippetSyntax as BundledLanguage;
 const codeSnippet = content.properties?.codeSnippet;
 ---
 
-<div class="p-6 bg-[#282A36]">
-  <Code code={codeSnippet || ''} lang={syntax || 'js'} theme="dracula" />
+<div class="p-6">
+  <Code code={codeSnippet || ''} lang={syntax || 'js'} wrap={true} />
 </div>
