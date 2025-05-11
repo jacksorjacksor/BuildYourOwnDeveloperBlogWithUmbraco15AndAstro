@@ -11,4 +11,6 @@ export interface CodeSnippetComponentPropertiesModel {
   codeSnippetSyntax?: string | null;
   /** @nullable */
   codeSnippet?: string | null;
+  /** @nullable */
+  fileName?: string | null;
 }

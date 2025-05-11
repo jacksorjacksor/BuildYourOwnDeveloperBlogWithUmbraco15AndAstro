@@ -9,6 +9,5 @@ import type { CodeSnippetComponentElementModel } from './codeSnippetComponentEle
 import type { ImageComponentElementModel } from './imageComponentElementModel';
 import type { QuoteComponentElementModel } from './quoteComponentElementModel';
 import type { RichTextComponentElementModel } from './richTextComponentElementModel';
-import type { CompositionPageMetaDataElementModel } from './compositionPageMetaDataElementModel';
 
-export type IApiElementModel = CodeSnippetComponentElementModel | ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel | CompositionPageMetaDataElementModel;
+export type IApiElementModel = CodeSnippetComponentElementModel | ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel;

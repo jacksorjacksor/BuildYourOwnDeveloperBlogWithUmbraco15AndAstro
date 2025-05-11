@@ -15,8 +15,10 @@ const { block } = Astro.props;
 const content = block.content as CodeSnippetComponentElementModel;
 const syntax = content.properties?.codeSnippetSyntax as BundledLanguage;
 const codeSnippet = content.properties?.codeSnippet;
+const fileName = content.properties?.fileName;
+const fileNameFallback = ''
 ---
 
 <div class="p-6">
-  <Code code={codeSnippet || ''} lang={syntax || 'js'} wrap={true} />
+  <Code code={codeSnippet || ''} lang={syntax || 'js'} wrap={true} title={fileName || fileNameFallback} />
 </div>
