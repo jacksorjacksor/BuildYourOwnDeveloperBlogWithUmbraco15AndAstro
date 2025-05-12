@@ -1,33 +1,45 @@
 ---
 import Layout from '../../layouts/Layout.astro';
-import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
-import { getCollection } from 'astro:content';
-import MetaData from '../../components/global/MetaData.astro';
-import BlockList from '../../components/BlockList.astro';
+import { formatDate } from '../../helpers/AppHelpers';
 
 export async function getStaticPaths() {
-  const blogCollection = await getCollection('blog');
-
-  const blogArticles = blogCollection.map((article) => {
-    return {
-      params: { slug: getFinalUrlSegment(article.data.slug) },
-      props: {
-        date: article.data.content.createDate,
-        title: article.data.content.properties?.title,
-        components: article.data.content.properties?.components?.items,
-        properties: article.data.content.properties,
+  const blogArticles = [
+    {
+      slug: 'hello-world',
+      date: '2025-05-01',
+      title: 'Hello World',
+      properties: {
+        richtext: {
+          markup:
+            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>',
+        },
       },
-    };
-  });
+    },
+    {
+      slug: 'astro-workshop',
+      date: '2025-05-05',
+      title: 'Astro Workshop',
+      properties: {
+        richtext: {
+          markup:
+            ' <p>Cras vehicula, mi quis euismod ultricies, augue erat egestas libero, quis pretium turpis orci nec purus.</p>',
+        },
+      },
+    },
+  ];
 
-  return blogArticles;
+  return blogArticles.map((article) => ({
+    // Implement params here to set the url. Remember the name of the file sets a convetion of what param name to use.
+    props: {
+      // Pass the article down here so that it is accessible from the Astro props
+    },
+  }));
 }
 
-const { date, title, components, properties } = Astro.props;
+const { article } = Astro.props;
 ---
 
 <Layout>
-  <MetaData slot="meta" metaProps={properties} />
   <section class="py-10 px-8 bg-white dark:bg-dark">
     <div class="mx-auto max-w-7xl flex justify-end md:px-8 pb-8">
       <a
@@ -44,7 +56,7 @@ const { date, title, components, properties } = Astro.props;
             <h1
               class="mb-6 text-[26px] font-bold leading-normal text-dark dark:text-white sm:text-3xl sm:leading-snug md:text-4xl md:leading-snug"
             >
-              {title}
+              {article.title}
             </h1>
             <div class="flex flex-wrap items-center pb-4">
               <div class="flex items-center mb-4">
@@ -64,11 +76,12 @@ const { date, title, components, properties } = Astro.props;
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span>{formatDate(date)}</span>
+                  <span>{formatDate(article.date)}</span>
                 </p>
               </div>
             </div>
-            {components && <BlockList blocks={components} />}
+            <!-- Render basic richtext property -->
+            <div set:html={article.properties.richtext.markup} />
           </div>
         </div>
       </div>
