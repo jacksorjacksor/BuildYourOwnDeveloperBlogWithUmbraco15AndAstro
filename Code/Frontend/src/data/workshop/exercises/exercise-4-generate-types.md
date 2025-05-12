@@ -4,9 +4,7 @@ description: 'Generate TypeScript definations'
 sortOrder: 4
 ---
 
-> 💡Hint
->
-> Make sure the backend CMS is running
+> 💡Make sure the backend CMS is running
 >
 > `dotnet run` from `./Code/Backend/DeveloperBlog.Umbraco`
 
@@ -18,19 +16,19 @@ Think of this as Umbraco Models Builder, but for TypeScript
 
 Orval is already set up for you.
 
-You can see the Orval configuration in the `orval.config.js` file
+You can see the Orval configuration in the `orval.config.js` file.
 
-Going forwards, you can refer to the [Orval documentaion](https://orval.dev/overview) for further exploration.
+In the future, you can refer to the [Orval documentaion](https://orval.dev/overview) for further exploration.
 
 Orval is called via an NPM script in the `package.json` file.
 
-The script you need to run is:
+The script you need to run to generate you TypeScript definitions is:
 
 ```
 npm run umb-ts-generate
 ```
 
-Ensure Umbraco is running before executing
+Ensure Umbraco is running before executing.
 
 Once run, this will generate TypeScript Types and Services in `src/umbraco-client`
 

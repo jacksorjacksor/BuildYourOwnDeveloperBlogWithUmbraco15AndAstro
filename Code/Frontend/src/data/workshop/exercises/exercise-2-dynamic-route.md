@@ -4,19 +4,17 @@ description: 'Astro Familiarisation'
 sortOrder: 2
 ---
 
-Now that you are more familiar with Astro, we will be setting up a dynamic route file ready for us to output our CMS content in coming exercises.
+Now that you're more familiar with Astro, we'll next set up a dynamic route file.
 
-Open the `[slug].astro` file in the `/pages/blog/` directory
+Open the `[slug].astro` file in the **Blog** directory `/pages/blog/`
 
 (**Not** the exercises directory)
 
-This will be out [Dynamic Route](https://docs.astro.build/en/guides/routing/#dynamic-routes) page for the blog articles
+This will be the [Dynamic Route](https://docs.astro.build/en/guides/routing/#dynamic-routes) page for the blog articles.
 
-The file is pre-set with some hardcoded data that will simulate some blog article data.
+The file comes pre-filled with some hardcoded data to simulate blog article content.
 
-Complete the `getStaticPaths()` function by setting the URL for the dynamic page
-
-and passing the data down to be rendered in the page
+Complete the `getStaticPaths()` function by **setting the URL** for the dynamic page and **passing the data through as a prop** so it can be rendered on the page.
 
 > 💡Hint
 >

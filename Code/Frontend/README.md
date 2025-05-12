@@ -6,7 +6,7 @@ Next we will finish up the set up by installing dependencies and making sure eve
 
 ## 1. Install Frontend Dependencies
 
-From the route of the frontend project `./Code/Frontend`
+From the route of the frontend project directory `./Code/Frontend`
 
 Please run the following:
 
@@ -16,7 +16,7 @@ npm install
 
 ## 2. Run the Umbraco to setup the CMS
 
-From the route of the backend project `./Code/Backend/DeveloperBlog.Umbraco`
+From the route of the backend project directory `./Code/Backend/DeveloperBlog.Umbraco`
 
 Please run the following:
 
@@ -24,7 +24,9 @@ Please run the following:
 dotnet run
 ```
 
-## 3. Run the Umbraco to setup the CMS
+This will build and run Umbraco.
+
+## 3. Login to Umbraco
 
 Login to the Umbraco instance on [https://localhost:44385/umbraco/](https://localhost:44385/umbraco/)
 
@@ -54,7 +56,7 @@ Now browse to: [http://localhost:4321](http://localhost:4321/)
 
 ## 6. Tell the teacher you are done 🙋‍♀️
 
-... also help anyone else who might have issues 😊
+... also, help anyone else who may nbe having issues 😊
 
 ## NOTE
 

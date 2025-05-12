@@ -12,6 +12,8 @@ There is a better way!
 
 ### Content Collections
 
+Before we call to the Umbraco Content Delivery API (via our newly generated service), we firstly want to create a reusable collection in Astro.
+
 For this we will be leveraging Astro [Content Collections](https://docs.astro.build/en/guides/content-collections/)
 
 Content Collections allow us to organise and query data, and enable Intellisense and type checking.
@@ -24,7 +26,7 @@ Notice that there is already a collection set up for the Exercise content you ha
 
 This collection used an Astro `glob` loader to load data from markdown files.
 
-We will be using a loader, but calling to get content from Umbraco.
+We will be using a different loader that makes a call to get content from Umbraco.
 
 > 💡Hint
 >
@@ -34,17 +36,9 @@ We will be using a loader, but calling to get content from Umbraco.
 >
 > This has the benefit of being able to switch the source with little effort.
 
-### Custom Content Service
-
-Rather than calling the generated TypeScript services directly, we've introduced an interim layer in the form of the `services/ContentService.ts` file.
-
-This hides some of the more confusing generated names and also allows us to fetch all pages by type, with pagination handled using a 'do'-'while' loop.
-
-This is all setup and ready for you to use.
-
 ### Implement the Blog Content Collection
 
-Use the following snippet to add in the Blog Content Collection
+Use the following snippet to add in the Blog Content Collection into the `content.config.ts` file.
 
 ```
 const blog = defineCollection({
@@ -69,13 +63,23 @@ Once this has been added, be sure to a export it for use:
 export const collections = { workshopExercise, blog };
 ```
 
+### Custom Content Service
+
+Rather than calling the generated TypeScript services directly, notice that we've introduced an interim layer in the form of the `services/ContentService.ts` file.
+
+This hides some of the more confusing generated names and also allows us to fetch all pages by type, with pagination handled using a 'do'-'while' loop.
+
+This has a function called `getAllContentByType` which we are using to get all the blog articles.
+
+This is all setup and ready for you to use.
+
 ### Good to know
 
 Notice we are setting a property called `slug` to `article.route.path`.
 
 This is were the page URL is in the Content Delivery API.
 
-The `schema` is also using [Zod](https://zod.dev/) to ensure we have type safety when using the Content Collection
+The `schema` is also using [Zod](https://zod.dev/) to ensure we have type safety when using the Content Collection.
 
 ### Update The Blog Listing
 

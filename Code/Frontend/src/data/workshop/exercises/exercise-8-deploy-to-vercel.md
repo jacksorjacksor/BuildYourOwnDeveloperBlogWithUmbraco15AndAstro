@@ -1,5 +1,5 @@
 ---
-title: '8 -Deploy to Vercel'
+title: '8 - Deploy to Vercel'
 description: 'Deploy to Vercel'
 sortOrder: 8
 ---

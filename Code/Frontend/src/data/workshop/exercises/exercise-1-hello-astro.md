@@ -4,7 +4,7 @@ description: ''
 sortOrder: 1
 ---
 
-In this exercise you will be exploring the basic Astro setup and getting Astro running with a basic Hello World example.
+In this exercise, you'll be setting up a basic Astro project and getting it running with a simple 'Hello World' example.
 
 ## Warm-up Exercise
 

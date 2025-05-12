@@ -6,9 +6,7 @@ sortOrder: 3
 
 In this exercise you will integrate the Umbraco Content Delivery API directly into your Astro project using JavaScript `fetch` requests.
 
-> 💡Hint
->
-> Make sure the backend CMS is running
+> 💡Make sure the backend CMS is running
 >
 > `dotnet run` from `./Code/Backend/DeveloperBlog.Umbraco`
 

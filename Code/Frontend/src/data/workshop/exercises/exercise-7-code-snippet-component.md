@@ -14,7 +14,7 @@ This is using [Contentment](https://marketplace.umbraco.com/package/umbraco.comm
 
 ### Create a Code Snippet astro component
 
-In the `.src/components/blocks` directory, create a new comonent file called `CodeSnippetComponent.astro`
+In the `.src/components/blocks` directory, create a new file called `CodeSnippetComponent.astro`
 
 Use the following snippet in the file:
 

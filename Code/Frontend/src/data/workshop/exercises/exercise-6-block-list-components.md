@@ -24,7 +24,7 @@ We'll make use of these by extending our `[slug].astro` dynamic route.
 
 ### Implementing The Block List
 
-In our `[slug].astro` file, we want to add in another property called `components` to explicitly set our Block List
+In our `[slug].astro` file, we want to add in another property called `components` to explicitly set our Block List.
 
 Where we are seting the `props` in the `getStaticPaths` function, add the following:
 
@@ -41,7 +41,7 @@ We then want to deconstuct for use in the markup with:
 const { date, title, components, properties } = Astro.props;
 ```
 
-In the markup, there is a comment with the position to render the blocks. Replace taht with
+In the markup, there is a comment with the position to render the blocks. Replace that with:
 
 ```
 {components && <BlockList blocks={components} />}
@@ -51,7 +51,7 @@ Make sure you import the required modules. Eg:
 
 `import BlockList from '../../components/BlockList.astro';`
 
-In VS code you should be able to do this by **CTRL + .**
+In VS code you should be able to do this by **CTRL + .** while the cursor is over the red-underline error indicator.
 
 ### Run Astro
 
