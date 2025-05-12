@@ -22,6 +22,12 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 >
 > and also
 >
-> `props: { article }`
+> ```
+>props: {
+>  date: article.date,
+>  title: article.title,
+>  properties: article.properties,
+>}
+> ```
 
 Run the Astro application and browse to one of the articles to see the data rendering
