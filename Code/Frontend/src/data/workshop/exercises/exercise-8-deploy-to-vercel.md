@@ -4,46 +4,36 @@ description: 'Deploy to Vercel'
 sortOrder: 8
 ---
 
-## WIP Notes
+Now that we have a working Astro blog powered by Umbraco, we can look at hosting it.
 
-**Important!** - The below is draft only. Do not follow along in it's current state.
+For this, we are going to use the cloud platform provider [Vercel](https://vercel.com/)
 
-The below is just a scaffold from an LLM and will need re-working
+This will be free for youy to host up to a certain limit (likely ample for a blog).
 
-We will also need to run this from a standing start with now Vercel account setup so we can detail how to setup and connect via thw CLI tool.
+## Creare a Vercel account
 
-It is also likely that we will have it installed as part of the initial `npm i`
+If you have not already done so, create an accrount with Vercel.
 
-We will also likely have a Vercel config file set up so that there is little configuration to do.
+## Login to Vercel via the CLI
 
-Ideally we want it to just be:
+If you do not already use Vercel, you will need to login to your Vercel account via the command line.
 
-- Have Vercel account set up before attending (back up instructions for people to be able to do that during this exercise if needed - also fine for them to just listen and learn and action in future)
-- Link Vercel CLI to account via command line call
-- Run a deploy script
-
-## Introduction
-
-In this exercise, you will learn how to deploy the Astro application to Vercel using the Vercel CLI.
-
-By the end, you will have a reproducible, cost-efficient workflow that publishes only the static output to Vercel’s global CDN.
-
-## 1. Install Vercel CLI locally
-
-Open a terminal in your Astro project directory.
-
-Run the following command to add Vercel CLI as a dev dependency:
-
-npm install --save-dev vercel
-
-This ensures every workshop participant uses the same CLI version without global installs.
-
-## 2. Initialise Vercel in your project
-
-In the project root, run:
+To do this run:
 
 ```
-npx vercel
+vercel login
+```
+
+The `vercel.json` file is already set up at the root of the project with the basic settings we need.
+
+## Link the blog project to Vercel
+
+Once logged in, you next need to link this project to Vercel.
+
+To do this, run the pre-configured script from the `package.json` file:
+
+```
+npm run vercel-link
 ```
 
 When prompted:
@@ -60,7 +50,7 @@ Press Enter to accept `./`.
 
 **What’s your build command?**
 
-Enter `npm run build`.
+Leave this empty as we will be pre-building the project.
 
 **Which directory is your build output located in?**
 
@@ -68,58 +58,30 @@ Enter `dist/`.
 
 A `vercel.json` file and a hidden `.vercel/` folder will appear, linking your local folder to the Vercel project.
 
-## 3. Add a deploy script
+This will create a project in Vercel.
 
-Open `package.json` and update the scripts section:
+Browse to the Vercel dashboard to see the project.
 
-```
-{
-"scripts": {
-"build": "astro build",
-"deploy": "npm run build && npx vercel --prod --prebuilt --confirm"
-}
-}
-```
+It will also create a `.vercel/project.json` file that is used to create the on-going link to the project.
 
-Explanation:
+## Deploy to Vercel
 
-- `npm run build` runs Astro’s static build.
-- `npx vercel --prod --prebuilt --confirm` tells Vercel to deploy the prebuilt `dist/` folder to production, skipping interactive prompts.
+Now that you have linked the project, let's deploy what we have so far!
 
-## 4. Review or customise vercel.json
-
-A minimal `vercel.json` looks like:
-
-```
-{
-"builds": [
-{ "src": "package.json", "use": "@vercel/static-build" }
-],
-"routes": [
-{ "handle": "filesystem" },
-{ "src": "/.*", "dest": "/index.html" }
-]
-}
-```
-
-- `@vercel/static-build` uses your build script to generate static assets.
-- `routes` serves files directly and falls back to `index.html` for client-side routing.
-
-## 5. Deploy to Vercel
-
-Whenever you’re ready, in your terminal run:
+To do this, run the pre-configured script:
 
 ```
 npm run deploy
 ```
 
-You will see logs as Vercel uploads `dist/` and publishes your site to a live URL.
+This will build the project and then push the changes to Vercel.
 
-## 6. Summary
+Once complete, browse to the Vercel dashboard and click on the link to see you live blog 🙌
 
-- A local Vercel CLI installation ensures consistency and no global pollution.
-- Initialization links your repo to a Vercel project and generates configuration.
-- A single deploy script builds and publishes your Astro site.
-- Only static assets are hosted, keeping costs minimal.
+### Note
 
-Now you’re all set to experiment: update your local CMS content, run `npm run deploy` again, and watch your changes go live instantly on Vercel!
+For this set up the Umbraco instance will continue to be locally managed. We are only deploying the static assets built by Astro.
+
+If you would like to host the CMS too - you can look at doing this in Azure / Umbraco Cloud or similar as an extra curricular activity.
+
+If you do continue down the locally hosted route - make sure you consider some redundency for your data.
