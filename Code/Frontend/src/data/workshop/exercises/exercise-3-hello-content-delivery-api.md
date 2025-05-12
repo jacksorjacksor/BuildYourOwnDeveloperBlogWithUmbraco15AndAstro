@@ -4,6 +4,10 @@ description: 'Basic content fetch from the Content Delivery API'
 sortOrder: 3
 ---
 
+You can checkout `checkpoint/exersise-3` if needed.
+
+-
+
 In this exercise you will integrate the Umbraco Content Delivery API directly into your Astro project using JavaScript `fetch` requests.
 
 > 💡Make sure the backend CMS is running
