@@ -1,5 +1,5 @@
 ---
-title: '9 - RSS Feed'
+title: 'Bonus - RSS Feed'
 description: 'Add an RSS feed'
 sortOrder: 9
 ---

@@ -41,7 +41,7 @@ We then want to deconstuct for use in the markup with:
 const { date, title, components, properties } = Astro.props;
 ```
 
-In the markup, there is a comment with the position to render the blocks. Replace that with:
+In the markup, replace where we are currently rendering the Rich Texr=t property with the following:
 
 ```
 {components && <BlockList blocks={components} />}
