@@ -18,7 +18,7 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 
 > 💡Hint
 >
-> Use `params: { slug: urlSegment }`
+> Use `params: { slug: article.slug  }`
 >
 > and also
 >
