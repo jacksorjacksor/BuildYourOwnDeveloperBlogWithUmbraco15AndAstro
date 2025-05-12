@@ -1,22 +1,14 @@
 ---
-title: '4 - Content Delivery API'
+title: '3 - Content Delivery API'
 description: 'Basic content fetch from the Content Delivery API'
-sortOrder: 4
+sortOrder: 3
 ---
 
 In this exercise you will integrate the Umbraco Content Delivery API directly into your Astro project using JavaScript `fetch` requests.
 
-### Objectives
-
-- Scaffold a basic Astro file from the cloned repository.
-
-- Use the `fetch` API within an `.astro` component to retrieve content from Umbraco.
-
-- Render the fetched data in your page template.
-
-- Observe how simple it is to set up direct API calls in Astro.
-
-- Evaluate the limitations of this direct-fetch approach before moving on to more robust patterns.
+> 💡Make sure the backend CMS is running
+>
+> `dotnet run` from `./Code/Backend/DeveloperBlog.Umbraco`
 
 ### Implement the Fetch Request
 
@@ -31,3 +23,9 @@ let data = await fetch(
 
 let blogs = await data.json();
 ```
+
+### 🤔💭
+
+- Observe how simple it is to set up direct API calls in Astro.
+
+- Evaluate the limitations of this direct-fetch approach before moving on to more robust patterns.

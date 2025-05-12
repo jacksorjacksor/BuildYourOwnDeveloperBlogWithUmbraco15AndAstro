@@ -1,48 +1,63 @@
-# Astro Starter Kit: Basics
+# Build Your Own Developer Blog: Setup
 
-```sh
-npm create astro@latest -- --template basics
+If you have made it this far you have already checked out the repository - well done and welcome! 👋
+
+Next we will finish up the set up by installing dependencies and making sure everything is working.
+
+## 1. Install Frontend Dependencies
+
+From the route of the frontend project directory `./Code/Frontend`
+
+Please run the following:
+
+```
+npm install
 ```
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## 2. Run the Umbraco to setup the CMS
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+From the route of the backend project directory `./Code/Backend/DeveloperBlog.Umbraco`
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+Please run the following:
 
-## 🚀 Project Structure
-
-Inside of your Astro project, you'll see the following folders and files:
-
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
+```
+dotnet run
 ```
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+This will build and run Umbraco.
 
-## 🧞 Commands
+## 3. Login to Umbraco
 
-All commands are run from the root of the project, from a terminal:
+Login to the Umbraco instance on [https://localhost:44385/umbraco/](https://localhost:44385/umbraco/)
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+**Credentials**<br>
+admin@example.com<br>
+1234567890
 
-## 👀 Want to learn more?
+## 4. Import uSync
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+From the uSync Dashboard in Settings
+
+[https://localhost:44385/umbraco/section/settings/workspace/usync-root](https://localhost:44385/umbraco/section/settings/workspace/usync-root)
+
+Run **Import Everything**
+
+## 5. Run Astro
+
+From the route of the backend project `./Code/Frontend`
+
+Please run the following:
+
+```
+npm run dev
+```
+
+Now browse to: [http://localhost:4321](http://localhost:4321/)
+
+## 6. Tell the teacher you are done 🙋‍♀️
+
+... also, help anyone else who may nbe having issues 😊
+
+## NOTE
+
+For the next exercises you will be following along the content in the Astro application [http://localhost:4321/exercises](http://localhost:4321/exercises)

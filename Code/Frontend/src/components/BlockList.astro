@@ -21,7 +21,9 @@ const COMPONENT_MAP = {
 
 {
   blocks?.map((component) => {
-    const BlockComponent = COMPONENT_MAP[component.content.contentType];
-    return BlockComponent ? <BlockComponent block={component} /> : null;
+    const key = component.content.contentType;
+    if (!(key in COMPONENT_MAP)) return null;
+    const BlockComponent = COMPONENT_MAP[key as keyof typeof COMPONENT_MAP];
+    return <BlockComponent block={component} />;
   })
 }

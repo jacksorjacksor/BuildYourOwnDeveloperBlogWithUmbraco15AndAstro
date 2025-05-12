@@ -1,7 +1,7 @@
 ---
-title: '10 - RSS Feed'
+title: '9 - RSS Feed'
 description: 'Add an RSS feed'
-sortOrder: 10
+sortOrder: 9
 ---
 
 TBC
