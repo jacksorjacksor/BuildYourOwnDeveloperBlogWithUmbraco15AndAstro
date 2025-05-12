@@ -17,4 +17,4 @@ const workshopExercise = defineCollection({
 
 // Exercise 5 - Implement Blog Content Collection here
 
-export const collections = { workshopExercise, blog };
+export const collections = { workshopExercise };
