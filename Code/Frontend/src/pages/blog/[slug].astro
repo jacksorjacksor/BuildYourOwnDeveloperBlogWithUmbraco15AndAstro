@@ -29,14 +29,14 @@ export async function getStaticPaths() {
   ];
 
   return blogArticles.map((article) => ({
-    // Implement params here to set the url. Remember the name of the file sets a convetion of what param name to use.
+    // Exercise 2 - Implement params here to set the url. Remember the name of the file sets a convetion of what param name to use.
     props: {
-      // Pass the article down here so that it is accessible from the Astro props
+      // Exercise 2 - Set props here so that it is accessible from the Astro props
     },
   }));
 }
 
-const { article } = Astro.props;
+const { date, title, properties } = Astro.props;
 ---
 
 <Layout>
@@ -56,7 +56,7 @@ const { article } = Astro.props;
             <h1
               class="mb-6 text-[26px] font-bold leading-normal text-dark dark:text-white sm:text-3xl sm:leading-snug md:text-4xl md:leading-snug"
             >
-              {article.title}
+              {title}
             </h1>
             <div class="flex flex-wrap items-center pb-4">
               <div class="flex items-center mb-4">
@@ -76,12 +76,12 @@ const { article } = Astro.props;
                         fill="currentColor"></path>
                     </svg>
                   </span>
-                  <span>{formatDate(article.date)}</span>
+                  <span>{formatDate(date)}</span>
                 </p>
               </div>
             </div>
             <!-- Render basic richtext property -->
-            <div set:html={article.properties.richtext.markup} />
+            <div set:html={properties.richtext.markup} />
           </div>
         </div>
       </div>
