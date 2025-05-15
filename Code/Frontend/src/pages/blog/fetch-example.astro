@@ -1,0 +1,63 @@
+---
+import SiteImage from '../../components/elements/SiteImage.astro';
+import { formatDate } from '../../helpers/AppHelpers';
+import Layout from '../../layouts/Layout.astro';
+
+// Exercise 3 - Observe the direct 'fetch' request to Content Delivery API here
+let data = await fetch(
+  'http://localhost:48006/umbraco/delivery/api/v2/content?take=100&filter=contentType:blogArticlePage'
+);
+
+// 🤔 It's simple and effective... but a bit verbose and error prone
+
+let blogs = await data.json();
+---
+
+<Layout>
+  <div class="bg-white py-10">
+    <div class="mx-auto max-w-7xl px-6 lg:px-8">
+      <div class="mx-auto max-w-2xl text-center">
+        <h2 class="text-balance text-4xl font-semibold tracking-tight text-gray-900 sm:text-5xl">
+          Blog Articles
+        </h2>
+        <p class="mt-2 text-lg/8 text-gray-600">Thoughts and learnings from Umbraco and beyond</p>
+      </div>
+      <div
+        class="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+      >
+        {
+          // 💭 We don't have any type safety with this appraoch so we've had to use the 'any' TypeScript type
+          blogs.items.map((article: any) => (
+            <article class="flex flex-col items-start justify-between">
+              <div class="relative w-full">
+                <SiteImage
+                  mediaPicker={article.properties?.summaryImage}
+                  cssClass="aspect-video w-full rounded-2xl bg-gray-100 object-cover sm:aspect-[2/1] lg:aspect-[3/2]"
+                />
+                <div class="absolute inset-0 rounded-2xl ring-1 ring-inset ring-gray-900/10" />
+              </div>
+              <div class="max-w-xl">
+                <div class="mt-8 flex items-center gap-x-4 text-xs">
+                  <time datetime="2020-03-16" class="text-gray-500">
+                    {formatDate(article.createDate)}
+                  </time>
+                </div>
+                <div class="group relative">
+                  <h3 class="mt-3 text-lg/6 font-semibold text-gray-900 group-hover:text-gray-600">
+                    <a href={article.slug}>
+                      <span class="absolute inset-0" />
+                      {article.properties?.title}
+                    </a>
+                  </h3>
+                  <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
+                    {article.properties?.summaryDescription}
+                  </p>
+                </div>
+              </div>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</Layout>
