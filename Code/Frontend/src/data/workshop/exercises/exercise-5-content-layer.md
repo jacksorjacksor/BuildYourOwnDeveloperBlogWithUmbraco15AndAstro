@@ -83,7 +83,7 @@ The `schema` is also using [Zod](https://zod.dev/) to ensure we have type safety
 
 ### Update The Blog Listing
 
-Replace the Component Script in the blog `index.astro` with:
+Add the following snippet to the Component Script in the blog `index.astro` with:
 
 ```
 import Layout from '../../layouts/Layout.astro';
@@ -91,11 +91,11 @@ import { getCollection } from 'astro:content';
 const blogs = await getCollection('blog');
 ```
 
-So much cleaner ☺️
+So much cleaner when compared to a direct `fetch` request ☺️
 
 ### Update The Dynamic Blog Page
 
-Replace the Component Script in the blog `[slug].astro` with:
+Add the following snippet to the Component Script in the blog `[slug].astro` with:
 
 ```
 import Layout from '../../layouts/Layout.astro';
