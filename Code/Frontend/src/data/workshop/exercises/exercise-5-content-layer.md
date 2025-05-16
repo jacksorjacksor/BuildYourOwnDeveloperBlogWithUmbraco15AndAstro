@@ -57,6 +57,8 @@ const blog = defineCollection({
 });
 ```
 
+You can uncomment the `import` statements at the top of the file.
+
 Once this has been added, be sure to a export it for use:
 
 ```

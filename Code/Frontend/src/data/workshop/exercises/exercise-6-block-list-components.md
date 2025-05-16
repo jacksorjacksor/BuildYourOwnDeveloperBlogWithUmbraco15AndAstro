@@ -41,7 +41,7 @@ We then want to deconstuct for use in the markup with:
 const { date, title, components, properties } = Astro.props;
 ```
 
-In the markup, replace where we are currently rendering the Rich Texr=t property with the following:
+In the markup, replace where we are currently rendering the Rich Text property with the following:
 
 ```
 {components && <BlockList blocks={components} />}
