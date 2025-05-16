@@ -1,16 +1,70 @@
 # Build Your Own Developer Blog with Umbraco 15 & Astro
 
-## Workshop date
+# Build Your Own Developer Blog: Setup
 
-Tuesday 17th June 2025
+If you have made it this far you have already checked out the repository - well done and welcome! 👋
 
-## Proposal
+Next we will finish up the set up by installing dependencies and making sure everything is working.
 
-> Join Umbraco MVPs Richard Jackson and Adam Prendergast for a hands-on workshop where you’ll create a fully functional developer blog using Umbraco 15’s Content Delivery API and the popular static site generator, Astro.
-> 
-> We’ll be using the Delivery API Extensions package for generating strongly typed classes and mapping those classes to Typescript with OpenAPI TypeScript. We’ll also be using the Contentment's code editor along with PrismJS to provide code snippet highlighting. We’ll then be looking to generate and deploy our site onto hosting platforms such as Vercel automatically through Umbraco’s native webhook integrations. As a little bonus, we can add RSS support and request to be added to the Umbraco Community Blogs list!
-> 
-> Whether you’re a solo developer or part of a larger team, this workshop will give you practical, real-world experience in building and deploying a modern developer blog - leaving you with a live site and all the know-how to keep it growing.
+## 1. Install Frontend Dependencies
+
+From the route of the frontend project directory `./Code/Frontend`
+
+Please run the following:
+
+```
+npm install
+```
+
+## 2. Run the Umbraco to setup the CMS
+
+From the route of the backend project directory `./Code/Backend/DeveloperBlog.Umbraco`
+
+Please run the following:
+
+```
+dotnet run
+```
+
+This will build and run Umbraco.
+
+## 3. Login to Umbraco
+
+Login to the Umbraco instance on [https://localhost:44385/umbraco/](https://localhost:44385/umbraco/)
+
+**Credentials**<br>
+admin@example.com<br>
+1234567890
+
+## 4. Import uSync
+
+From the uSync Dashboard in Settings
+
+[https://localhost:44385/umbraco/section/settings/workspace/usync-root](https://localhost:44385/umbraco/section/settings/workspace/usync-root)
+
+Run **Import Everything**
+
+## 5. Run Astro
+
+From the route of the backend project `./Code/Frontend`
+
+Please run the following:
+
+```
+npm run dev
+```
+
+Now browse to: [http://localhost:4321](http://localhost:4321/)
+
+## 6. Tell the teacher you are done 🙋‍♀️
+
+... also, help anyone else who may nbe having issues 😊
+
+## NOTE
+
+For the next exercises you will be following along the content in the Astro application [http://localhost:4321/exercises](http://localhost:4321/exercises)
+
+---
 
 ## Sample Blogs
 
