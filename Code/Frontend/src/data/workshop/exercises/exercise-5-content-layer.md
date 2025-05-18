@@ -35,7 +35,7 @@ The collections are configured in `content.config.ts` localed in the route of th
 
 Notice that there is already a collection set up for the Exercise content you have been using.
 
-This collection used an Astro `glob` loader to load data from markdown files. More details about this process can be found in the [Astro Content Loader API](https://docs.astro.build/en/reference/content-loader-reference/) docs.
+This collection used an Astro `[glob](https://docs.astro.build/en/reference/content-loader-reference/#glob-loader)` loader to load data from markdown files. More details about this process can be found in the [Astro Content Loader API](https://docs.astro.build/en/reference/content-loader-reference/) docs.
 
 We will be using a different loader that makes a call to get content from Umbraco.
 

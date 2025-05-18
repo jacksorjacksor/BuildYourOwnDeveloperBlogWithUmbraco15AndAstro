@@ -5,6 +5,8 @@ import tailwindcss from '@tailwindcss/vite';
 
 import expressiveCode from 'astro-expressive-code';
 
+import { targetBlank } from './src/plugins/targetBlank';
+
 // https://astro.build/config
 export default defineConfig({
   site: 'https://your-domain-here.com',
@@ -24,4 +26,10 @@ export default defineConfig({
   },
 
   integrations: [expressiveCode()],
+
+  markdown: {
+    rehypePlugins:[
+      targetBlank
+    ]
+  }
 });
