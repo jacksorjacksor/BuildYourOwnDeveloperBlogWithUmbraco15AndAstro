@@ -2,6 +2,9 @@
 title: '5 - Blog Content Collection'
 description: ''
 sortOrder: 5
+branchInfo:
+    name: 'checkpoint/exercise-5'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now that we have TypeScript types to work with, we can look to update our Umbraco implementation with something more robust.
@@ -22,9 +25,17 @@ Content Collections allow us to organise and query data, and enable Intellisense
 
 The collections are configured in `content.config.ts` localed in the route of the `src` directory
 
+```
+.
+└── Code/
+    └── Frontend/
+        └── src/
+            └── content.config.ts
+```
+
 Notice that there is already a collection set up for the Exercise content you have been using.
 
-This collection used an Astro `glob` loader to load data from markdown files.
+This collection used an Astro `glob` loader to load data from markdown files. More details about this process can be found in the [Astro Content Loader API](https://docs.astro.build/en/reference/content-loader-reference/) docs.
 
 We will be using a different loader that makes a call to get content from Umbraco.
 
@@ -40,7 +51,7 @@ We will be using a different loader that makes a call to get content from Umbrac
 
 Use the following snippet to add in the Blog Content Collection into the `content.config.ts` file.
 
-```
+```ts title=./Code/Frontend/src/content.config.ts
 const blog = defineCollection({
   loader: async () => {
     const response = await getAllContentByType('blogArticlePage');
@@ -57,15 +68,24 @@ const blog = defineCollection({
 });
 ```
 
-Once this has been added, be sure to a export it for use:
+Once this has been added, be sure to a export it for use in other files:
 
-```
+```ts title=.Code/Frontend/src/content.config.ts
 export const collections = { workshopExercise, blog };
 ```
 
 ### Custom Content Service
 
 Rather than calling the generated TypeScript services directly, notice that we've introduced an interim layer in the form of the `services/ContentService.ts` file.
+
+```
+.
+└── Code/
+    └── Frontend/
+        └── src/
+            └── services/
+                └── ContentService.ts ⬅️
+```
 
 This hides some of the more confusing generated names and also allows us to fetch all pages by type, with pagination handled using a 'do'-'while' loop.
 
@@ -85,7 +105,7 @@ The `schema` is also using [Zod](https://zod.dev/) to ensure we have type safety
 
 Replace the Component Script in the blog `index.astro` with:
 
-```
+```ts title=./Code/Frontend/src/pages/blog/index.astro
 import Layout from '../../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 const blogs = await getCollection('blog');
@@ -97,7 +117,7 @@ So much cleaner ☺️
 
 Replace the Component Script in the blog `[slug].astro` with:
 
-```
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
 import { getFinalUrlSegment } from '../../helpers/AppHelpers';
 import { getCollection } from 'astro:content';

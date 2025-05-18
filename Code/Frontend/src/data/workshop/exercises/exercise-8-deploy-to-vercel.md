@@ -2,6 +2,9 @@
 title: '8 - Deploy to Vercel'
 description: 'Deploy to Vercel'
 sortOrder: 8
+branchInfo:
+    name: 'checkpoint/exercise-8'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now that we have a working Astro blog powered by Umbraco, we can look at hosting it.
