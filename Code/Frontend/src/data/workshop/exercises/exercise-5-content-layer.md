@@ -23,14 +23,14 @@ Content Collections allow us to organise and query data, and enable Intellisense
 
 ### Configuring a Blog Content Collection
 
-The collections are configured in `content.config.ts` localed in the route of the `src` directory
+The collections are configured in `content.config.ts` (⭐) localed in the route of the `src` directory:
 
 ```
 .
 └── Code/
     └── Frontend/
         └── src/
-            └── content.config.ts
+            └── content.config.ts ⭐
 ```
 
 Notice that there is already a collection set up for the Exercise content you have been using.
@@ -84,7 +84,7 @@ Rather than calling the generated TypeScript services directly, notice that we'v
     └── Frontend/
         └── src/
             └── services/
-                └── ContentService.ts ⬅️
+                └── ContentService.ts ⭐
 ```
 
 This hides some of the more confusing generated names and also allows us to fetch all pages by type, with pagination handled using a 'do'-'while' loop.

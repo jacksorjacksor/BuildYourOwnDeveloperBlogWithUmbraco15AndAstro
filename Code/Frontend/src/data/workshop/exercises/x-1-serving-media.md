@@ -32,7 +32,7 @@ In a nutshell... host the media in Azure blob storage and manage the media endpo
 
 ### Explaining the dynamic glob import
 
-```
+```ts title=./Code/Frontend/src/helpers/MediaHelper.ts wrap
 const images = import.meta.glob<{ default: ImageMetadata }>(
   '/src/assets/media/**/*.{jpg,png,webp}',
   { eager: true }
@@ -41,20 +41,20 @@ const images = import.meta.glob<{ default: ImageMetadata }>(
 
 This scans the project's /src/assets/media folder for any .jpg, .png or .webp file and creates an object where each file path is a key.
 
-The generic `{ default: ImageMetadata }` Tells TypeScript that each module it finds will export a default value matching Astro's ImageMetadata type, so you get full compile-time safety.
+The generic `{ default: ImageMetadata }` tells TypeScript that each module it finds will export a default value matching Astro's ImageMetadata type, so you get full compile-time safety.
 
-`{ eager: true }` Forces Vite/Astro to import every matched file immediately at build time (not lazily), giving you a ready-to-use map rather than promises.
+`{ eager: true }` forces Vite/Astro to import every matched file immediately at build time (not lazily), giving you a ready-to-use map rather than promises.
 
 Using an eager glob to pull in metadata for every image does carry a few trade-offs:
 
-Build-time overhead:
+### Build-time overhead:
 Every matched file is parsed and its metadata bundled at build time, so the more images you have, the longer your build and memory usage will be.
 
-Runtime performance notes:
-Once the site is built, looking up images[key].default is just a quick object property access – it has virtually zero cost in the browser. Your actual image downloads and <Image> processing happen exactly as before.
+### Runtime performance notes:
+Once the site is built, looking up images[key].default is just a quick object property access – it has virtually zero cost in the browser. Your actual image downloads and `<Image>` processing happen exactly as before.
 
-Alternatives for scale:
-Switch to non-eager globs (import.meta.glob without eager) so you only load metadata for images you actually reference at runtime.
+### Alternatives for scale:
+Switch to non-eager globs (`import.meta.glob` without eager) so you only load metadata for images you actually reference at runtime.
 
 Split large asset folders into smaller chunks and import only what each page needs.
 

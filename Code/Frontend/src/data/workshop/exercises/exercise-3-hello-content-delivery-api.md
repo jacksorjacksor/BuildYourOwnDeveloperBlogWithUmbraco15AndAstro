@@ -17,7 +17,7 @@ In this exercise you will integrate the [Umbraco Content Delivery API](https://d
 
 ### Implement the Fetch Request
 
-Open `blog/index.astro` in your editor:
+Open `blog/index.astro` (⭐) in your editor:
 
 ```
 .
@@ -26,7 +26,7 @@ Open `blog/index.astro` in your editor:
         └── src/
             └── pages/
                 └── blog/
-                    └── index.astro ⬅️
+                    └── index.astro ⭐
 ```
 
 At the top of the file, add a fetch call inside the Astro [Component Script](https://docs.astro.build/en/basics/astro-components/#the-component-script):

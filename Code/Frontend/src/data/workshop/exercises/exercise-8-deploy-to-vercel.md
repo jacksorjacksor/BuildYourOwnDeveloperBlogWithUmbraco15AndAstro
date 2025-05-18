@@ -23,7 +23,7 @@ If you do not already use Vercel, you will need to login to your Vercel account 
 
 To do this run:
 
-```
+```bash title=Code/Frontend
 vercel login
 ```
 
@@ -35,7 +35,7 @@ Once logged in, you next need to link this project to Vercel.
 
 To do this, run the pre-configured script from the `package.json` file:
 
-```
+```bash title=Code/Frontend
 npm run vercel-link
 ```
 
@@ -73,7 +73,7 @@ Now that you have linked the project, let's deploy what we have so far!
 
 To do this, run the pre-configured script:
 
-```
+```bash title=Code/Frontend
 npm run deploy
 ```
 

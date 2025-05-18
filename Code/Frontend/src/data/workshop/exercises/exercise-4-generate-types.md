@@ -23,16 +23,16 @@ Think of this as Umbraco Models Builder, but for TypeScript
 
 In the future, you can refer to the [Orval documentaion](https://orval.dev/overview) for further exploration.
 
-You can see the Orval configuration in the `orval.config.js` file.
+You can see the Orval configuration in the `orval.config.js` file (1️⃣).
 
-Orval is called via an NPM script in the `package.json` file.
+Orval is called via an NPM script in the `package.json` file (2️⃣).
 
 ```
 .
 └── Code/
     └── Frontend/
-        ├── orval.config.js
-        └── package.json
+        ├── orval.config.js 1️⃣
+        └── package.json 2️⃣
 ```
 
 The command you need to run the NPM script which generates the TypeScript definitions is:
@@ -43,22 +43,21 @@ npm run umb-ts-generate
 
 Ensure Umbraco is running before executing.
 
-Once run, this will generate TypeScript Types and Services in `src/umbraco-client`
+Once run, this will generate TypeScript Types and Services in `src/umbraco-client` (1️⃣)
 
-The Types are located under `src/umbraco-client/model`
+The Types are located under `src/umbraco-client/model` (2️⃣)
 
-An example of a generated type safe service can be found in `src/umbraco-client/content/content.ts`
+An example of a generated type safe service can be found in `src/umbraco-client/content/content.ts` (3️⃣)
 
 ```
 .
 └── Code/
     └── Frontend/
         └── src/
-            └── umbraco-client/
+            └── umbraco-client/ 1️⃣
                 ├── content/
-                │   └── content.ts
-                ├── media
-                └── model
+                │   └── content.ts 3️⃣
+                └── model 2️⃣
 ```
 
 ---

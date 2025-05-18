@@ -9,7 +9,7 @@ branchInfo:
 
 Now that you're more familiar with Astro, we'll next set up a dynamic route file.
 
-Within the `Frontend` project, open `pages/blog/[slug].astro`:
+Within the `Frontend` project, open `pages/blog/[slug].astro` (⭐):
 
 ```
 .
@@ -18,10 +18,9 @@ Within the `Frontend` project, open `pages/blog/[slug].astro`:
         └── src/
             └── pages/
                 ├── blog/
-                │   └── [slug].astro ⬅️
+                │   └── [slug].astro ⭐
                 └── exercises/ ⚠️ not this folder!
 ```
-
 
 This will be the [Dynamic Route](https://docs.astro.build/en/guides/routing/#dynamic-routes) page for the blog articles.
 

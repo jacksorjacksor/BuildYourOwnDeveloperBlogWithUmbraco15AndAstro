@@ -10,11 +10,11 @@ Next we will finish up the set up by installing dependencies and making sure eve
 
 ## 1. Install Frontend Dependencies
 
-From the route of the frontend project `./Code/Frontend`
+From the route of the frontend project `./Code/Frontend/`
 
 Please run the following:
 
-```
+```bash title=Code/Frontend
 npm install
 ```
 
@@ -24,7 +24,7 @@ From the route of the backend project `./Code/Backend/DeveloperBlog.Umbraco`
 
 Please run the following:
 
-```
+```bash title=Code/Backend/DeveloperBlog.Umbraco/
 dotnet run
 ```
 
@@ -34,7 +34,7 @@ From the route of the backend project `./Code/Frontend`
 
 Please run the following:
 
-```
+```bash title=Code/Frontend
 npm run dev
 ```
 

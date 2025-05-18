@@ -13,7 +13,7 @@ In this exercise, you'll be setting up a basic Astro project and getting it runn
 
 Familiarise yourself with the Astro syntax and project structure.
 
-Open the `index.astro` at the route of the `/pages/` directory file in your editor.
+Open the `index.astro` (⭐) at the route of the `/pages/` directory file in your editor.
 
 ```
 .
@@ -21,7 +21,7 @@ Open the `index.astro` at the route of the `/pages/` directory file in your edit
     └── Frontend/
         └── src/
             └── pages/
-                └── index.astro ⬅️
+                └── index.astro ⭐
 ```
 
 Use the imported Layout component and render some simple HTML content within it.
