@@ -29,6 +29,13 @@ const { Content } = await render(exercise);
     </div>
     <div class="mx-auto prose lg:prose-xl">
       <h1 class="mb-2 text-lg font-semibold">{exercise.data.title}</h1>
+
+      {exercise.data.branchInfo ? (
+        <p class="text-sm text-gray-500">
+          🌿 <a href={exercise.data.branchInfo.url} target="_blank">{exercise.data.branchInfo.name}</a>
+        </p>
+      ) : null}
+
       <Content />
     </div>
     <div class="mx-auto max-w-7xl md:px-8 pt-12 flex justify-end">

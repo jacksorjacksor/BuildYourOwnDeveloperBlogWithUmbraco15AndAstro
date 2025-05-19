@@ -10,6 +10,10 @@ const workshopExercise = defineCollection({
     title: z.string(),
     description: z.string(),
     sortOrder: z.number(),
+    branchInfo: z.object({
+      name: z.string(),
+      url: z.string(),
+    }).optional()
   }),
 });
 

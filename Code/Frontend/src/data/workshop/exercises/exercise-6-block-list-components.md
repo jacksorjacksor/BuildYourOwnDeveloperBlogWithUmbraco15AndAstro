@@ -2,6 +2,9 @@
 title: '6 - Block List Components'
 description: 'Add Block List components to the blog article'
 sortOrder: 6
+branchInfo:
+    name: 'checkpoint/exercise-6'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 At the moment, we're only rendering some basic Rich Text from the CMS - which is a bit dull 😴

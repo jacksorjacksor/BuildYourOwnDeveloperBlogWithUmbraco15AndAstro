@@ -2,6 +2,9 @@
 title: '7 - Code Snippets'
 description: 'Add a Code Snippet component to the blog article'
 sortOrder: 7
+branchInfo:
+    name: 'checkpoint/exercise-7'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now we know the importance of sharing code, lets look at extending our Block List implementation with a Code Snippet block.
