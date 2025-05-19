@@ -68,7 +68,9 @@ const blog = defineCollection({
 });
 ```
 
-Once this has been added, be sure to a export it for use in other files:
+You can uncomment the `import` statements at the top of the file.
+
+Once this has been added, be sure to a export it for use:
 
 ```ts title=.Code/Frontend/src/content.config.ts
 export const collections = { workshopExercise, blog };
@@ -103,7 +105,7 @@ The `schema` is also using [Zod](https://zod.dev/) to ensure we have type safety
 
 ### Update The Blog Listing
 
-Replace the Component Script in the blog `index.astro` with:
+Add the following snippet to the Component Script in the blog `index.astro` with:
 
 ```ts title=./Code/Frontend/src/pages/blog/index.astro
 import Layout from '../../layouts/Layout.astro';
@@ -111,11 +113,11 @@ import { getCollection } from 'astro:content';
 const blogs = await getCollection('blog');
 ```
 
-So much cleaner ☺️
+So much cleaner when compared to a direct `fetch` request ☺️
 
 ### Update The Dynamic Blog Page
 
-Replace the Component Script in the blog `[slug].astro` with:
+Add the following snippet to the Component Script in the blog `[slug].astro` with:
 
 ```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
