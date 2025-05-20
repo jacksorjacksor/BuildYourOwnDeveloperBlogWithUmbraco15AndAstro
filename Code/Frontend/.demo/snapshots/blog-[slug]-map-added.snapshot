@@ -1,0 +1,36 @@
+---
+import Layout from '../../layouts/Layout.astro';
+
+export async function getStaticPaths() {
+  // Simulate some data coming from the CMS
+  const blogArticles = [
+    {
+      slug: 'hello-world',
+      date: '2025-05-01',
+      title: 'Hello World',
+      properties: {
+        richtext: {
+          markup:
+            '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>',
+        },
+      },
+    },
+    {
+      slug: 'astro-workshop',
+      date: '2025-05-05',
+      title: 'Astro Workshop',
+      properties: {
+        richtext: {
+          markup:
+            ' <p>Cras vehicula, mi quis euismod ultricies, augue erat egestas libero, quis pretium turpis orci nec purus.</p>',
+        },
+      },
+    },
+  ];
+
+  return blogArticles.map((article) => ({
+    // Set the url/slug
+    // Set the properties
+  }));
+}
+---

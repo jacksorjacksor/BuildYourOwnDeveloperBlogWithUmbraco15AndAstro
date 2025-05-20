@@ -53,6 +53,23 @@
       ]
     },
     {
+      "id": "blog-slug-set-slug",
+      "title": "Blog [slug] Set Slug",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-map-added.snapshot",
+          "patch": "patches/blog-[slug]-set-slug.patch"
+        }
+      ]
+    },
+    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",
