@@ -56,7 +56,7 @@
         }
       ]
     },
-        {
+    {
       "id": "open-blog-page",
       "title": "Open Blog Page",
       "description": "",
@@ -121,7 +121,7 @@
           "patch": "patches/blog-[slug]-render-props.patch"
         }
       ]
-    }
+    },
     {
       "id": "open-blog-listing",
       "title": "Open Blog Listing",
