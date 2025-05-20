@@ -4,6 +4,28 @@
   "description": "First open the Astro page, then add the Layout import in a second demo",
   "demos": [
     {
+      "id": "open-slide-1",
+      "title": "Open Slide 1",
+      "description": "Revisit page routing",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/3-2_file-based-routing.png"
+        }
+      ]
+    },
+    {
+      "id": "open-slide-2",
+      "title": "Open Slide 2",
+      "description": "Single level dynamic route",
+      "steps": [
+        {
+          "action": "imagePreview",
+          "path": "./_presentation/4-3-single-level-dynamic-route.png"
+        }
+      ]
+    },
+    {
       "id": "open-blog-dynamic-route",
       "title": "Open Blog [slug].astro",
       "description": "",
@@ -121,30 +143,8 @@
       ]
     },
     {
-      "id": "open-slide-1",
-      "title": "Open Slide 1",
-      "description": "Revisit page routing",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "./_presentation/3-2_file-based-routing.png"
-        }
-      ]
-    },
-    {
-      "id": "open-slide-2",
-      "title": "Open Slide 2",
-      "description": "Single level dynamic route",
-      "steps": [
-        {
-          "action": "imagePreview",
-          "path": "./_presentation/4-3-single-level-dynamic-route.png"
-        }
-      ]
-    },
-    {
       "id": "open-dynamic-route",
-      "title": "Open [slug].astro",
+      "title": "Ax - Open [slug].astro",
       "description": "Open the [slug].astro",
       "steps": [
         {
@@ -159,7 +159,7 @@
     },
     {
       "id": "slug-add-imports",
-      "title": "[slug] Add Imports",
+      "title": "Ax - [slug] Add Imports",
       "description": "",
       "steps": [
         {
@@ -176,7 +176,7 @@
     },
     {
       "id": "slug-add-content-collection",
-      "title": "[slug] Add Content Collection",
+      "title": "Ax - [slug] Add Content Collection",
       "description": "",
       "steps": [
         {
@@ -193,7 +193,7 @@
     },
     {
       "id": "slug-add-props-render",
-      "title": "[slug] Add Props & Render",
+      "title": "Ax - [slug] Add Props & Render",
       "description": "",
       "steps": [
         {
@@ -210,7 +210,7 @@
     },
     {
       "id": "slug-markup-render",
-      "title": "[slug] Add Markup",
+      "title": "Ax - [slug] Add Markup",
       "description": "",
       "steps": [
         {
@@ -227,7 +227,7 @@
     },
     {
       "id": "exercise-index-open",
-      "title": "Listing Open",
+      "title": "Ax - Listing Open",
       "description": "",
       "steps": [
         {
@@ -242,7 +242,7 @@
     },
     {
       "id": "exercise-c-collection",
-      "title": "Listing Add Content Collection",
+      "title": "Ax - Listing Add Content Collection",
       "description": "",
       "steps": [
         {
@@ -259,7 +259,7 @@
     },
     {
       "id": "exercise-render-list",
-      "title": "Listing Render List",
+      "title": "Ax - Listing Render List",
       "description": "",
       "steps": [
         {
