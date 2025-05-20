@@ -70,6 +70,23 @@
       ]
     },
     {
+      "id": "blog-slug-set-props",
+      "title": "Blog [slug] Set Props",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-slug-set.snapshot",
+          "patch": "patches/blog-[slug]-set-props.patch"
+        }
+      ]
+    },
+    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",

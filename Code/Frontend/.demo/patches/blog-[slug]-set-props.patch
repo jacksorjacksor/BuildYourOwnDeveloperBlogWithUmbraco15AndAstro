@@ -1,0 +1,16 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -31,7 +31,11 @@
+   return blogArticles.map((article) => ({
+     // Set the url/slug
+     params: { slug: article.slug },
+     // Set the properties
++    props: {
++      title: article.title,
++      properties: article.properties,
++    },
+   }));
+ }
+ ---
