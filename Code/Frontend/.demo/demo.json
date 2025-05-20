@@ -36,6 +36,23 @@
       ]
     },
     {
+      "id": "blog-slug-add-map",
+      "title": "Blog [slug] Add Map",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-data-added.snapshot",
+          "patch": "patches/blog-[slug]-map.patch"
+        }
+      ]
+    },
+    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",
