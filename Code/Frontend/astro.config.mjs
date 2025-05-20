@@ -25,9 +25,13 @@ export default defineConfig({
     plugins: [tailwindcss()],
   },
 
-  integrations: [expressiveCode()],
+  integrations: [
+    expressiveCode({
+      themes: ['dracula'],
+    })
+  ],
 
-  markdown: {
+  markdown:{
     rehypePlugins:[
       targetBlank
     ]
