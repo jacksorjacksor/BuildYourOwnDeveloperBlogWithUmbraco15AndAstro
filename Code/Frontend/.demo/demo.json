@@ -87,6 +87,40 @@
       ]
     },
     {
+      "id": "blog-slug-deconstruct",
+      "title": "Blog [slug] Deconstruct",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-props-set.snapshot",
+          "patch": "patches/blog-[slug]-deconstruct.patch"
+        }
+      ]
+    },
+    {
+      "id": "blog-slug-output-markup",
+      "title": "Blog [slug] Output Markup",
+      "description": "",
+      "steps": [
+        {
+          "action": "open",
+          "path": "./src/pages/blog/[slug].astro"
+        },
+        {
+          "action": "applyPatch",
+          "path": "./src/pages/blog/[slug].astro",
+          "contentPath": "snapshots/blog-[slug]-deconstructed.snapshot",
+          "patch": "patches/blog-[slug]-output-markup.patch"
+        }
+      ]
+    },
+    {
       "id": "open-slide-1",
       "title": "Open Slide 1",
       "description": "Revisit page routing",

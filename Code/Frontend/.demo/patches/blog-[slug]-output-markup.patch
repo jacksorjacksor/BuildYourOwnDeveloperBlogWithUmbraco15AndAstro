@@ -1,0 +1,14 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -41,4 +41,9 @@
+ 
+ // Deconstruct the props to get access in the mark-up
+ const { title, properties } = Astro.props;
+ ---
++
++<Layout>
++  <h1>{title}</h1>
++  <div set:html={properties.richtext.markup} />
++</Layout>

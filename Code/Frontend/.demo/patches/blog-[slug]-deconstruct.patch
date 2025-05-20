@@ -1,0 +1,13 @@
+Index: /src/pages/blog/[slug].astro
+===================================================================
+--- /src/pages/blog/[slug].astro
++++ /src/pages/blog/[slug].astro
+@@ -37,5 +37,8 @@
+       properties: article.properties,
+     },
+   }));
+ }
++
++// Deconstruct the props to get access in the mark-up
++const { title, properties } = Astro.props;
+ ---
