@@ -4,6 +4,7 @@ import CodeSnippetComponent from './blocks/CodeSnippetComponent.astro';
 import ImageComponent from './blocks/ImageComponent.astro';
 import QuoteComponent from './blocks/QuoteComponent.astro';
 import RichTextComponent from './blocks/RichTextComponent.astro';
+import MarkdownComponent from './blocks/MarkdownComponent.astro';
 
 interface Props {
   blocks: ApiBlockListModelItemsItem[];
@@ -16,6 +17,7 @@ const COMPONENT_MAP = {
   imageComponent: ImageComponent,
   quoteComponent: QuoteComponent,
   codeSnippetComponent: CodeSnippetComponent,
+  markdownComponent: MarkdownComponent
 };
 ---
 
