@@ -28,7 +28,7 @@ const blog = defineCollection({
   },
   schema: z.object({
     slug: z.string(),
-    content: z.any() as ZodType<BlogArticlePageContentModel>, // An 'anything goes' Zod type that we cast to our genertated interface
+    content: z.any() as ZodType<BlogArticlePageContentModel>, // An 'anything goes' Zod type that we cast to our generated interface
   }),
 });
 

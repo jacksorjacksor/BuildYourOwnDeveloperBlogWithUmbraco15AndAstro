@@ -5,8 +5,6 @@ import type {
   MarkdownComponentElementModel,
 } from '../../umbraco-client/model';
 
-import { getCollection, render } from 'astro:content';
-
 interface Props {
   block: ApiBlockListModelItemsItem;
 }
@@ -15,11 +13,8 @@ const { block } = Astro.props;
 const content = block.content as MarkdownComponentElementModel;
 
 const contentAsString = content?.properties?.markdown ?? ''
+const renderedMarkdown = await markdown(contentAsString);
 
 ---
 
-<h1>hi</h1>
-<div
-class="prose prose-li:list-decimal py-5 text-base leading-relaxed text-body-color dark:text-dark-6">
-  {await markdown(contentAsString)}
-</div>
+<div set:html={renderedMarkdown} class="prose prose-li:list-decimal py-5 text-base leading-relaxed text-body-color dark:text-dark-6" />
