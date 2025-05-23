@@ -10,5 +10,6 @@ import type { ImageComponentElementModel } from './imageComponentElementModel';
 import type { QuoteComponentElementModel } from './quoteComponentElementModel';
 import type { RichTextComponentElementModel } from './richTextComponentElementModel';
 import type { CompositionPageMetaDataElementModel } from './compositionPageMetaDataElementModel';
+import type { MarkdownComponentElementModel } from './markdownComponentElementModel';
 
-export type IApiElementModel = CodeSnippetComponentElementModel | ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel | CompositionPageMetaDataElementModel;
+export type IApiElementModel = CodeSnippetComponentElementModel | ImageComponentElementModel | QuoteComponentElementModel | RichTextComponentElementModel | CompositionPageMetaDataElementModel | MarkdownComponentElementModel;

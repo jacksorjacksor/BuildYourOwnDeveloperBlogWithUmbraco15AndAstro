@@ -1,5 +1,6 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
+import markdownIntegration from '@astropub/md'
 
 import tailwindcss from '@tailwindcss/vite';
 
@@ -26,6 +27,7 @@ export default defineConfig({
   },
 
   integrations: [
+    markdownIntegration(),
     expressiveCode({
       themes: ['dracula'],
     })

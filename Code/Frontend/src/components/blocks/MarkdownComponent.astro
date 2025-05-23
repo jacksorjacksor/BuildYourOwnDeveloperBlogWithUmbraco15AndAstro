@@ -1,0 +1,20 @@
+---
+import { markdown } from '@astropub/md'
+import type {
+  ApiBlockListModelItemsItem,
+  MarkdownComponentElementModel,
+} from '../../umbraco-client/model';
+
+interface Props {
+  block: ApiBlockListModelItemsItem;
+}
+
+const { block } = Astro.props;
+const content = block.content as MarkdownComponentElementModel;
+
+const contentAsString = content?.properties?.markdown ?? ''
+const renderedMarkdown = await markdown(contentAsString);
+
+---
+
+<div set:html={renderedMarkdown} class="prose prose-li:list-decimal py-5 text-base leading-relaxed text-body-color dark:text-dark-6" />
