@@ -26,37 +26,6 @@
       ]
     },
     {
-      "id": "run-backend-cms",
-      "title": "Run Backend CMS",
-      "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeTerminalCommand",
-          "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
-        }
-      ]
-    },
-    {
-      "id": "prepare-dev-command",
-      "title": "Open Terminal and Type Dev Command",
-      "description": "Open the VS Code terminal and insert `npm run dev` without running it",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.sendSequence",
-          "args": { "text": "npm run dev" }
-        }
-      ]
-    },
-    {
       "id": "open-blog-page",
       "title": "Open Blog Page",
       "description": "",
@@ -202,6 +171,37 @@
           "path": "./src/pages/blog/index.astro",
           "contentPath": "snapshots/blog-index-basic-list-added.snapshot",
           "patch": "patches/blog-index-list-styled.patch"
+        }
+      ]
+    },
+    {
+      "id": "run-backend-cms",
+      "title": "Run Backend CMS",
+      "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
+        }
+      ]
+    },
+    {
+      "id": "prepare-dev-command",
+      "title": "Open Terminal and Type Dev Command",
+      "description": "Open the VS Code terminal and insert `npm run dev` without running it",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.sendSequence",
+          "args": { "text": "npm run dev" }
         }
       ]
     }
