@@ -243,21 +243,6 @@
       ]
     },
     {
-      "id": "run-backend-cms",
-      "title": "Run Backend CMS",
-      "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
-      "steps": [
-        {
-          "action": "executeVSCodeCommand",
-          "command": "workbench.action.terminal.new"
-        },
-        {
-          "action": "executeTerminalCommand",
-          "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
-        }
-      ]
-    },
-    {
       "id": "prepare-ts-generate-cmd",
       "title": "TS Generate",
       "description": "",
@@ -272,6 +257,21 @@
           "args": {
             "text": "npm run umb-ts-generate"
           }
+        }
+      ]
+    },
+    {
+      "id": "run-backend-cms",
+      "title": "Run Backend CMS",
+      "description": "Open the integrated terminal and run `dotnet run` in the Backend/DeveloperBlog.Umbraco folder",
+      "steps": [
+        {
+          "action": "executeVSCodeCommand",
+          "command": "workbench.action.terminal.new"
+        },
+        {
+          "action": "executeTerminalCommand",
+          "command": "cd ../Backend/DeveloperBlog.Umbraco && dotnet run"
         }
       ]
     },
