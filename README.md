@@ -68,7 +68,7 @@ For the next exercises you will be following along the content in the Astro appl
 
 ## 7. Tell the teacher you are done 🙋‍♀️
 
-... also, help anyone else who may nbe having issues 😊
+... also, help anyone else who may be having issues 😊
 
 ---
 
