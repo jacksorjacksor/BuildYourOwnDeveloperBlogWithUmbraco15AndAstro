@@ -36,6 +36,8 @@ admin@example.com<br>
 
 ## 4. Import uSync
 
+Your Umbraco instance should be populated with some sample articles due to uSync's "Import on Startup" functionality - but if this doesn't work:
+
 From the uSync Dashboard in Settings
 
 [https://localhost:44385/umbraco/section/settings/workspace/usync-root](https://localhost:44385/umbraco/section/settings/workspace/usync-root)
@@ -53,6 +55,8 @@ npm run dev
 ```
 
 Now browse to: [http://localhost:4321](http://localhost:4321/)
+
+...and if this is successful you should see a blank white page! 🙌
 
 ## 6. Tell the teacher you are done 🙋‍♀️
 
