@@ -56,7 +56,8 @@ Notice this uses a simple map to intergrate the content type of the element and 
 
 extend the component map with:
 
-```const COMPONENT_MAP = {
+```
+const COMPONENT_MAP = {
   ...
   codeSnippetComponent: CodeSnippetComponent,
 };
