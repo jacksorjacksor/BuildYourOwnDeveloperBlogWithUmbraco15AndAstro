@@ -21,7 +21,7 @@ In the `.src/components/blocks` directory, create a new file called `CodeSnippet
 
 Use the following snippet in the file:
 
-```
+```js title=".src/components/blocks"
 ---
 import type { BundledLanguage } from 'shiki';
 import { Code } from 'astro:components';
@@ -59,7 +59,8 @@ Notice this uses a simple map to intergrate the content type of the element and 
 
 extend the component map with:
 
-```const COMPONENT_MAP = {
+```js title="./src/components/BlockList.astro"
+const COMPONENT_MAP = {
   ...
   codeSnippetComponent: CodeSnippetComponent,
 };
