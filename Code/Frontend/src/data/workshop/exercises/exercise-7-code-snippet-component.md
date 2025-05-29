@@ -2,6 +2,9 @@
 title: '7 - Code Snippets'
 description: 'Add a Code Snippet component to the blog article'
 sortOrder: 7
+branchInfo:
+    name: 'checkpoint/exercise-7'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now we know the importance of sharing code, lets look at extending our Block List implementation with a Code Snippet block.
@@ -18,7 +21,7 @@ In the `.src/components/blocks` directory, create a new file called `CodeSnippet
 
 Use the following snippet in the file:
 
-```
+```js title=".src/components/blocks"
 ---
 import type { BundledLanguage } from 'shiki';
 import { Code } from 'astro:components';
@@ -56,7 +59,7 @@ Notice this uses a simple map to intergrate the content type of the element and 
 
 extend the component map with:
 
-```
+```js title="./src/components/BlockList.astro"
 const COMPONENT_MAP = {
   ...
   codeSnippetComponent: CodeSnippetComponent,

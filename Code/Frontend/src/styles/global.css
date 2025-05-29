@@ -1,2 +1,16 @@
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
+
+@layer utilities{
+    /* Removes back ticks around code */
+    .prose code::before,
+    .prose code::after {
+        content: none;
+    }
+    
+    /* Removes speech marks around quotes */
+    .prose blockquote p:first-of-type::before,
+    .prose blockquote p:last-of-type::after {
+        content: none;
+    }
+}
