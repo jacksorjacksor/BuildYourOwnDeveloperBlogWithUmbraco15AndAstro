@@ -14,8 +14,10 @@
   },
   "dependencies": {
     "@astrojs/ts-plugin": "^1.10.4",
+    "@astropub/md": "^1.0.0",
     "@tailwindcss/vite": "^4.1.4",
     "astro": "^5.7.9",
+    "astro-expressive-code": "^0.41.2",
     "tailwindcss": "^4.1.4"
   },
   "devDependencies": {

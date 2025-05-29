@@ -2,13 +2,26 @@
 title: '2 - Dynamic Route'
 description: 'Astro Familiarisation'
 sortOrder: 2
+branchInfo:
+    name: 'checkpoint/exercise-2'
+    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now that you're more familiar with Astro, we'll next set up a dynamic route file.
 
-Open the `[slug].astro` file in the **Blog** directory `/pages/blog/`
+Within the `Frontend` project, open `pages/blog/[slug].astro`:
 
-(**Not** the exercises directory)
+```
+.
+└── Code/
+    └── Frontend/
+        └── src/
+            └── pages/
+                ├── blog/
+                │   └── [slug].astro ⬅️
+                └── exercises/ ⚠️ not this folder!
+```
+
 
 This will be the [Dynamic Route](https://docs.astro.build/en/guides/routing/#dynamic-routes) page for the blog articles.
 
@@ -22,13 +35,13 @@ Now let's fix it by implementing the following.
 
 Complete the `getStaticPaths()` function by **setting the URL** for the dynamic page and **passing the data through as a prop** so it can be rendered on the page.
 
-> 💡Hint
+>💡Hint
 >
 > Use `params: { slug: article.slug  }`
 >
 > and also
 >
-> ```
+> ```js title=.Code/Frontend/src/pages/blog/[slug].astro
 > props: {
 >  date: article.date,
 >  title: article.title,
@@ -36,4 +49,4 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 > }
 > ```
 
-Run the Astro application and browse to one of the articles to see the data rendering
+Run the Astro application and browse to one of the articles to see the data rendering.
