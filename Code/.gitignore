@@ -488,3 +488,6 @@ $RECYCLE.BIN/
 **/Umbraco/mediacache/
 *.sqlite.db-wal
 *.sqlite.db-shm
+
+# Removed the package JSON file for workshop to avoid a x-platform dependency issue
+**/package-lock.json
