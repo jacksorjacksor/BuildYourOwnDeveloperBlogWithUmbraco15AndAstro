@@ -40,8 +40,9 @@ This will build and run Umbraco.
 
 Login to the Umbraco instance on [https://localhost:44385/umbraco/](https://localhost:44385/umbraco/)
 
-**Credentials**<br>
-admin@example.com<br>
+**Credentials**
+
+admin@example.com
 1234567890
 
 ## 5. Import uSync
@@ -62,13 +63,13 @@ Please run the following:
 npm run dev
 ```
 
-Now browse to: [http://localhost:4321](http://localhost:4321/)
+Now browse to the exercises page: [http://localhost:4321/exercises](http://localhost:4321/exercises)
 
-For the next exercises you will be following along the content in the Astro application [http://localhost:4321/exercises](http://localhost:4321/exercises)
+You will be following along the exercise content in the Astro application.
 
 ## 7. Tell the teacher you are done 🙋‍♀️
 
-... also, help anyone else who may nbe having issues 😊
+... also, help anyone else who may be having issues 😊
 
 ---
 
