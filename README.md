@@ -1,6 +1,6 @@
 # Build Your Own Developer Blog with Umbraco 15 & Astro
 
-# Build Your Own Developer Blog: Setup
+# Setup
 
 If you have made it this far you have already checked out the repository - well done and welcome! 👋
 
