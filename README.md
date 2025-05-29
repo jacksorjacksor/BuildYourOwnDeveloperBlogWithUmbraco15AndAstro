@@ -47,7 +47,9 @@ admin@example.com
 
 ## 5. Import uSync
 
-From the uSync Dashboard in Settings
+Your Umbraco instance should be populated with some sample articles due to uSync's "Import on Startup" functionality - but if this doesn't work...
+
+... you can import from the uSync Dashboard in Settings
 
 [https://localhost:44385/umbraco/section/settings/workspace/usync-root](https://localhost:44385/umbraco/section/settings/workspace/usync-root)
 
