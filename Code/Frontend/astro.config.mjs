@@ -1,11 +1,8 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
-import markdownIntegration from '@astropub/md'
-
+import markdownIntegration from '@astropub/md';
 import tailwindcss from '@tailwindcss/vite';
-
 import expressiveCode from 'astro-expressive-code';
-
 import { targetBlank } from './src/plugins/targetBlank';
 
 // https://astro.build/config
@@ -30,12 +27,10 @@ export default defineConfig({
     markdownIntegration(),
     expressiveCode({
       themes: ['dracula'],
-    })
+    }),
   ],
 
-  markdown:{
-    rehypePlugins:[
-      targetBlank
-    ]
-  }
+  markdown: {
+    rehypePlugins: [targetBlank],
+  },
 });
