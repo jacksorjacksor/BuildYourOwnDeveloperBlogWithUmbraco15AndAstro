@@ -1,6 +1,6 @@
 # Build Your Own Developer Blog with Umbraco 15 & Astro
 
-# Build Your Own Developer Blog: Setup
+# Setup
 
 If you have made it this far you have already checked out the repository - well done and welcome! 👋
 
@@ -47,7 +47,9 @@ admin@example.com
 
 ## 5. Import uSync
 
-From the uSync Dashboard in Settings
+Your Umbraco instance should be populated with some sample articles due to uSync's "Import on Startup" functionality - but if this doesn't work...
+
+... you can import from the uSync Dashboard in Settings
 
 [https://localhost:44385/umbraco/section/settings/workspace/usync-root](https://localhost:44385/umbraco/section/settings/workspace/usync-root)
 
@@ -67,7 +69,11 @@ Now browse to the exercises page: [http://localhost:4321/exercises](http://local
 
 You will be following along the exercise content in the Astro application.
 
-## 7. Tell the teacher you are done 🙋‍♀️
+## 7. Add Astro Extention into VS Code 
+
+If you are using VS Code, you can install the [Astro Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) for syntax highlighting.
+
+## 8. Tell the teacher you are done 🙋‍♀️
 
 ... also, help anyone else who may be having issues 😊
 
