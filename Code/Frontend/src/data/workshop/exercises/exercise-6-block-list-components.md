@@ -31,7 +31,7 @@ In our `[slug].astro` file, we want to add in another property called `component
 
 Where we are seting the `props` in the `getStaticPaths` function, add the following:
 
-```
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 props: {
     // Keep existing props - just add in the line below
     components: article.data.content.properties?.components?.items,
@@ -40,21 +40,25 @@ props: {
 
 We then want to deconstuct for use in the markup with:
 
-```
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 const { date, title, components, properties } = Astro.props;
 ```
 
 In the markup, replace where we are currently rendering the Rich Text property with the following:
 
-```
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 {components && <BlockList blocks={components} />}
 ```
 
 Make sure you import the required modules. Eg:
 
-`import BlockList from '../../components/BlockList.astro';`
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro
+import BlockList from '../../components/BlockList.astro';
+```
 
-In VS code you should be able to do this by **CTRL + .** while the cursor is over the red-underline error indicator.
+In VS code you should be able to do this by:
+1. Hovering your cursor over the red-underline error indicator
+2. Pressing **[CTRL] + [.]**
 
 ### Run Astro
 

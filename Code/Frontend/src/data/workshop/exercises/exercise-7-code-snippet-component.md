@@ -25,6 +25,7 @@ Use the following snippet in the file:
 ---
 import type { BundledLanguage } from 'shiki';
 import { Code } from 'astro:components';
+import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
 import type {
   ApiBlockListModelItemsItem,
   CodeSnippetComponentElementModel,

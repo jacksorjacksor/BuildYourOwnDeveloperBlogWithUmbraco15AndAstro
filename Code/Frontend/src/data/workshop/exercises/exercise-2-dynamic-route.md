@@ -9,7 +9,7 @@ branchInfo:
 
 Now that you're more familiar with Astro, we'll next set up a dynamic route file.
 
-Within the `Frontend` project, open `pages/blog/[slug].astro`:
+Within the `Frontend` project, open `pages/blog/[slug].astro` ⭐:
 
 ```
 .
@@ -18,8 +18,8 @@ Within the `Frontend` project, open `pages/blog/[slug].astro`:
         └── src/
             └── pages/
                 ├── blog/
-                │   └── [slug].astro ⬅️
-                └── exercises/ ⚠️ not this folder!
+                │   └── [slug].astro ⭐
+                └── exercises/
 ```
 
 
@@ -37,7 +37,12 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 
 >💡Hint
 >
-> Use `params: { slug: article.slug  }`
+> Use:
+> ```js title=.Code/Frontend/src/pages/blog/[slug].astro
+> params: { 
+>    slug: article.slug 
+> }
+> ```
 >
 > and also
 >
@@ -49,4 +54,8 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 > }
 > ```
 
-Run the Astro application and browse to one of the articles to see the data rendering.
+Run the Astro application and browse to one of the articles to see the data rendering:
+
+```bash title = "Code/Frontend"
+npm run dev
+```
