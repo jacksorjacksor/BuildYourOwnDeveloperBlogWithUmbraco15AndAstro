@@ -69,9 +69,11 @@ Now browse to the exercises page: [http://localhost:4321/exercises](http://local
 
 You will be following along the exercise content in the Astro application.
 
-## 7. Add Astro Extention into VS Code 
+## 7. VS Code Extensions: "Astro" and "Tailwind CSS IntelliSense"  
 
-If you are using VS Code, you can install the [Astro Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) for syntax highlighting.
+If you are using VS Code, you can install:
+- [Astro Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) for syntax highlighting.
+- [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for Tailwind usage support.
 
 ## 8. Tell the teacher you are done 🙋‍♀️
 
