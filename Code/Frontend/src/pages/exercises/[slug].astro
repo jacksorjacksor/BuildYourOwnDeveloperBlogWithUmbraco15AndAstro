@@ -4,17 +4,28 @@
 import Layout from '../../layouts/Layout.astro';
 import { render } from 'astro:content';
 import { getCollection } from 'astro:content';
+import ExerciseNavButton from '../../components/ExerciseNavButton.astro'
+
+import { getPreviousExercise, getNextExercise } from '../../helpers/ExerciseHelper';
 
 export async function getStaticPaths() {
   const exercises = await getCollection('workshopExercise');
   return exercises.map((exercise) => ({
     params: { slug: exercise.id },
-    props: { exercise },
+    props: { exercise, allExercises: exercises },
   }));
 }
 
-const { exercise } = Astro.props;
+const { exercise, allExercises  } = Astro.props;
 const { Content } = await render(exercise);
+
+var currentPageIndex = exercise.data.sortOrder;
+
+const previousExercise = getPreviousExercise(allExercises, currentPageIndex);
+const nextExercise = getNextExercise(allExercises, currentPageIndex);
+
+const previousExerciseText = "← Previous Exercise"
+const nextExerciseText = "→ Next Exercise"
 ---
 
 <Layout>
@@ -37,7 +48,29 @@ const { Content } = await render(exercise);
       ) : null}
 
       <Content />
-    </div>
+
+      <!-- Exercise Nav Boxes -->
+      <div class="pt-8">
+        {previousExercise ? 
+          <ExerciseNavButton
+            exerciseId={previousExercise.id} 
+            directionText={previousExerciseText} 
+            exerciseTitle={previousExercise.data.title}
+            floatEnd={false} /> 
+          : null
+        }
+
+        {nextExercise ? 
+          <ExerciseNavButton
+            exerciseId={nextExercise.id}
+            directionText={nextExerciseText}
+            exerciseTitle={nextExercise.data.title}
+            floatEnd={true} />
+          : null
+          }
+      </div>
+
+    
     <div class="mx-auto max-w-7xl md:px-8 pt-12 flex justify-end">
       <a
         class="border-indigo-600 border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-indigo-600"
