@@ -12,11 +12,11 @@ Make sure you are on the workshop start branch `checkpoint/start`
 git checkout checkpoint/start
 ```
 
-Next we will finish up the set up by installing dependencies and making sure everything is working.
+Next we will install dependencies and making sure everything is working.
 
 ## 2. Install Frontend Dependencies
 
-From the route of the frontend project directory `./Code/Frontend`
+From the root of the frontend project directory `./Code/Frontend`
 
 Please run the following:
 
@@ -42,8 +42,8 @@ Login to the Umbraco instance on [https://localhost:44385/umbraco/](https://loca
 
 **Credentials**
 
-admin@example.com
-1234567890
+- admin@example.com
+- 1234567890
 
 ## 5. Import uSync
 
@@ -57,7 +57,7 @@ Run **Import Everything**
 
 ## 6. Run Astro
 
-From the route of the backend project `./Code/Frontend`
+From the route of the frontend project `./Code/Frontend`
 
 Please run the following:
 
@@ -69,50 +69,13 @@ Now browse to the exercises page: [http://localhost:4321/exercises](http://local
 
 You will be following along the exercise content in the Astro application.
 
-## 7. VS Code Extensions: "Astro" and "Tailwind CSS IntelliSense"  
+## 7. VS Code Extensions: "Astro" and "Tailwind CSS IntelliSense"
 
 If you are using VS Code, you can install:
+
 - [Astro Extension](https://marketplace.visualstudio.com/items?itemName=astro-build.astro-vscode) for syntax highlighting.
 - [Tailwind CSS IntelliSense](https://marketplace.visualstudio.com/items?itemName=bradlc.vscode-tailwindcss) for Tailwind usage support.
 
 ## 8. Tell the teacher you are done 🙋‍♀️
 
 ... also, help anyone else who may be having issues 😊
-
----
-
-## Sample Blogs
-
-### Theo's Blog
-
-https://t3.gg/blog
-
-### Scott Hanselman
-
-https://www.hanselman.com/blog/
-
-### Kenn Jacobsen
-
-https://kjac.dev/
-
-### Owain Jones
-
-https://www.owainjones.dev/
-
-### Rick Butterfield
-
-https://rickbutterfield.dev/
-
-## HexMaster
-
-https://hexmaster.nl/
-
-## RSS Feeds / Umbraco Blogs
-
-### Umbraco: How to add your own blog posts to the blog feed
-
-https://community.umbraco.com/learn-about-the-community/blog-posts/how-to-add-your-own-blog-post/
-
-### Astro: Add an RSS feed:
-
-https://docs.astro.build/en/recipes/rss/
