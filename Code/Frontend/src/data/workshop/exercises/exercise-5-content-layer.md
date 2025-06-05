@@ -35,7 +35,7 @@ The collections are configured in `content.config.ts` localed in the route of th
 
 Notice that there is already a collection set up for the Exercise content you have been using.
 
-This collection used an Astro `[glob](https://docs.astro.build/en/reference/content-loader-reference/#glob-loader)` loader to load data from markdown files. More details about this process can be found in the [Astro Content Loader API](https://docs.astro.build/en/reference/content-loader-reference/) docs.
+This collection used an Astro [glob](https://docs.astro.build/en/reference/content-loader-reference/#glob-loader) loader to load data from markdown files. More details about this process can be found in the [Astro Content Loader API](https://docs.astro.build/en/reference/content-loader-reference/) docs.
 
 We will be using a different loader that makes a call to get content from Umbraco.
 
@@ -70,7 +70,7 @@ const blog = defineCollection({
 
 You can uncomment the `import` statements at the top of the file.
 
-Once this has been added, be sure to a export it for use:
+Once this snippet has been added, be sure to export it for use:
 
 ```ts title=.Code/Frontend/src/content.config.ts
 export const collections = { workshopExercise, blog };
@@ -117,7 +117,7 @@ So much cleaner when compared to a direct `fetch` request ☺️
 
 ### Update The Dynamic Blog Page
 
-Add the following snippet to the Component Script in the blog `[slug].astro` with:
+Replace the existing frontmatter in the blog's `[slug].astro` with:
 
 ```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
