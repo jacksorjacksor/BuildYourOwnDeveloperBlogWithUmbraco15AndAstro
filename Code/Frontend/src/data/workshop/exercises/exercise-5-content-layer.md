@@ -3,8 +3,8 @@ title: '5 - Blog Content Collection'
 description: ''
 sortOrder: 5
 branchInfo:
-    name: 'checkpoint/exercise-5'
-    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
+  name: 'checkpoint/exercise-5'
+  url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now that we have TypeScript types to work with, we can look to update our Umbraco implementation with something more robust.
@@ -117,12 +117,13 @@ So much cleaner when compared to a direct `fetch` request ☺️
 
 ### Update The Dynamic Blog Page
 
-Replace the existing frontmatter in the blog's `[slug].astro` with:
+Replace the existing Component Script in the blog's `[slug].astro` with:
 
 ```ts title=./Code/Frontend/src/pages/blog/[slug].astro
 import Layout from '../../layouts/Layout.astro';
 import { getFinalUrlSegment } from '../../helpers/AppHelpers';
 import { getCollection } from 'astro:content';
+import { formatDate } from '../../helpers/AppHelpers';
 
 export async function getStaticPaths() {
   const blogCollection = await getCollection('blog');

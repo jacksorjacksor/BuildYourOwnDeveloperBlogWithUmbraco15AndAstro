@@ -9,9 +9,11 @@ branchInfo:
 
 In this exercise you will look at the [Umbraco Content Delivery API](https://docs.umbraco.com/umbraco-cms/reference/content-delivery-api) integrated directly into your Astro project using JavaScript `fetch` requests.
 
-This is a quick exercise to observe a direct Content Delivery API integration via a simple `fetch` request.
+This is a quick exercise to simply **observe** a direct Content Delivery API integration via a simple `fetch` request.
 
 This has been preconfigured for you in the example file `fetch-example.astro` in the `/blog` directory.
+
+_Note: There is no code to implement in this exercise._
 
 ### Open the Fetch Example File
 
