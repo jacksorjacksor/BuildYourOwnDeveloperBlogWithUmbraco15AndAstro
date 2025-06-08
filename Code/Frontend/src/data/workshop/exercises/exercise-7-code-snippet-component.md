@@ -3,11 +3,11 @@ title: '7 - Code Snippets'
 description: 'Add a Code Snippet component to the blog article'
 sortOrder: 7
 branchInfo:
-    name: 'checkpoint/exercise-7'
-    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
+  name: 'checkpoint/exercise-7'
+  url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
-Now we know the importance of sharing code, lets look at extending our Block List implementation with a Code Snippet block.
+Now that we have Block List component rendering, lets look at adding a Code Snippet block.
 
 Umbraco has already been setup with the Document Type called:
 
@@ -17,7 +17,7 @@ This is using [Contentment](https://marketplace.umbraco.com/package/umbraco.comm
 
 ### Create a Code Snippet astro component
 
-In the `.src/components/blocks` directory, create a new file called `CodeSnippetComponent.astro`
+In the `.src/components/blocks` directory, open the empty `CodeSnippetComponent.astro` file.
 
 Use the following snippet in the file:
 
@@ -25,7 +25,6 @@ Use the following snippet in the file:
 ---
 import type { BundledLanguage } from 'shiki';
 import { Code } from 'astro:components';
-import { formatDate, getFinalUrlSegment } from '../../helpers/AppHelpers';
 import type {
   ApiBlockListModelItemsItem,
   CodeSnippetComponentElementModel,
@@ -56,11 +55,9 @@ The syntax is set in the component using a dropdown in the CMS.
 
 Open the `./src/components/BlockList.astro` file that is used for rendering the Blocks.
 
-Notice this uses a simple map to intergrate the content type of the element and render the correct block.
+Notice this uses a simple map to render the correct block. Extend the component map with:
 
-extend the component map with:
-
-```js title="./src/components/BlockList.astro"
+```js title="./src/components/BlockList.astro" ins="codeSnippetComponent: CodeSnippetComponent,"
 const COMPONENT_MAP = {
   ...
   codeSnippetComponent: CodeSnippetComponent,
