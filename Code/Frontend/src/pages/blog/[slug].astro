@@ -9,7 +9,7 @@ export async function getStaticPaths() {
       date: '2025-05-01',
       title: 'Hello World',
       properties: {
-        richtext: {
+        richText: {
           markup:
             '<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus lacinia odio vitae vestibulum vestibulum.</p>',
         },
@@ -20,7 +20,7 @@ export async function getStaticPaths() {
       date: '2025-05-05',
       title: 'Astro Workshop',
       properties: {
-        richtext: {
+        richText: {
           markup:
             ' <p>Cras vehicula, mi quis euismod ultricies, augue erat egestas libero, quis pretium turpis orci nec purus.</p>',
         },
@@ -81,7 +81,7 @@ const { date, title, properties } = Astro.props;
               </div>
             </div>
             <!-- Render basic richtext property -->
-            <div set:html={properties.richtext.markup} />
+            <div set:html={properties?.richText?.markup} />
           </div>
         </div>
       </div>

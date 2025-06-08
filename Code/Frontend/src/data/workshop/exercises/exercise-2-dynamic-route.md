@@ -35,7 +35,7 @@ Complete the `getStaticPaths()` function by **setting the URL** for the dynamic 
 > ```js title=.Code/Frontend/src/pages/blog/[slug].astro
 > params: {
 >   slug: article.slug
-> }
+> },
 > ```
 >
 > and also
