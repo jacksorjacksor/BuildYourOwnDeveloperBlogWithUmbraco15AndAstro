@@ -29,6 +29,8 @@ Open `blog/fetch-example.astro` in your editor:
                     └── fetch-example.astro ⬅️
 ```
 
+This fetches the blog article pages from Umbraco and acts as a listing page.
+
 - Observe how simple it is to set up direct API calls in Astro.
 
 - Think about the limitations of this direct-fetch approach - we will next implement a more robust approach.
