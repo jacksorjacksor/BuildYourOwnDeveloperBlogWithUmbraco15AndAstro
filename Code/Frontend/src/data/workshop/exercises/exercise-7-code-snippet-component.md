@@ -24,7 +24,7 @@ Use the following snippet in the file:
 ```js title=".src/components/blocks"
 ---
 import type { BundledLanguage } from 'shiki';
-import { Code } from 'astro:components';
+import { Code } from 'astro-expressive-code/components';
 import type {
   ApiBlockListModelItemsItem,
   CodeSnippetComponentElementModel,
@@ -41,8 +41,8 @@ const syntax = content.properties?.codeSnippetSyntax as BundledLanguage;
 const codeSnippet = content.properties?.codeSnippet;
 ---
 
-<div class="p-6 bg-[#282A36]">
-  <Code code={codeSnippet || ''} lang={syntax || 'js'} theme="dracula" />
+<div class="my-6 bg-[#282A36]">
+  <Code code={codeSnippet || ''} lang={syntax || 'js'} />
 </div>
 
 ```

@@ -7,9 +7,13 @@ branchInfo:
   url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
-Let's now look to get our blog hosted.
+Let's now look to get our blog hosted 🚀
 
-For this, we are going to use the cloud platform provider [Vercel](https://vercel.com/)
+At this point, it might be a good idea to switch to the `main` branch, which contains a fully configured blog.
+
+This can then serve as a solid foundation for you to build on going forward.
+
+You can still deploy this workshop exercise branch as an initial test – it's easy enough to tweak and redeploy later.
 
 ## Create a Vercel account
 
@@ -65,8 +69,8 @@ Once complete, browse to the Vercel dashboard and click on the link to see you l
 
 ### Note
 
-For this set up the Umbraco instance will continue to be locally managed. We are only deploying the static assets built by Astro.
+For this setup, the Umbraco instance will continue to be managed locally. We're only deploying the static assets built by Astro.
 
-If you would like to host the CMS too - you can look at doing this in Azure / Umbraco Cloud or similar as an extra curricular activity.
+If you'd like to host the CMS as well, you could look into doing this via Azure, Umbraco Cloud or something similar as an extra-curricular activity.
 
-If you do continue down the locally hosted route - make sure you consider some redundency for your data.
+If you do stick with the locally hosted route, just make sure you consider some redundancy for your data.

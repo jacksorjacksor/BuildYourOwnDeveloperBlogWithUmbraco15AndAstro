@@ -31,7 +31,7 @@ In our `[slug].astro` file, we want to add in another property called `component
 
 Where we are seting the `props` in the `getStaticPaths` function, add the following:
 
-```ts title=./Code/Frontend/src/pages/blog/[slug].astro
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro ins="components: article.data.content.properties?.components?.items,"
 props: {
     // Keep existing props - just add in the line below
     components: article.data.content.properties?.components?.items,
