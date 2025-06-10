@@ -1,6 +1,7 @@
 ---
 import { getCollection } from 'astro:content';
 import SiteImage from './elements/SiteImage.astro';
+import { formatDate } from '../helpers/AppHelpers';
 const blogs = await getCollection('blog');
 let articlesToShow = 3;
 ---
@@ -23,7 +24,7 @@ let articlesToShow = 3;
             <div class="max-w-xl">
               <div class="mt-8 flex items-center gap-x-4 text-xs">
                 <time datetime="2020-03-16" class="text-gray-500">
-                  Mar 16, 2020
+                  {formatDate(article.data.content.updateDate)}
                 </time>
               </div>
               <div class="group relative">
@@ -34,9 +35,7 @@ let articlesToShow = 3;
                   </a>
                 </h3>
                 <p class="mt-5 line-clamp-3 text-sm/6 text-gray-600">
-                  Illo sint voluptas. Error voluptates culpa eligendi. Hic vel totam vitae illo. Non
-                  aliquid explicabo necessitatibus unde. Sed exercitationem placeat consectetur
-                  nulla deserunt vel. Iusto corrupti dicta.
+                  {article.data.content.properties?.summaryDescription}
                 </p>
               </div>
             </div>

@@ -17,6 +17,6 @@ const syntax = content.properties?.codeSnippetSyntax as BundledLanguage;
 const codeSnippet = content.properties?.codeSnippet;
 ---
 
-<div class="my-6 p-6 bg-[#282A36]">
+<div class="my-6 bg-[#282A36]">
   <Code code={codeSnippet || ''} lang={syntax || 'js'} />
 </div>
