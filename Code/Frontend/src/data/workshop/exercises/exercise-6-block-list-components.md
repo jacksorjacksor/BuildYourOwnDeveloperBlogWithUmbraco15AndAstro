@@ -3,8 +3,8 @@ title: '6 - Block List Components'
 description: 'Add Block List components to the blog article'
 sortOrder: 6
 branchInfo:
-    name: 'checkpoint/exercise-6'
-    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
+  name: 'checkpoint/exercise-6'
+  url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 At the moment, we're only rendering some basic Rich Text from the CMS - which is a bit dull 😴
@@ -31,7 +31,7 @@ In our `[slug].astro` file, we want to add in another property called `component
 
 Where we are seting the `props` in the `getStaticPaths` function, add the following:
 
-```ts title=./Code/Frontend/src/pages/blog/[slug].astro
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro ins="components: article.data.content.properties?.components?.items,"
 props: {
     // Keep existing props - just add in the line below
     components: article.data.content.properties?.components?.items,
@@ -40,7 +40,7 @@ props: {
 
 We then want to deconstuct for use in the markup with:
 
-```ts title=./Code/Frontend/src/pages/blog/[slug].astro
+```ts title=./Code/Frontend/src/pages/blog/[slug].astro ins="components"
 const { date, title, components, properties } = Astro.props;
 ```
 
@@ -57,6 +57,7 @@ import BlockList from '../../components/BlockList.astro';
 ```
 
 In VS code you should be able to do this by:
+
 1. Hovering your cursor over the red-underline error indicator
 2. Pressing **[CTRL] + [.]**
 

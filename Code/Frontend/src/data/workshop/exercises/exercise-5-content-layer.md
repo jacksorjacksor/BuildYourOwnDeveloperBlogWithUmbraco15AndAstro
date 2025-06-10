@@ -3,8 +3,8 @@ title: '5 - Blog Content Collection'
 description: ''
 sortOrder: 5
 branchInfo:
-    name: 'checkpoint/exercise-5'
-    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
+  name: 'checkpoint/exercise-5'
+  url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 Now that we have TypeScript types to work with, we can look to update our Umbraco implementation with something more robust.
@@ -23,14 +23,14 @@ Content Collections allow us to organise and query data, and enable Intellisense
 
 ### Configuring a Blog Content Collection
 
-The collections are configured in `content.config.ts` localed in the route of the `src` directory
+The collections are configured in `content.config.ts` ⭐ localed in the root of the `src` directory
 
 ```
 .
 └── Code/
     └── Frontend/
         └── src/
-            └── content.config.ts
+            └── content.config.ts ⭐
 ```
 
 Notice that there is already a collection set up for the Exercise content you have been using.
@@ -72,7 +72,7 @@ You can uncomment the `import` statements at the top of the file.
 
 Once this snippet has been added, be sure to export it for use:
 
-```ts title=.Code/Frontend/src/content.config.ts
+```ts title=.Code/Frontend/src/content.config.ts ins="blog"
 export const collections = { workshopExercise, blog };
 ```
 
@@ -117,12 +117,14 @@ So much cleaner when compared to a direct `fetch` request ☺️
 
 ### Update The Dynamic Blog Page
 
-Replace the existing frontmatter in the blog's `[slug].astro` with:
+Replace the **entire** existing Component Script in the blog's `[slug].astro` with:
 
 ```ts title=./Code/Frontend/src/pages/blog/[slug].astro
+---
 import Layout from '../../layouts/Layout.astro';
 import { getFinalUrlSegment } from '../../helpers/AppHelpers';
 import { getCollection } from 'astro:content';
+import { formatDate } from '../../helpers/AppHelpers';
 
 export async function getStaticPaths() {
   const blogCollection = await getCollection('blog');
@@ -142,8 +144,11 @@ export async function getStaticPaths() {
 }
 
 const { date, title, properties } = Astro.props;
+---
 ```
 
 Notice we are using a `getFinalUrlSegment` to get only the last segment of the path.
 
 This is because Astro is already aware of the `/blog/` segment due to the `blog` directory informing the routing.
+
+You can now browse to [http://localhost:4321/blog](http://localhost:4321/blog) to see the content coming from Umbraco via an Astro Content Collection and generated TypeScript services.
