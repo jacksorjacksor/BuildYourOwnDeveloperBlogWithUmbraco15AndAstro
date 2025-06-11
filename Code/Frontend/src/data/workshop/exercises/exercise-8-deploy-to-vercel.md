@@ -7,7 +7,7 @@ branchInfo:
   url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
-Let's now look to get our blog hosted 🚀
+Next we'll look to get our blog hosted 🚀
 
 At this point, it might be a good idea to switch to the `main` branch, which contains a fully configured blog.
 
