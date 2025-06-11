@@ -4,7 +4,7 @@
 import Layout from '../../layouts/Layout.astro';
 import { render } from 'astro:content';
 import { getCollection } from 'astro:content';
-import ExerciseNavButton from '../../components/ExerciseNavButton.astro'
+import ExerciseNavButton from '../../components/ExerciseNavButton.astro';
 
 import { getPreviousExercise, getNextExercise } from '../../helpers/ExerciseHelper';
 
@@ -16,7 +16,7 @@ export async function getStaticPaths() {
   }));
 }
 
-const { exercise, allExercises  } = Astro.props;
+const { exercise, allExercises } = Astro.props;
 const { Content } = await render(exercise);
 
 var currentPageIndex = exercise.data.sortOrder;
@@ -24,8 +24,8 @@ var currentPageIndex = exercise.data.sortOrder;
 const previousExercise = getPreviousExercise(allExercises, currentPageIndex);
 const nextExercise = getNextExercise(allExercises, currentPageIndex);
 
-const previousExerciseText = "← Previous Exercise"
-const nextExerciseText = "→ Next Exercise"
+const previousExerciseText = '← Previous Exercise';
+const nextExerciseText = '→ Next Exercise';
 ---
 
 <Layout>
@@ -41,43 +41,44 @@ const nextExerciseText = "→ Next Exercise"
     <div class="mx-auto prose lg:prose-xl">
       <h1 class="mb-2 text-lg font-semibold">{exercise.data.title}</h1>
 
-      {exercise.data.branchInfo ? (
-        <p class="text-sm text-gray-500">
-          🌿 <a href={exercise.data.branchInfo.url} target="_blank">{exercise.data.branchInfo.name}</a>
-        </p>
-      ) : null}
+      <!-- Hiding this for now as we don't currently have the individual checkpoint branches setup -->
+      <!-- {
+        exercise.data.branchInfo ? (
+          <p class="text-sm text-gray-500">
+            🌿{' '}
+            <a href={exercise.data.branchInfo.url} target="_blank">
+              {exercise.data.branchInfo.name}
+            </a>
+          </p>
+        ) : null
+      } -->
 
       <Content />
 
       <!-- Exercise Nav Boxes -->
-      <div class="pt-8">
-        {previousExercise ? 
-          <ExerciseNavButton
-            exerciseId={previousExercise.id} 
-            directionText={previousExerciseText} 
-            exerciseTitle={previousExercise.data.title}
-            floatEnd={false} /> 
-          : null
+      <div class="mx-auto pt-8">
+        {
+          previousExercise ? (
+            <ExerciseNavButton
+              exerciseId={previousExercise.id}
+              directionText={previousExerciseText}
+              exerciseTitle={previousExercise.data.title}
+              floatEnd={false}
+            />
+          ) : null
         }
 
-        {nextExercise ? 
-          <ExerciseNavButton
-            exerciseId={nextExercise.id}
-            directionText={nextExerciseText}
-            exerciseTitle={nextExercise.data.title}
-            floatEnd={true} />
-          : null
-          }
+        {
+          nextExercise ? (
+            <ExerciseNavButton
+              exerciseId={nextExercise.id}
+              directionText={nextExerciseText}
+              exerciseTitle={nextExercise.data.title}
+              floatEnd={true}
+            />
+          ) : null
+        }
       </div>
-
-    
-    <div class="mx-auto max-w-7xl md:px-8 pt-12 flex justify-end">
-      <a
-        class="border-indigo-600 border rounded-md inline-flex items-center justify-center py-3 px-7 text-center text-base font-medium text-indigo-600"
-        href="/exercises"
-      >
-        Back to Exercise List
-      </a>
     </div>
   </section>
 </Layout>

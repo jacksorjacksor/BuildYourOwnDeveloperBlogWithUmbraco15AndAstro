@@ -4,13 +4,15 @@ description: 'Serving Media'
 sortOrder: 100
 ---
 
-We can explore 2 ways of serving media.
+As we have gone with a locally hosted Umbraco instance for this workshop - which still might be viable for you own blog (just make sure the database is backed up)...
+
+... we needed a way to serve the media.
+
+Essentailly we had 2 options.
+
+## Option 1 - Moving the Media into Astro
 
 The first is a little experimental (that's what these workshops are good for right! 😄).
-
-## Option 1 (experimental)
-
-_We'll use this for the workshop to cut down on pre-requisites and dependencies on Azure._
 
 Moving the default Umbraco media directory to live in the Astro assets directory - a little wild I know!
 
@@ -24,9 +26,16 @@ It will allow us to explore the (currently experimental) Astro feature of [Image
 
 Configuration for Astro responsive images can be found [here](https://docs.astro.build/en/reference/experimental-flags/responsive-images/)
 
-## Option 2 (better for hosted backend)
+> 💡
+> We used this option in the final workshop to cut down on pre-requisites and dependencies on Azure.
+>
+> ... and also to play around with the concept.
+>
+> Also... as it is experimental, please don't use this approach without proper testing on a client project.
 
-In a nutshell... host the media in Azure blob storage and manage the media endpoint in an Astro [environment variable](https://docs.astro.build/en/guides/environment-variables/)
+## Option 2 - Azure Blob Storage
+
+Host the media in Azure blob storage and manage the media endpoint in an Astro [environment variable](https://docs.astro.build/en/guides/environment-variables/)
 
 ## Good to know
 
