@@ -55,3 +55,11 @@ npm run dev
 ```
 
 Browse to [http://localhost:4321/blog/hello-world](http://localhost:4321/blog/hello-world) to see one of the hardcoded articles.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.

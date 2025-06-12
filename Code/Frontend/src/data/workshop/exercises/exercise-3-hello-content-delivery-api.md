@@ -52,3 +52,11 @@ npm run dev
 Now browse to: [http://localhost:4321/blog/fetch-example](http://localhost:4321/blog/fetch-example)
 
 Note: This file is for demonstration purposes and can be deleted for your actual blog.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.

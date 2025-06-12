@@ -74,3 +74,9 @@ For this setup, the Umbraco instance will continue to be managed locally. We're 
 If you'd like to host the CMS as well, you could look into doing this via Azure, Umbraco Cloud or something similar as an extra-curricular activity.
 
 If you do stick with the locally hosted route, just make sure you consider some redundancy for your data.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
