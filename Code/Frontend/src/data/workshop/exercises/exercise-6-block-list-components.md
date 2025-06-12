@@ -64,3 +64,11 @@ In VS code you should be able to do this by:
 ### Run Astro
 
 Run the Astro application again - you should now have blocks rendering!
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.

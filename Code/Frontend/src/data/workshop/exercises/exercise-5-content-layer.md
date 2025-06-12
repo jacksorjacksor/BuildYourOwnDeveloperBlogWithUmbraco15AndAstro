@@ -152,3 +152,11 @@ Notice we are using a `getFinalUrlSegment` to get only the last segment of the p
 This is because Astro is already aware of the `/blog/` segment due to the `blog` directory informing the routing.
 
 You can now browse to [http://localhost:4321/blog](http://localhost:4321/blog) to see the content coming from Umbraco via an Astro Content Collection and generated TypeScript services.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.
