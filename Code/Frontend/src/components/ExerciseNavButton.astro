@@ -1,0 +1,15 @@
+---
+const { exerciseId, directionText, exerciseTitle, floatEnd } = Astro.props;
+
+// Type check for floatLeft
+if (typeof floatEnd !== "boolean") {
+    throw new Error("Prop 'floatEnd' must be a boolean.");
+}
+
+---
+<a
+  class={`border-indigo-600 border rounded-md inline-flex flex-col items-center justify-center py-2 px-5 text-center text-base font-medium text-indigo-600 not-prose ${floatEnd ? 'float-end' : ''}`}
+  href={`/exercises/${exerciseId}`}
+>
+    <p>{directionText}</p><p class="font-bold">{exerciseTitle}</p>
+</a>

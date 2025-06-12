@@ -3,8 +3,8 @@ title: '4 - Generate TypeScript'
 description: 'Generate TypeScript definations'
 sortOrder: 4
 branchInfo:
-    name: 'checkpoint/exercise-4'
-    url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
+  name: 'checkpoint/exercise-4'
+  url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
 > 💡Make sure Umbraco is running
@@ -39,7 +39,7 @@ The command you need to run the NPM script which generates the TypeScript defini
 
 ```bash title = "Code/Frontend"
 npm run umb-ts-generate
-``` 
+```
 
 Ensure Umbraco is running before executing.
 
@@ -66,3 +66,11 @@ An example of a generated type safe service can be found in `src/umbraco-client/
 🤯 Imagine writing all that by hand!
 
 This approach is genuinely a game changer when working headlessly with Umbraco.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.

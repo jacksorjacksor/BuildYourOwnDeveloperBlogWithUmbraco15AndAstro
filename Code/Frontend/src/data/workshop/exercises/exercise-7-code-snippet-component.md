@@ -69,3 +69,11 @@ const COMPONENT_MAP = {
 In Umbraco, add a Code Snippet to a new or existing article.
 
 Publish and re-run Astro to see the component rendering 🤓
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.

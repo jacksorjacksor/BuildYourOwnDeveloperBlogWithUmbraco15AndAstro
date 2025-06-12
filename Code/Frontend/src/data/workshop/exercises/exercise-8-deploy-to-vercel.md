@@ -7,7 +7,7 @@ branchInfo:
   url: 'https://github.com/jacksorjacksor/BuildYourOwnDeveloperBlogWithUmbraco15AndAstro/tree/checkpoint/start'
 ---
 
-Let's now look to get our blog hosted 🚀
+Next we'll look to get our blog hosted 🚀
 
 At this point, it might be a good idea to switch to the `main` branch, which contains a fully configured blog.
 
@@ -74,3 +74,9 @@ For this setup, the Umbraco instance will continue to be managed locally. We're 
 If you'd like to host the CMS as well, you could look into doing this via Azure, Umbraco Cloud or something similar as an extra-curricular activity.
 
 If you do stick with the locally hosted route, just make sure you consider some redundancy for your data.
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.

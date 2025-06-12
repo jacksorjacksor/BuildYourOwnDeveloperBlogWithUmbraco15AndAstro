@@ -45,3 +45,11 @@ npm run dev
 Browse to the home page [http://localhost:4321/](http://localhost:4321/) to view your changes.
 
 Make updates and observe hot reloading in action 🚀
+
+---
+
+> 💁‍♀️ Offer help to anyone who might be finding it difficult.
+
+> ✅ Let Rich or Adam know once you've finished.
+
+> ⏱️ Please wait for the next demo before starting the next exercise.
