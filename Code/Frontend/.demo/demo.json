@@ -20,9 +20,6 @@
       "description": "",
       "steps": [
         {
-          "action": "close"
-        },
-        {
           "action": "imagePreview",
           "path": "_presentation/3-1_file-based-routing.png"
         }
@@ -33,9 +30,6 @@
       "title": "Open Slide 3",
       "description": "",
       "steps": [
-        {
-          "action": "close"
-        },
         {
           "action": "imagePreview",
           "path": "./_presentation/3-2_file-based-routing.png"
