@@ -20,9 +20,6 @@
       "description": "",
       "steps": [
         {
-          "action": "close"
-        },
-        {
           "action": "imagePreview",
           "path": "./_presentation/5-2-cd-api.png"
         }
