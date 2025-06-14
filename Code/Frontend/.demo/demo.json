@@ -20,6 +20,9 @@
       "description": "Single level dynamic route",
       "steps": [
         {
+          "action": "close"
+        },
+        {
           "action": "imagePreview",
           "path": "./_presentation/4-3-single-level-dynamic-route.png"
         }
