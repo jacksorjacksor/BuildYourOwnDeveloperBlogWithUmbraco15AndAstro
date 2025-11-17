@@ -1,4 +1,8 @@
-# Build Your Own Developer Blog with Umbraco 15 & Astro
+# Build Your Own Developer Blog with Umbraco & Astro
+
+## Software versions
+- Umbraco: 16.3.4
+- Astro: v5.15.8
 
 # Setup
 
